@@ -1,122 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-    const REPORT_TITLE = "JANUARY WEEK 2 SALES AUDIT";
-    const REPORT_DATE = "Jan 14, 2026";
-    
-    // HEADER TOTALS
-    const MTD_TOTAL_REVENUE = "₦10.1m"; 
-    const MTD_TOTAL_CUSTOMERS = "6";
-    const MTD_TOTAL_LEADS = "60";
-    const MTD_AVG_CONVERSION = "10.00%"; // High-Alert Red < 50%
+    // 1. MONTH-TO-DATE (MTD) TOTALS
+    const MTD_TOTAL_REVENUE = "₦10.3m"; 
+    const MTD_TOTAL_CUSTOMERS = "7";
+    const MTD_TOTAL_LEADS = "75";
+    const MTD_AVG_CONVERSION = "9.3%";
 
-    // SALES TEAM DATA (WEEK 2)
-    const TEAM_DATA = [
-        { name: "Immaculate O. Imion", rev: "₦8.9m", bonus: "₦8.9k", cust: "5", leads: "12", conv: "42%" },
-        { name: "Patricia Uchedienyi", rev: "₦1.2m", bonus: "₦1.2k", cust: "1", leads: "33", conv: "3%" },
-        { name: "Damilola A. Akingboye", rev: "₦0.00", bonus: "₦0.00", cust: "0", leads: "15", conv: "0%" },
+    // 2. MTD TEAM TABLE
+    const MTD_TEAM_DATA = [
+        { name: "Immaculate O. Imion", rev: "₦8.9m", bonus: "₦8.9k", cust: "5", leads: "17", conv: "29%" },
+        { name: "Patricia Uchedienyi", rev: "₦1.4m", bonus: "₦1.4k", cust: "2", leads: "36", conv: "5%" },
+        { name: "Damilola A. Akingboye", rev: "₦0.00", bonus: "₦0.00", cust: "0", leads: "22", conv: "0%" },
         { name: "Jemila O. Ibrahim",    rev: "₦0.00", bonus: "₦0.00", cust: "0", leads: "0",  conv: "0%" }
+    ];
+
+    // 3. LAST WEEK ONLY (WEEK 2)
+    const WK2_TEAM_DATA = [
+        { name: "Immaculate O. Imion", rev: "₦8.9m", cust: "5", leads: "12", conv: "42%" },
+        { name: "Patricia Uchedienyi", rev: "₦1.2m", cust: "1", leads: "33", conv: "3%" },
+        { name: "Damilola A. Akingboye", rev: "₦0.00", cust: "0", leads: "15", conv: "0%" },
+        { name: "Jemila O. Ibrahim",    rev: "₦0.00", cust: "0", leads: "0",  conv: "0%" }
     ];
 </script>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENERGYMALL - Jan 2026 Audit</title>
+    <title>ENERGYMALL - Monthly & Weekly Audit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
         .energy-blue { background-color: #001F3F; }
         .energy-yellow { color: #FFD700; }
         .energy-cyan { color: #00E5FF; }
-        .stat-card { transition: all 0.3s ease; }
-        .stat-card:hover { transform: translateY(-5px); border-color: #FFD700; }
         .high-alert { color: #EF5350 !important; font-weight: 900; }
+        .section-header { border-left: 8px solid #001F3F; padding-left: 1rem; margin-bottom: 1.5rem; }
     </style>
 </head>
-<body class="bg-slate-100 text-slate-900 p-4 md:p-10">
+<body class="p-4 md:p-10">
 
     <div class="max-w-7xl mx-auto">
-        <header class="energy-blue text-white rounded-3xl p-8 mb-8 shadow-2xl flex flex-col md:row justify-between items-center border-b-8 border-[#FFD700]">
+        <header class="energy-blue text-white rounded-3xl p-8 mb-8 shadow-2xl flex flex-col md:flex-row justify-between items-center border-b-8 border-[#FFD700]">
             <div>
                 <h1 class="text-4xl font-black tracking-tighter uppercase energy-yellow">EnergyMall</h1>
-                <p class="energy-cyan font-bold tracking-widest text-xs mt-1 uppercase" id="reportTitle"></p>
+                <p class="energy-cyan font-bold tracking-widest text-xs mt-1 uppercase">Executive Sales Audit | Jan 2026</p>
             </div>
             <div class="mt-6 md:mt-0 text-center md:text-right">
-                <div class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-1">MTD REVENUE TOTAL</div>
+                <div class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] mb-1">MTD REVENUE</div>
                 <div class="text-5xl font-black" id="headerRev"></div>
             </div>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-            <div class="stat-card bg-white p-6 rounded-2xl shadow-sm border-2 border-transparent">
-                <p class="text-slate-400 text-[10px] font-black uppercase">Lead Volume</p>
-                <p class="text-3xl font-black text-[#001F3F]" id="cardLeads"></p>
-            </div>
-            <div class="stat-card bg-white p-6 rounded-2xl shadow-sm border-2 border-transparent">
-                <p class="text-slate-400 text-[10px] font-black uppercase">Customers Closed</p>
-                <p class="text-3xl font-black text-[#001F3F]" id="cardCust"></p>
-            </div>
-            <div class="stat-card bg-white p-6 rounded-2xl shadow-sm border-2 border-transparent">
-                <p class="text-slate-400 text-[10px] font-black uppercase">Avg. Conversion</p>
-                <p class="text-3xl font-black high-alert" id="cardConv"></p>
-            </div>
-            <div class="stat-card energy-blue p-6 rounded-2xl shadow-sm">
-                <p class="energy-cyan text-[10px] font-black uppercase">Audit Status</p>
-                <p class="text-xl font-black text-white uppercase italic">Week 2 Active</p>
-            </div>
+        <div class="section-header">
+            <h2 class="text-2xl font-black text-slate-800 uppercase tracking-tight">January Month-To-Date (MTD)</h2>
+            <p class="text-slate-500 text-sm italic font-bold">Comprehensive performance from Jan 1st - Present</p>
         </div>
 
         <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden mb-12">
-            <div class="bg-slate-900 p-6 flex justify-between items-center">
-                <h2 class="text-white font-black uppercase tracking-widest text-sm">Performance Audit Breakdown</h2>
-                <span class="energy-yellow text-[10px] font-black uppercase tracking-widest italic" id="updateDate"></span>
-            </div>
             <div class="overflow-x-auto">
                 <table class="w-full text-left">
-                    <thead class="bg-slate-50 border-b text-slate-400 text-[10px] uppercase font-black">
+                    <thead class="bg-slate-900 text-white text-[10px] uppercase font-black">
                         <tr>
-                            <th class="px-8 py-4">Representative</th>
+                            <th class="px-8 py-4">Sales Rep</th>
                             <th class="px-8 py-4">Revenue</th>
-                            <th class="px-8 py-4">Exp. Bonus</th>
-                            <th class="px-8 py-4 text-center">Cust.</th>
+                            <th class="px-8 py-4">Bonus</th>
+                            <th class="px-8 py-4 text-center">Customers</th>
                             <th class="px-8 py-4 text-center">Leads</th>
-                            <th class="px-8 py-4 text-right">Conv. %</th>
+                            <th class="px-8 py-4 text-right">Conversion</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody" class="divide-y divide-slate-100">
-                        </tbody>
+                    <tbody id="mtdTable" class="divide-y divide-slate-100 font-medium"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section-header">
+            <h2 class="text-2xl font-black text-slate-800 uppercase tracking-tight">Last Week Only (Week 2)</h2>
+            <p class="text-slate-500 text-sm italic font-bold text-orange-600">Specific Audit for the last 7 days</p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden mb-12">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-100 text-slate-500 text-[10px] uppercase font-black border-b">
+                        <tr>
+                            <th class="px-8 py-4">Sales Rep</th>
+                            <th class="px-8 py-4">Weekly Revenue</th>
+                            <th class="px-8 py-4 text-center">Weekly Leads</th>
+                            <th class="px-8 py-4 text-right">Weekly Conversion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="wkTable" class="divide-y divide-slate-100"></tbody>
                 </table>
             </div>
         </div>
 
         <footer class="mt-12 text-center">
-            <p class="text-slate-400 text-[9px] font-black uppercase tracking-[0.5em] opacity-40">EnergyMall Sales Ops &copy; 2026</p>
+            <p class="text-slate-400 text-[9px] font-black uppercase tracking-[0.5em] opacity-40 italic">Confidential Internal Audit - Suruka Natures Gift Enterprise</p>
         </footer>
     </div>
 
     <script>
-        // Injecting data from top script
-        document.getElementById('reportTitle').textContent = REPORT_TITLE;
         document.getElementById('headerRev').textContent = MTD_TOTAL_REVENUE;
-        document.getElementById('cardLeads').textContent = MTD_TOTAL_LEADS;
-        document.getElementById('cardCust').textContent = MTD_TOTAL_CUSTOMERS;
-        document.getElementById('cardConv').textContent = MTD_AVG_CONVERSION;
-        document.getElementById('updateDate').textContent = "Updated: " + REPORT_DATE;
 
-        const tbody = document.getElementById('tableBody');
-        TEAM_DATA.forEach(row => {
+        // Populate MTD Table
+        const mtdBody = document.getElementById('mtdTable');
+        MTD_TEAM_DATA.forEach(row => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td class="px-8 py-6 font-bold text-[#001F3F]">${row.name}</td>
-                <td class="px-8 py-6 font-black text-lg text-slate-800">${row.rev}</td>
-                <td class="px-8 py-6 font-mono text-slate-500 italic">${row.bonus}</td>
-                <td class="px-8 py-6 text-center font-bold">${row.cust}</td>
-                <td class="px-8 py-6 text-center font-bold text-slate-400">${row.leads}</td>
-                <td class="px-8 py-6 text-right font-black high-alert">${row.conv}</td>
+                <td class="px-8 py-5 font-bold text-[#001F3F]">${row.name}</td>
+                <td class="px-8 py-5 font-black text-slate-800">${row.rev}</td>
+                <td class="px-8 py-5 font-mono text-orange-600 font-bold">${row.bonus}</td>
+                <td class="px-8 py-5 text-center">${row.cust}</td>
+                <td class="px-8 py-5 text-center text-slate-400 font-bold">${row.leads}</td>
+                <td class="px-8 py-5 text-right high-alert">${row.conv}</td>
             `;
-            tbody.appendChild(tr);
+            mtdBody.appendChild(tr);
+        });
+
+        // Populate Weekly Table
+        const wkBody = document.getElementById('wkTable');
+        WK2_TEAM_DATA.forEach(row => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td class="px-8 py-5 font-bold text-[#001F3F]">${row.name}</td>
+                <td class="px-8 py-5 font-black text-slate-700 italic">${row.rev}</td>
+                <td class="px-8 py-5 text-center font-bold text-slate-500">${row.leads}</td>
+                <td class="px-8 py-5 text-right high-alert">${row.conv}</td>
+            `;
+            wkBody.appendChild(tr);
         });
     </script>
 </body>
