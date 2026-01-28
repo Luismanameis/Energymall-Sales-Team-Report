@@ -15,19 +15,25 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
         .scroll-content { margin-top: 320px; padding-bottom: 50px; }
+        
+        /* Bold Red Headings as requested */
         .h-red { color: #FF0000; font-weight: 950; text-transform: uppercase; border-left: 8px solid #FF0000; padding-left: 15px; margin: 30px 0 15px 0; display: block; font-size: 1.8rem; }
+        
         .card { background: #0f0f0f; border: 1px solid #222; border-radius: 12px; padding: 15px; }
         .stat-label { color: #666; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
-        .text-revenue { color: #00FF41; } 
-        .text-customer { color: #00A3FF; } 
-        .text-lead { color: #FFA500; }     
+        
+        /* Thematic Colors */
+        .text-revenue { color: #00FF41; } /* Green Revenue */
+        .text-white-metric { color: #ffffff; } /* White Metrics */
+        .pct-high { color: #00FF41; } /* >50% Green */
+        .pct-low { color: #FF0000; }  /* <50% Red */
+        
         .stack-lg { font-size: 2.2rem; font-weight: 900; line-height: 1; }
         table { width: 100%; border-collapse: collapse; }
         th { color:#888; font-size:11px; text-transform:uppercase; font-weight: 900; padding:15px 12px; border-bottom:2px solid #333; text-align: left; background: #0a0a0a; }
         td { padding:15px 12px; border-bottom: 1px solid #1a1a1a; font-size:1rem; font-weight: 700; color: #eee; }
+        
         .staff-name { color: #ffffff; font-size: 1.1rem; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #FF0000; }
-        .pct-high { color: #00FF41; } 
-        .pct-low { color: #FF0000; }
         #resetBtn { display: none; background: #FF0000; color: white; font-size: 10px; font-weight: 900; padding: 5px 12px; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
         .hidden-row { display: none !important; }
         @media (max-width: 768px) { .scroll-content { margin-top: 310px; } .fixed-header { padding: 15px 20px; } }
@@ -46,9 +52,9 @@
         </header>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div class="card border-green-900/30"><p class="stat-label">Total Revenue</p><p id="hRev" class="stack-lg text-revenue">₦107.8m</p></div>
-            <div class="card border-blue-900/30"><p class="stat-label">Total Cust</p><p id="hCust" class="stack-lg text-customer">40</p></div>
-            <div class="card border-orange-900/30"><p class="stat-label">Total Leads</p><p id="hLeads" class="stack-lg text-lead">235</p></div>
+            <div class="card border-green-900/30"><p class="stat-label">Total Revenue</p><p id="hRev" class="stack-lg text-revenue">₦110.6m</p></div>
+            <div class="card border-blue-900/30"><p class="stat-label">Total Cust</p><p id="hCust" class="stack-lg text-white-metric">40</p></div>
+            <div class="card border-orange-900/30"><p class="stat-label">Total Leads</p><p id="hLeads" class="stack-lg text-white-metric">232</p></div>
             <div class="card border-zinc-800"><p class="stat-label">Global Conv %</p><p id="hConv" class="stack-lg pct-low">17.24%</p></div>
         </div>
     </div>
@@ -56,7 +62,7 @@
     <div class="scroll-content">
         <div class="grid-container px-5 md:px-10">
             
-            <span class="h-red">Representative Audit (Jan 2026)</span>
+            <span class="h-red">Representative Audit (January 2026)</span>
             <div class="card mb-10 p-0 overflow-hidden">
                 <div class="overflow-x-auto">
                     <table>
@@ -64,9 +70,9 @@
                             <tr>
                                 <th>Representative</th>
                                 <th>Revenue</th>
-                                <th>Bonus Share</th>
-                                <th class="text-customer">Cust</th>
-                                <th class="text-lead">Leads</th>
+                                <th>Bonus</th>
+                                <th class="text-white-metric">Cust</th>
+                                <th class="text-white-metric">Leads</th>
                                 <th class="text-right">Conv %</th>
                             </tr>
                         </thead>
@@ -74,33 +80,33 @@
                             <tr class="rep-row" data-name="Damilola Abidemi Akingboye" data-rev="38.7m" data-cust="10" data-leads="66" data-conv="15.15%">
                                 <td><span class="staff-name" onclick="filterAudit(this)">Damilola A. Akingboye</span></td>
                                 <td class="text-revenue">₦38.7m</td>
-                                <td class="text-zinc-500">₦19.4k</td>
-                                <td class="text-customer">10</td>
-                                <td class="text-lead">66</td>
+                                <td class="text-zinc-500">₦19.3k</td>
+                                <td class="text-white-metric">10</td>
+                                <td class="text-white-metric">66</td>
                                 <td class="text-right pct-low">15.15%</td>
                             </tr>
-                            <tr class="rep-row" data-name="Patricia Uchedienyi" data-rev="34.6m" data-cust="6" data-leads="78" data-conv="7.69%">
+                            <tr class="rep-row" data-name="Patricia Uchedienyi" data-rev="34.5m" data-cust="6" data-leads="81" data-conv="7.41%">
                                 <td><span class="staff-name" onclick="filterAudit(this)">Patricia Uchedienyi</span></td>
-                                <td class="text-revenue">₦34.6m</td>
-                                <td class="text-zinc-500">₦17.3k</td>
-                                <td class="text-customer">6</td>
-                                <td class="text-lead">78</td>
-                                <td class="text-right pct-low">7.69%</td>
+                                <td class="text-revenue">₦34.5m</td>
+                                <td class="text-zinc-500">₦17.2k</td>
+                                <td class="text-white-metric">6</td>
+                                <td class="text-white-metric">81</td>
+                                <td class="text-right pct-low">7.41%</td>
                             </tr>
-                            <tr class="rep-row" data-name="Immaculate Osereme Imion" data-rev="29.7m" data-cust="19" data-leads="91" data-conv="20.88%">
+                            <tr class="rep-row" data-name="Immaculate Osereme Imion" data-rev="32.5m" data-cust="20" data-leads="91" data-conv="21.98%">
                                 <td><span class="staff-name" onclick="filterAudit(this)">Immaculate O. Imion</span></td>
-                                <td class="text-revenue">₦29.7m</td>
-                                <td class="text-zinc-500">₦14.8k</td>
-                                <td class="text-customer">19</td>
-                                <td class="text-lead">91</td>
-                                <td class="text-right pct-low">20.88%</td>
+                                <td class="text-revenue">₦32.5m</td>
+                                <td class="text-zinc-500">₦16.2k</td>
+                                <td class="text-white-metric">20</td>
+                                <td class="text-white-metric">91</td>
+                                <td class="text-right pct-low">21.98%</td>
                             </tr>
-                            <tr class="rep-row" data-name="Jemila Ojo-Agafu Ibrahim" data-rev="1.36m" data-cust="2" data-leads="0" data-conv="0.00%">
+                            <tr class="rep-row" data-name="Jemila Ojo-Agafu Ibrahim" data-rev="1.3m" data-cust="2" data-leads="0" data-conv="0.00%">
                                 <td><span class="staff-name" onclick="filterAudit(this)">Jemila O. Ibrahim</span></td>
-                                <td class="text-revenue">₦1.36m</td>
-                                <td class="text-zinc-500">₦679</td>
-                                <td class="text-customer">2</td>
-                                <td class="text-lead">0</td>
+                                <td class="text-revenue">₦1.3m</td>
+                                <td class="text-zinc-500">₦678</td>
+                                <td class="text-white-metric">2</td>
+                                <td class="text-white-metric">0</td>
                                 <td class="text-right pct-low">0.00%</td>
                             </tr>
                         </tbody>
@@ -110,29 +116,57 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                 <div>
-                    <span class="h-red">Revenue Split</span>
+                    <span class="h-red">Sales Team vs The Business</span>
                     <div class="card p-0 overflow-hidden">
                         <table>
                             <thead><tr><th>Entity</th><th>Revenue</th><th class="text-right">% Share</th></tr></thead>
                             <tbody>
-                                <tr><td>Sales Team</td><td class="text-revenue">₦104.4m</td><td class="text-right pct-high">96.83%</td></tr>
-                                <tr><td>The Business</td><td class="text-revenue">₦3.4m</td><td class="text-right pct-low">3.17%</td></tr>
+                                <tr><td>Sales Team</td><td class="text-revenue">₦107.2m</td><td class="text-right pct-high">96.91%</td></tr>
+                                <tr><td>The Business</td><td class="text-revenue">₦3.4m</td><td class="text-right pct-low">3.09%</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div>
-                    <span class="h-red">Weekly Velocity</span>
+                    <span class="h-red">Monthly Velocity (Jan)</span>
                     <div class="card p-0 overflow-hidden">
                         <table>
                             <thead><tr><th>Timeline</th><th>Revenue</th><th>Cust</th><th class="text-right">Leads</th></tr></thead>
                             <tbody>
-                                <tr><td>Week 4</td><td class="text-revenue">₦77.0m</td><td>16</td><td class="text-right">52</td></tr>
-                                <tr><td>Week 5 (New)</td><td class="text-revenue">₦7.2m</td><td>4</td><td class="text-right">23</td></tr>
+                                <tr><td>Week 4</td><td class="text-revenue">₦77.0m</td><td class="text-white-metric">16</td><td class="text-right text-white-metric">52</td></tr>
+                                <tr><td>Week 5</td><td class="text-revenue">₦7.2m</td><td class="text-white-metric">4</td><td class="text-right text-white-metric">23</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+            </div>
+
+            <span class="h-red">Historical Analysis (2025 vs 2026)</span>
+            <div class="card mb-10 p-0 overflow-hidden">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>2025 Total</th>
+                            <th>2026 YTD</th>
+                            <th class="text-right">Diff (Gap)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sales Team</td>
+                            <td class="text-white-metric">₦863.3m</td>
+                            <td class="text-revenue">₦107.2m</td>
+                            <td class="text-right pct-low">87.57% Remaining</td>
+                        </tr>
+                        <tr>
+                            <td>The Business</td>
+                            <td class="text-white-metric">₦138.0m</td>
+                            <td class="text-revenue">₦3.4m</td>
+                            <td class="text-right pct-low">97.53% Remaining</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <footer class="text-center py-20 opacity-20 text-[10px] uppercase tracking-[15px]">
@@ -158,9 +192,9 @@
         function resetAudit() {
             const rows = document.querySelectorAll('.rep-row');
             rows.forEach(r => r.classList.remove('hidden-row'));
-            document.getElementById('hRev').innerText = '₦107.8m';
+            document.getElementById('hRev').innerText = '₦110.6m';
             document.getElementById('hCust').innerText = '40';
-            document.getElementById('hLeads').innerText = '235';
+            document.getElementById('hLeads').innerText = '232';
             document.getElementById('hConv').innerText = '17.24%';
             document.getElementById('viewStatus').innerText = "Executive Sales Audit | Jan 2026";
             document.getElementById('resetBtn').style.display = 'none';
