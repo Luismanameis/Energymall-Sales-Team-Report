@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENERGYMALL EXECUTIVE AUDIT - JAN 28 UPDATE</title>
+    <title>ENERGYMALL EXECUTIVE AUDIT - JAN 28</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -11,59 +11,63 @@
         .fixed-header { 
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
             background-color: rgba(5, 5, 5, 0.98); backdrop-filter: blur(15px);
-            border-bottom: 2px solid #1a1a1a; padding: 15px 40px 20px 40px; 
+            border-bottom: 2px solid #1a1a1a; padding: 15px 25px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
-        .scroll-content { margin-top: 320px; padding-bottom: 50px; }
+        /* Tightened spacing here */
+        .scroll-content { margin-top: 240px; padding-bottom: 50px; }
+        @media (max-width: 768px) { .scroll-content { margin-top: 280px; } }
+
+        .h-red { color: #FF0000; font-weight: 950; text-transform: uppercase; border-left: 8px solid #FF0000; padding-left: 15px; margin: 20px 0 15px 0; display: block; font-size: 1.6rem; }
         
-        /* Bold Red Headings as requested */
-        .h-red { color: #FF0000; font-weight: 950; text-transform: uppercase; border-left: 8px solid #FF0000; padding-left: 15px; margin: 30px 0 15px 0; display: block; font-size: 1.8rem; }
+        .card { background: #0f0f0f; border: 1px solid #222; border-radius: 12px; padding: 12px; }
+        .stat-label { color: #666; font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
         
-        .card { background: #0f0f0f; border: 1px solid #222; border-radius: 12px; padding: 15px; }
-        .stat-label { color: #666; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+        .text-revenue { color: #00FF41; } 
+        .text-white-metric { color: #ffffff; } 
+        .pct-high { color: #00FF41; } 
+        .pct-low { color: #FF0000; }  
         
-        /* Thematic Colors */
-        .text-revenue { color: #00FF41; } /* Green Revenue */
-        .text-white-metric { color: #ffffff; } /* White Metrics */
-        .pct-high { color: #00FF41; } /* >50% Green */
-        .pct-low { color: #FF0000; }  /* <50% Red */
-        
-        .stack-lg { font-size: 2.2rem; font-weight: 900; line-height: 1; }
+        .stack-lg { font-size: 1.8rem; font-weight: 900; line-height: 1; }
         table { width: 100%; border-collapse: collapse; }
-        th { color:#888; font-size:11px; text-transform:uppercase; font-weight: 900; padding:15px 12px; border-bottom:2px solid #333; text-align: left; background: #0a0a0a; }
-        td { padding:15px 12px; border-bottom: 1px solid #1a1a1a; font-size:1rem; font-weight: 700; color: #eee; }
+        th { color:#888; font-size:10px; text-transform:uppercase; font-weight: 900; padding:12px; border-bottom:2px solid #333; text-align: left; background: #0a0a0a; }
+        td { padding:14px 12px; border-bottom: 1px solid #1a1a1a; font-size:0.95rem; font-weight: 700; color: #eee; }
         
-        .staff-name { color: #ffffff; font-size: 1.1rem; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #FF0000; }
-        #resetBtn { display: none; background: #FF0000; color: white; font-size: 10px; font-weight: 900; padding: 5px 12px; border-radius: 4px; cursor: pointer; text-transform: uppercase; }
+        .staff-name { color: #ffffff; font-size: 1rem; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #FF0000; }
+        #resetBtn { display: none; background: #FF0000; color: white; font-size: 10px; font-weight: 900; padding: 4px 10px; border-radius: 4px; cursor: pointer; text-transform: uppercase; margin-top: 5px; }
         .hidden-row { display: none !important; }
-        @media (max-width: 768px) { .scroll-content { margin-top: 310px; } .fixed-header { padding: 15px 20px; } }
     </style>
 </head>
 <body>
 <div class="max-w-7xl mx-auto">
 
     <div class="fixed-header">
-        <header class="flex justify-between items-center mb-4">
+        <header class="flex justify-between items-start mb-4">
             <div>
-                <h1 class="text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">ENERGY<span class="text-red-600">MALL</span></h1>
-                <p id="viewStatus" class="text-zinc-500 font-bold uppercase text-[10px] tracking-[5px] mt-1">Executive Sales Audit | Jan 2026</p>
+                <h1 class="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-none">ENERGY<span class="text-red-600">MALL</span></h1>
+                <p id="viewStatus" class="text-zinc-500 font-bold uppercase text-[9px] tracking-[4px] mt-1">Executive Sales Audit | Jan 2026</p>
+                <div id="resetBtn" onclick="resetAudit()">Reset View ✕</div>
             </div>
-            <div id="resetBtn" onclick="resetAudit()">Reset View ✕</div>
+            <div class="text-right border-l-2 border-red-600 pl-4">
+                <p class="stat-label">Month Leader</p>
+                <p class="text-sm font-black text-white uppercase italic">Damilola A.</p>
+                <p class="text-lg font-black text-revenue">₦38.7m</p>
+            </div>
         </header>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div class="card border-green-900/30"><p class="stat-label">Total Revenue</p><p id="hRev" class="stack-lg text-revenue">₦110.6m</p></div>
             <div class="card border-blue-900/30"><p class="stat-label">Total Cust</p><p id="hCust" class="stack-lg text-white-metric">40</p></div>
             <div class="card border-orange-900/30"><p class="stat-label">Total Leads</p><p id="hLeads" class="stack-lg text-white-metric">232</p></div>
-            <div class="card border-zinc-800"><p class="stat-label">Global Conv %</p><p id="hConv" class="stack-lg pct-low">17.24%</p></div>
+            <div class="card border-zinc-800"><p class="stat-label">Conv %</p><p id="hConv" class="stack-lg pct-low">17.24%</p></div>
         </div>
     </div>
 
     <div class="scroll-content">
-        <div class="grid-container px-5 md:px-10">
+        <div class="px-5 md:px-10">
             
-            <span class="h-red">Representative Audit (January 2026)</span>
-            <div class="card mb-10 p-0 overflow-hidden">
+            <span class="h-red">Representative Audit</span>
+            <div class="card mb-8 p-0 overflow-hidden">
                 <div class="overflow-x-auto">
                     <table>
                         <thead>
@@ -114,9 +118,9 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <span class="h-red">Sales Team vs The Business</span>
+                    <span class="h-red">Revenue Split</span>
                     <div class="card p-0 overflow-hidden">
                         <table>
                             <thead><tr><th>Entity</th><th>Revenue</th><th class="text-right">% Share</th></tr></thead>
@@ -128,7 +132,7 @@
                     </div>
                 </div>
                 <div>
-                    <span class="h-red">Monthly Velocity (Jan)</span>
+                    <span class="h-red">January Velocity</span>
                     <div class="card p-0 overflow-hidden">
                         <table>
                             <thead><tr><th>Timeline</th><th>Revenue</th><th>Cust</th><th class="text-right">Leads</th></tr></thead>
@@ -141,35 +145,7 @@
                 </div>
             </div>
 
-            <span class="h-red">Historical Analysis (2025 vs 2026)</span>
-            <div class="card mb-10 p-0 overflow-hidden">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Metric</th>
-                            <th>2025 Total</th>
-                            <th>2026 YTD</th>
-                            <th class="text-right">Diff (Gap)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Sales Team</td>
-                            <td class="text-white-metric">₦863.3m</td>
-                            <td class="text-revenue">₦107.2m</td>
-                            <td class="text-right pct-low">87.57% Remaining</td>
-                        </tr>
-                        <tr>
-                            <td>The Business</td>
-                            <td class="text-white-metric">₦138.0m</td>
-                            <td class="text-revenue">₦3.4m</td>
-                            <td class="text-right pct-low">97.53% Remaining</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <footer class="text-center py-20 opacity-20 text-[10px] uppercase tracking-[15px]">
+            <footer class="text-center py-16 opacity-20 text-[10px] uppercase tracking-[15px]">
                 Energymall Intelligence 2026
             </footer>
         </div>
