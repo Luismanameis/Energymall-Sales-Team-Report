@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENERGYMALL EXECUTIVE AUDIT - FEB START</title>
+    <title>ENERGYMALL EXECUTIVE AUDIT - FEB 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -44,72 +44,72 @@
         <header class="flex justify-between items-start mb-4">
             <div>
                 <h1 class="text-3xl md:text-4xl font-black tracking-tighter uppercase leading-none">ENERGY<span class="text-red-600">MALL</span></h1>
-                <p id="viewStatus" class="text-zinc-500 font-bold uppercase text-[9px] tracking-[4px] mt-1">Executive Sales Audit | Jan-Feb 2026</p>
+                <p id="viewStatus" class="text-zinc-500 font-bold uppercase text-[9px] tracking-[4px] mt-1">Executive Sales Audit | February 2026</p>
                 <div id="resetBtn" onclick="resetAudit()">Reset View ✕</div>
             </div>
             <div class="text-right border-l-2 border-red-600 pl-4">
-                <p class="stat-label">Jan Leader</p>
+                <p class="stat-label">Previous Month (Jan)</p>
                 <p class="text-sm font-black text-white uppercase italic">Damilola A.</p>
                 <p class="text-lg font-black text-revenue">₦41.8m</p>
             </div>
         </header>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <div class="card border-zinc-800"><p class="stat-label">Total Revenue (Jan)</p><p id="hRev" class="stack-lg text-revenue">₦119.0m</p></div>
-            <div class="card border-zinc-800"><p class="stat-label">Total Cust</p><p id="hCust" class="stack-lg text-white-metric">48</p></div>
-            <div class="card border-zinc-800"><p class="stat-label">Total Leads</p><p id="hLeads" class="stack-lg text-white-metric">262</p></div>
-            <div class="card border-zinc-800"><p class="stat-label">Conv %</p><p id="hConv" class="stack-lg pct-low">16.79%</p></div>
+            <div class="card border-zinc-800"><p class="stat-label">Feb Revenue</p><p id="hRev" class="stack-lg text-revenue">₦0.0</p></div>
+            <div class="card border-zinc-800"><p class="stat-label">Feb Cust</p><p id="hCust" class="stack-lg text-white-metric">0</p></div>
+            <div class="card border-zinc-800"><p class="stat-label">Feb Leads</p><p id="hLeads" class="stack-lg text-white-metric">0</p></div>
+            <div class="card border-zinc-800"><p class="stat-label">Feb Conv %</p><p id="hConv" class="stack-lg pct-low">0.00%</p></div>
         </div>
     </div>
 
     <div class="scroll-content">
         <div class="px-5 md:px-10">
             
-            <span class="h-red">Representative Audit (2026 YTD)</span>
+            <span class="h-red">Representative Audit (February Focus)</span>
             <div class="card mb-8 p-0 overflow-hidden">
                 <div class="overflow-x-auto">
                     <table>
                         <thead>
                             <tr>
                                 <th>Representative</th>
-                                <th>Revenue</th>
+                                <th>Feb Revenue</th>
+                                <th>Jan Performance</th>
                                 <th class="text-white-metric">Cust</th>
                                 <th class="text-white-metric">Leads</th>
-                                <th>% Target</th>
                                 <th class="text-right">Conv %</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="rep-row" data-name="Damilola Abidemi Akingboye" data-rev="41.8m" data-cust="11" data-leads="73" data-conv="15.07%">
+                            <tr class="rep-row" data-name="Damilola Abidemi Akingboye" data-rev="0.0" data-cust="0" data-leads="0" data-conv="0.00%">
                                 <td><span class="staff-name" onclick="filterAudit(this)">Damilola A. Akingboye</span></td>
-                                <td class="text-revenue">₦41.8m</td>
-                                <td class="text-white-metric">11</td>
-                                <td class="text-white-metric">73</td>
-                                <td class="text-zinc-500">6.97%</td>
-                                <td class="text-right pct-low">15.07%</td>
-                            </tr>
-                            <tr class="rep-row" data-name="Patricia Uchedienyi" data-rev="36.3m" data-cust="9" data-leads="90" data-conv="10.00%">
-                                <td><span class="staff-name" onclick="filterAudit(this)">Patricia Uchedienyi</span></td>
-                                <td class="text-revenue">₦36.3m</td>
-                                <td class="text-white-metric">9</td>
-                                <td class="text-white-metric">90</td>
-                                <td class="text-zinc-500">5.49%</td>
-                                <td class="text-right pct-low">10.00%</td>
-                            </tr>
-                            <tr class="rep-row" data-name="Immaculate Osereme Imion" data-rev="36.2m" data-cust="22" data-leads="99" data-conv="22.22%">
-                                <td><span class="staff-name" onclick="filterAudit(this)">Immaculate O. Imion</span></td>
-                                <td class="text-revenue">₦36.2m</td>
-                                <td class="text-white-metric">22</td>
-                                <td class="text-white-metric">99</td>
-                                <td class="text-zinc-500">3.87%</td>
-                                <td class="text-right pct-low">22.22%</td>
-                            </tr>
-                            <tr class="rep-row" data-name="Jemila Ojo-Agafu Ibrahim" data-rev="1.4m" data-cust="2" data-leads="0" data-conv="0.00%">
-                                <td><span class="staff-name" onclick="filterAudit(this)">Jemila O. Ibrahim</span></td>
-                                <td class="text-revenue">₦1.4m</td>
-                                <td class="text-white-metric">2</td>
+                                <td class="text-revenue">₦0.0</td>
+                                <td class="text-zinc-500">₦41.8m</td>
                                 <td class="text-white-metric">0</td>
-                                <td class="text-zinc-500">0.50%</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-right pct-low">0.00%</td>
+                            </tr>
+                            <tr class="rep-row" data-name="Patricia Uchedienyi" data-rev="0.0" data-cust="0" data-leads="0" data-conv="0.00%">
+                                <td><span class="staff-name" onclick="filterAudit(this)">Patricia Uchedienyi</span></td>
+                                <td class="text-revenue">₦0.0</td>
+                                <td class="text-zinc-500">₦36.3m</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-right pct-low">0.00%</td>
+                            </tr>
+                            <tr class="rep-row" data-name="Immaculate Osereme Imion" data-rev="0.0" data-cust="0" data-leads="0" data-conv="0.00%">
+                                <td><span class="staff-name" onclick="filterAudit(this)">Immaculate O. Imion</span></td>
+                                <td class="text-revenue">₦0.0</td>
+                                <td class="text-zinc-500">₦36.2m</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-right pct-low">0.00%</td>
+                            </tr>
+                            <tr class="rep-row" data-name="Jemila Ojo-Agafu Ibrahim" data-rev="0.0" data-cust="0" data-leads="0" data-conv="0.00%">
+                                <td><span class="staff-name" onclick="filterAudit(this)">Jemila O. Ibrahim</span></td>
+                                <td class="text-revenue">₦0.0</td>
+                                <td class="text-zinc-500">₦1.4m</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-white-metric">0</td>
                                 <td class="text-right pct-low">0.00%</td>
                             </tr>
                         </tbody>
@@ -119,7 +119,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <span class="h-red">Revenue Split (YTD)</span>
+                    <span class="h-red">2026 YTD Split</span>
                     <div class="card p-0 overflow-hidden">
                         <table>
                             <thead><tr><th>Entity</th><th>Revenue</th><th class="text-right">% Share</th></tr></thead>
@@ -131,20 +131,20 @@
                     </div>
                 </div>
                 <div>
-                    <span class="h-red">Monthly Velocity (Jan)</span>
+                    <span class="h-red">February Velocity</span>
                     <div class="card p-0 overflow-hidden">
                         <table>
                             <thead><tr><th>Timeline</th><th>Revenue</th><th>Cust</th><th class="text-right">Leads</th></tr></thead>
                             <tbody>
-                                <tr><td>Week 4</td><td class="text-revenue">₦77.0m</td><td class="text-white-metric">16</td><td class="text-right text-white-metric">52</td></tr>
-                                <tr><td>Week 5</td><td class="text-revenue">₦18.0m</td><td class="text-white-metric">12</td><td class="text-right text-white-metric">49</td></tr>
+                                <tr><td>Week 1</td><td class="text-revenue">₦0.0</td><td class="text-white-metric">0</td><td class="text-right text-white-metric">0</td></tr>
+                                <tr><td>Week 2</td><td class="text-revenue">--</td><td class="text-white-metric">--</td><td class="text-right text-white-metric">--</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <span class="h-red">Historical Variance (2025 vs 2026)</span>
+            <span class="h-red">Historical Growth (2025 vs 2026 YTD)</span>
             <div class="card p-0 overflow-hidden">
                 <table>
                     <thead>
@@ -198,11 +198,11 @@
         function resetAudit() {
             const rows = document.querySelectorAll('.rep-row');
             rows.forEach(r => r.classList.remove('hidden-row'));
-            document.getElementById('hRev').innerText = '₦119.0m';
-            document.getElementById('hCust').innerText = '48';
-            document.getElementById('hLeads').innerText = '262';
-            document.getElementById('hConv').innerText = '16.79%';
-            document.getElementById('viewStatus').innerText = "Executive Sales Audit | Jan-Feb 2026";
+            document.getElementById('hRev').innerText = '₦0.0';
+            document.getElementById('hCust').innerText = '0';
+            document.getElementById('hLeads').innerText = '0';
+            document.getElementById('hConv').innerText = '0.00%';
+            document.getElementById('viewStatus').innerText = "Executive Sales Audit | February 2026";
             document.getElementById('resetBtn').style.display = 'none';
         }
     </script>
