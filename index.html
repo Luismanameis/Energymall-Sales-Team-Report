@@ -12,13 +12,13 @@
         .fixed-header { 
             position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
             background-color: rgba(5, 5, 5, 0.98); backdrop-filter: blur(15px);
-            border-bottom: 2px solid #1a1a1a; padding: 15px 25px; 
+            border-bottom: 2px solid #FF0000; padding: 15px 25px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
         .scroll-content { margin-top: 240px; padding-bottom: 50px; }
         @media (max-width: 768px) { .scroll-content { margin-top: 280px; } }
 
-        .h-red { color: #FF0000 !important; font-weight: 950; text-transform: uppercase; border-left: 8px solid #FF0000; padding-left: 15px; margin: 40px 0 15px 0; display: block; font-size: 1.6rem; }
+        .h-red { color: #FF0000 !important; font-weight: 950; text-transform: uppercase; border-left: 8px solid #FF0000; padding-left: 15px; margin: 40px 0 15px 0; display: block; font-size: 1.4rem; }
         .card { background: #0f0f0f; border: 1px solid #222; border-radius: 12px; padding: 12px; }
         .stat-label { color: #666; font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px; }
         .text-revenue { color: #00FF41 !important; } 
@@ -32,7 +32,7 @@
         td { padding:14px 12px; border-bottom: 1px solid #1a1a1a; font-size:0.95rem; font-weight: 700; color: #eee; }
         
         .staff-name { color: #ffffff; font-size: 1rem; cursor: pointer; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #FF0000; }
-        #resetBtn { display: none; background: #FF0000; color: white; font-size: 10px; font-weight: 900; padding: 4px 10px; border-radius: 4px; cursor: pointer; text-transform: uppercase; margin-top: 5px; }
+        #resetBtn { display: none; background: #FF0000; color: white; font-size: 10px; font-weight: 900; padding: 4px 10px; border-radius: 4px; cursor: pointer; text-transform: uppercase; margin-top: 5px; width: fit-content; }
         .hidden-row { display: none !important; }
     </style>
 </head>
@@ -101,6 +101,14 @@
                                 <td class="text-white-metric">2</td>
                                 <td class="text-white-metric">10</td>
                                 <td class="text-right pct-low">20.00%</td>
+                            </tr>
+                            <tr class="rep-row" data-name="Jemila Ojo-Agafu Ibrahim" data-rev="0.0" data-cust="0" data-leads="0" data-conv="0.00%">
+                                <td><span class="staff-name" onclick="filterAudit(this)">Jemila O. Ibrahim</span></td>
+                                <td class="text-revenue">₦0.0</td>
+                                <td class="text-zinc-500">₦1.4m</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-white-metric">0</td>
+                                <td class="text-right">0.00%</td>
                             </tr>
                         </tbody>
                     </table>
@@ -181,7 +189,7 @@
             
             const convVal = parseFloat(row.getAttribute('data-conv'));
             const convElem = document.getElementById('hConv');
-            convElem.className = convVal >= 50 ? "stack-lg pct-high" : "stack-lg pct-low";
+            convElem.className = convVal >= 30 ? "stack-lg pct-high" : "stack-lg pct-low";
 
             document.getElementById('viewStatus').innerText = "AUDIT: " + row.getAttribute('data-name');
             document.getElementById('resetBtn').style.display = 'block';
