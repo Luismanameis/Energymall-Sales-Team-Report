@@ -16,18 +16,11 @@
             padding: 15px 20px;
         }
 
-        /* Rule: Headings in Bold Red */
         .h-bold-red { color: var(--neon-red); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-top: 25px; margin-bottom: 12px; display: block; border-left: 5px solid var(--neon-red); padding-left: 12px; }
-        
-        /* Rule: Revenue in Green */
         .rev-green { color: var(--neon-green) !important; font-weight: 700; }
-        
-        /* Rule: Percentages > 50% Green, < 50% Red */
         .perc-high { color: var(--neon-green) !important; font-weight: 700; }
         .perc-low { color: var(--neon-red) !important; font-weight: 700; }
-
-        /* Metrics in White */
-        .metric-white { color: #FFFFFF !important; }
+        .metric-white { color: #FFFFFF !important; font-weight: 600; }
         
         table { width: 100%; border-collapse: separate; border-spacing: 0 2px; }
         th { text-align: left; padding: 6px 10px; font-size: 9px; color: #555; text-transform: uppercase; font-weight: 900; }
@@ -52,14 +45,14 @@
         <div class="max-w-[1200px] mx-auto">
             <div class="flex justify-between items-center mb-3">
                 <h1 class="text-2xl font-black italic uppercase tracking-tighter">ENERGYMALL<span class="text-red-600">SALES</span></h1>
-                <div class="text-[9px] font-black text-zinc-400 tracking-[4px] uppercase border border-zinc-800 px-2 py-1">Feb 2026 AUDIT v3</div>
+                <div class="text-[9px] font-black text-zinc-400 tracking-[4px] uppercase border border-zinc-800 px-2 py-1">Feb 2026 AUDIT v4</div>
             </div>
             
             <div class="hud-grid">
-                <div class="hud-item border-l-red-600"><p class="hud-label">Feb Revenue (Team)</p><p class="hud-val rev-green">₦80.5m</p></div>
-                <div class="hud-item"><p class="hud-label">Total Leads (Feb)</p><p class="hud-val metric-white">180</p></div>
-                <div class="hud-item"><p class="hud-label">2026 YTD Total</p><p class="hud-val rev-green">₦199.5m</p></div>
-                <div class="hud-item"><p class="hud-label">Sales Team Share</p><p class="hud-val perc-high">96.03%</p></div>
+                <div class="hud-item border-l-red-600"><p class="hud-label">Feb Revenue (Total)</p><p class="hud-val rev-green">₦88.3m</p></div>
+                <div class="hud-item"><p class="hud-label">Total Leads (Feb)</p><p class="hud-val metric-white">205</p></div>
+                <div class="hud-item"><p class="hud-label">2026 YTD Total</p><p class="hud-val rev-green">₦207.3m</p></div>
+                <div class="hud-item"><p class="hud-label">Sales Team Share</p><p class="hud-val perc-high">96.18%</p></div>
             </div>
         </div>
     </header>
@@ -70,12 +63,12 @@
         <div class="overflow-x-auto mb-6">
             <table>
                 <thead>
-                    <tr><th>Agent</th><th>Revenue</th><th>Bonus</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr>
+                    <tr><th>Agent</th><th>Revenue</th><th>Expected Bonus</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Immaculate Imion</td><td class="rev-green">₦48.59m</td><td class="rev-green">₦48.6k</td><td class="metric-white">15</td><td class="metric-white">71</td><td class="perc-low">21.13%</td></tr>
-                    <tr><td>Damilola Akingboye</td><td class="rev-green">₦17.18m</td><td class="rev-green">₦17.2k</td><td class="metric-white">8</td><td class="metric-white">46</td><td class="perc-low">17.39%</td></tr>
-                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦10.22m</td><td class="rev-green">₦10.2k</td><td class="metric-white">7</td><td class="metric-white">65</td><td class="perc-low">10.77%</td></tr>
+                    <tr><td>Immaculate Imion</td><td class="rev-green">₦61.8m</td><td class="rev-green">₦61.8k</td><td class="metric-white">18</td><td class="metric-white">81</td><td class="perc-low">22.22%</td></tr>
+                    <tr><td>Damilola Akingboye</td><td class="rev-green">₦11.7m</td><td class="rev-green">₦11.7k</td><td class="metric-white">11</td><td class="metric-white">57</td><td class="perc-low">19.30%</td></tr>
+                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦10.2m</td><td class="rev-green">₦10.2k</td><td class="metric-white">7</td><td class="metric-white">70</td><td class="perc-low">10.00%</td></tr>
                     <tr><td>Jemila Ibrahim</td><td class="rev-green">₦0</td><td class="rev-green">₦0</td><td class="metric-white">0</td><td class="metric-white">0</td><td class="perc-low">0.00%</td></tr>
                 </tbody>
             </table>
@@ -87,9 +80,9 @@
                 <table>
                     <thead><tr><th>Agent</th><th>YTD Rev</th><th>Leads</th><th>Conv %</th><th>Target %</th></tr></thead>
                     <tbody>
-                        <tr><td>Immaculate</td><td class="rev-green">₦84.8m</td><td class="metric-white">170</td><td class="perc-low">21.18%</td><td class="perc-low">9.07%</td></tr>
-                        <tr><td>Damilola</td><td class="rev-green">₦59.0m</td><td class="metric-white">119</td><td class="perc-low">15.97%</td><td class="perc-low">9.83%</td></tr>
-                        <tr><td>Patricia</td><td class="rev-green">₦46.5m</td><td class="metric-white">159</td><td class="perc-low">10.06%</td><td class="perc-low">7.04%</td></tr>
+                        <tr><td>Immaculate</td><td class="rev-green">₦98.0m</td><td class="metric-white">180</td><td class="perc-low">21.67%</td><td class="perc-low">10.48%</td></tr>
+                        <tr><td>Damilola</td><td class="rev-green">₦53.6m</td><td class="metric-white">130</td><td class="perc-low">16.92%</td><td class="perc-low">8.93%</td></tr>
+                        <tr><td>Patricia</td><td class="rev-green">₦46.5m</td><td class="metric-white">164</td><td class="perc-low">9.76%</td><td class="perc-low">7.04%</td></tr>
                         <tr><td>Jemila</td><td class="rev-green">₦1.4m</td><td class="metric-white">0</td><td class="perc-low">0.00%</td><td class="perc-low">0.50%</td></tr>
                     </tbody>
                 </table>
@@ -97,12 +90,12 @@
             <div>
                 <span class="h-bold-red">03 // Weekly Velocity (February)</span>
                 <table>
-                    <thead><tr><th>Week</th><th>Revenue</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr></thead>
+                    <thead><tr><th>Week</th><th>Revenue</th><th>Cust.</th><th>Leads</th></tr></thead>
                     <tbody>
-                        <tr><td>Week 1</td><td class="rev-green">₦25.7m</td><td class="metric-white">13</td><td class="metric-white">45</td><td class="perc-low">28.8%</td></tr>
-                        <tr><td>Week 2</td><td class="rev-green">₦25.3m</td><td class="metric-white">12</td><td class="metric-white">46</td><td class="perc-low">26.1%</td></tr>
-                        <tr><td>Week 3</td><td class="rev-green">₦14.9m</td><td class="metric-white">10</td><td class="metric-white">66</td><td class="perc-low">15.1%</td></tr>
-                        <tr><td>Week 4</td><td class="rev-green">₦14.6m</td><td class="metric-white">5</td><td class="metric-white">23</td><td class="perc-low">21.7%</td></tr>
+                        <tr><td>Week 1</td><td class="rev-green">₦25.7m</td><td class="metric-white">13</td><td class="metric-white">45</td></tr>
+                        <tr><td>Week 2</td><td class="rev-green">₦25.3m</td><td class="metric-white">12</td><td class="metric-white">46</td></tr>
+                        <tr><td>Week 3</td><td class="rev-green">₦14.9m</td><td class="metric-white">10</td><td class="metric-white">66</td></tr>
+                        <tr><td>Week 4</td><td class="rev-green">₦22.3m</td><td class="metric-white">11</td><td class="metric-white">48</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -113,9 +106,9 @@
             <table>
                 <thead><tr><th>Segment</th><th>Total Revenue</th><th>Contribution %</th><th>Remaining to 2025 Goal</th></tr></thead>
                 <tbody>
-                    <tr><td>Sales Team</td><td class="rev-green">₦191.6m</td><td class="perc-high">96.03%</td><td class="perc-low">₦671.7m (77.8%)</td></tr>
-                    <tr><td>The Business</td><td class="rev-green">₦7.9m</td><td class="perc-low">3.97%</td><td class="perc-low">₦130.1m (94.3%)</td></tr>
-                    <tr class="font-black bg-zinc-950"><td>TOTAL COMMAND</td><td class="rev-green">₦199.5m</td><td class="perc-high">100%</td><td class="perc-low">₦801.8m Gap</td></tr>
+                    <tr><td>Sales Team</td><td class="rev-green">₦199.4m</td><td class="perc-high">96.18%</td><td class="perc-low">₦664.0m (76.9%)</td></tr>
+                    <tr><td>The Business</td><td class="rev-green">₦7.9m</td><td class="perc-low">3.82%</td><td class="perc-low">₦130.1m (94.3%)</td></tr>
+                    <tr class="font-black bg-zinc-950"><td>TOTAL COMMAND</td><td class="rev-green">₦207.3m</td><td class="perc-high">100%</td><td class="perc-low">₦794.1m Gap</td></tr>
                 </tbody>
             </table>
         </div>
@@ -123,11 +116,11 @@
         <span class="h-bold-red">05 // Historical Audit (All-Time Highs)</span>
         <div class="overflow-x-auto mb-6">
             <table>
-                <thead><tr><th>Agent</th><th>Lifetime Rev (24+)</th><th>Annual Avg</th><th>Cust.</th><th>Total Leads</th></tr></thead>
+                <thead><tr><th>Agent</th><th>Lifetime Rev (24+)</th><th>Annual Avg</th><th>Cust.</th><th>Leads</th></tr></thead>
                 <tbody>
-                    <tr><td>Immaculate</td><td class="rev-green">₦518.4m</td><td class="rev-green">₦172.8m</td><td class="metric-white">207</td><td class="metric-white">3,090</td></tr>
-                    <tr><td>Patricia</td><td class="rev-green">₦509.8m</td><td class="rev-green">₦169.9m</td><td class="metric-white">240</td><td class="metric-white">2,458</td></tr>
-                    <tr><td>Damilola</td><td class="rev-green">₦482.2m</td><td class="rev-green">₦160.7m</td><td class="metric-white">192</td><td class="metric-white">3,752</td></tr>
+                    <tr><td>Immaculate</td><td class="rev-green">₦531.6m</td><td class="rev-green">₦177.2m</td><td class="metric-white">210</td><td class="metric-white">3,100</td></tr>
+                    <tr><td>Patricia</td><td class="rev-green">₦509.8m</td><td class="rev-green">₦169.9m</td><td class="metric-white">240</td><td class="metric-white">2,463</td></tr>
+                    <tr><td>Damilola</td><td class="rev-green">₦476.8m</td><td class="rev-green">₦158.9m</td><td class="metric-white">195</td><td class="metric-white">3,763</td></tr>
                     <tr><td>Jemila</td><td class="rev-green">₦57.9m</td><td class="rev-green">₦19.3m</td><td class="metric-white">40</td><td class="metric-white">512</td></tr>
                 </tbody>
             </table>
