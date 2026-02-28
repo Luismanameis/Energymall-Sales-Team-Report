@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
     <style>
-        :root { --em-blue: #0056b3; --neon-green: #00FF41; --neon-red: #FF0000; --bg-black: #050505; }
+        :root { --em-gold: #D4AF37; --neon-green: #00FF41; --neon-red: #FF0000; --bg-black: #050505; }
         body { font-family: 'Outfit', sans-serif; background-color: var(--bg-black); color: white; line-height: 1.1; margin: 0; }
         
         .fixed-hud { 
@@ -17,7 +17,9 @@
         }
 
         .h-bold-red { color: var(--neon-red); font-weight: 900; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; margin-top: 25px; margin-bottom: 12px; display: block; border-left: 5px solid var(--neon-red); padding-left: 12px; }
+        
         .rev-green { color: var(--neon-green) !important; font-weight: 700; }
+        .bonus-gold { color: var(--em-gold) !important; font-weight: 700; }
         .perc-high { color: var(--neon-green) !important; font-weight: 700; }
         .perc-low { color: var(--neon-red) !important; font-weight: 700; }
         .metric-white { color: #FFFFFF !important; font-weight: 600; }
@@ -45,7 +47,7 @@
         <div class="max-w-[1200px] mx-auto">
             <div class="flex justify-between items-center mb-3">
                 <h1 class="text-2xl font-black italic uppercase tracking-tighter">ENERGYMALL<span class="text-red-600">SALES</span></h1>
-                <div class="text-[9px] font-black text-zinc-400 tracking-[4px] uppercase border border-zinc-800 px-2 py-1">Feb 2026 AUDIT v4</div>
+                <div class="text-[9px] font-black text-zinc-400 tracking-[4px] uppercase border border-zinc-800 px-2 py-1">Feb 2026 AUDIT v5</div>
             </div>
             
             <div class="hud-grid">
@@ -66,10 +68,10 @@
                     <tr><th>Agent</th><th>Revenue</th><th>Expected Bonus</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Immaculate Imion</td><td class="rev-green">₦61.8m</td><td class="rev-green">₦61.8k</td><td class="metric-white">18</td><td class="metric-white">81</td><td class="perc-low">22.22%</td></tr>
-                    <tr><td>Damilola Akingboye</td><td class="rev-green">₦11.7m</td><td class="rev-green">₦11.7k</td><td class="metric-white">11</td><td class="metric-white">57</td><td class="perc-low">19.30%</td></tr>
-                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦10.2m</td><td class="rev-green">₦10.2k</td><td class="metric-white">7</td><td class="metric-white">70</td><td class="perc-low">10.00%</td></tr>
-                    <tr><td>Jemila Ibrahim</td><td class="rev-green">₦0</td><td class="rev-green">₦0</td><td class="metric-white">0</td><td class="metric-white">0</td><td class="perc-low">0.00%</td></tr>
+                    <tr><td>Immaculate Imion</td><td class="rev-green">₦61.8m</td><td class="bonus-gold">₦30.9k</td><td class="metric-white">18</td><td class="metric-white">81</td><td class="perc-low">22.22%</td></tr>
+                    <tr><td>Damilola Akingboye</td><td class="rev-green">₦11.7m</td><td class="bonus-gold">₦11.7k</td><td class="metric-white">11</td><td class="metric-white">57</td><td class="perc-low">19.30%</td></tr>
+                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦10.2m</td><td class="bonus-gold">₦10.2k</td><td class="metric-white">7</td><td class="metric-white">70</td><td class="perc-low">10.00%</td></tr>
+                    <tr><td>Jemila Ibrahim</td><td class="rev-green">₦0</td><td class="bonus-gold">₦0</td><td class="metric-white">0</td><td class="metric-white">0</td><td class="perc-low">0.00%</td></tr>
                 </tbody>
             </table>
         </div>
@@ -104,7 +106,7 @@
         <span class="h-bold-red">04 // Team vs Business Structure (Gap Analysis)</span>
         <div class="overflow-x-auto mb-6">
             <table>
-                <thead><tr><th>Segment</th><th>Total Revenue</th><th>Contribution %</th><th>Remaining to 2025 Goal</th></tr></thead>
+                <thead><tr><th>Segment</th><th>Total Revenue</th><th>Contribution %</th><th>Difference (Gap)</th></tr></thead>
                 <tbody>
                     <tr><td>Sales Team</td><td class="rev-green">₦199.4m</td><td class="perc-high">96.18%</td><td class="perc-low">₦664.0m (76.9%)</td></tr>
                     <tr><td>The Business</td><td class="rev-green">₦7.9m</td><td class="perc-low">3.82%</td><td class="perc-low">₦130.1m (94.3%)</td></tr>
@@ -113,10 +115,10 @@
             </table>
         </div>
 
-        <span class="h-bold-red">05 // Historical Audit (All-Time Highs)</span>
+        <span class="h-bold-red">05 // Historical Audit (All-Time 24+ Highs)</span>
         <div class="overflow-x-auto mb-6">
             <table>
-                <thead><tr><th>Agent</th><th>Lifetime Rev (24+)</th><th>Annual Avg</th><th>Cust.</th><th>Leads</th></tr></thead>
+                <thead><tr><th>Agent</th><th>Lifetime Rev</th><th>Annual Avg</th><th>Cust.</th><th>Total Leads</th></tr></thead>
                 <tbody>
                     <tr><td>Immaculate</td><td class="rev-green">₦531.6m</td><td class="rev-green">₦177.2m</td><td class="metric-white">210</td><td class="metric-white">3,100</td></tr>
                     <tr><td>Patricia</td><td class="rev-green">₦509.8m</td><td class="rev-green">₦169.9m</td><td class="metric-white">240</td><td class="metric-white">2,463</td></tr>
