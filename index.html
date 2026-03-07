@@ -8,44 +8,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         :root { --em-red: #E11D48; --em-green: #16A34A; --em-gold: #B8860B; --bg-light: #F8FAFC; --text-dark: #0F172A; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.2; margin: 0; padding-top: 210px; }
+        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.2; margin: 0; padding-top: 145px; } /* Reduced from 210px */
         
         /* CONTINUOUS TICKER */
-        .ticker-wrap { position: fixed; top: 0; width: 100%; height: 40px; background: #000; z-index: 5000; border-bottom: 2px solid var(--em-red); overflow: hidden; display: flex; align-items: center; }
+        .ticker-wrap { position: fixed; top: 0; width: 100%; height: 35px; background: #000; z-index: 5000; border-bottom: 2px solid var(--em-red); overflow: hidden; display: flex; align-items: center; }
         .ticker-move { display: inline-block; white-space: nowrap; animation: ticker-scroll 60s linear infinite; }
         @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .t-item { display: inline-block; padding: 0 40px; font-size: 12px; font-weight: 900; letter-spacing: 1px; color: #FFF; text-transform: uppercase; }
+        .t-item { display: inline-block; padding: 0 40px; font-size: 11px; font-weight: 900; letter-spacing: 1px; color: #FFF; text-transform: uppercase; }
         .t-item span { color: var(--em-green); margin-left: 5px; }
         .t-item b { color: var(--em-red); margin-left: 5px; }
 
-        /* FIXED HUD */
+        /* FIXED HUD - TIGHTER VERTICAL SPACE */
         .fixed-hud { 
-            background: white; border-bottom: 4px solid var(--em-red); 
-            position: fixed; top: 40px; width: 100%; z-index: 4000; padding: 20px 25px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: white; border-bottom: 3px solid var(--em-red); 
+            position: fixed; top: 35px; width: 100%; z-index: 4000; padding: 12px 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .h-bold-red { 
             color: var(--em-red); font-weight: 900; text-transform: uppercase; 
-            letter-spacing: 1.5px; font-size: 0.95rem; margin: 40px 0 15px 0; 
+            letter-spacing: 1.5px; font-size: 0.9rem; margin: 25px 0 12px 0; 
             display: block; border-left: 6px solid var(--em-red); padding-left: 15px;
-            background: #fff; padding-top: 8px; padding-bottom: 8px;
+            background: #fff; padding-top: 6px; padding-bottom: 6px;
         }
         
         .rev-green { color: var(--em-green) !important; font-weight: 800; }
         .rev-red { color: var(--em-red) !important; font-weight: 800; }
         .metric-dark { color: var(--text-dark) !important; font-weight: 700; }
         
-        table { width: 100%; border-collapse: separate; border-spacing: 0; background: white; border-radius: 8px; overflow: hidden; border: 1px solid #E2E8F0; margin-bottom: 30px; }
-        th { text-align: left; padding: 12px 15px; font-size: 10px; color: #64748B; text-transform: uppercase; font-weight: 900; background: #F1F5F9; border-bottom: 2px solid #E2E8F0; }
-        td { padding: 12px 15px; font-size: 15px; border-bottom: 1px solid #F1F5F9; font-weight: 500; }
+        table { width: 100%; border-collapse: separate; border-spacing: 0; background: white; border-radius: 8px; overflow: hidden; border: 1px solid #E2E8F0; margin-bottom: 20px; }
+        th { text-align: left; padding: 10px 15px; font-size: 9px; color: #64748B; text-transform: uppercase; font-weight: 900; background: #F1F5F9; border-bottom: 1px solid #E2E8F0; }
+        td { padding: 10px 15px; font-size: 14px; border-bottom: 1px solid #F1F5F9; font-weight: 500; }
 
         .hud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1400px; margin: 0 auto; }
-        .hud-val { font-size: 1.8rem; font-weight: 900; line-height: 1; letter-spacing: -1px; }
+        .hud-val { font-size: 1.5rem; font-weight: 900; line-height: 1; letter-spacing: -1px; }
 
         @media (max-width: 768px) {
             .hud-grid { grid-template-columns: repeat(2, 1fr); }
-            body { padding-top: 320px; }
+            body { padding-top: 220px; }
         }
     </style>
 </head>
@@ -56,21 +56,20 @@
             <div class="t-item">IMMACULATE 2026: <span>99.7m</span> | <b>21.2% CV</b></div>
             <div class="t-item">DAMILOLA 2026: <span>89.4m</span> | <b>18.8% CV</b></div>
             <div class="t-item">PATRICIA 2026: <span>49.6m</span> | <b>9.8% CV</b></div>
-            <div class="t-item">JEMILA 2026: <span>1.3m</span></div>
-            <div class="t-item">2026 TOTAL CUSTOMERS: <span>89</span></div>
-            <div class="t-item">MARCH CUSTOMERS: <span>7</span></div>
-            <div class="t-item">2026 YTD REVENUE: <span>248.1m</span></div>
+            <div class="t-item">YTD REVENUE: <span>248.1m</span></div>
+            <div class="t-item">TOTAL 2026 LEADS: <span>524</span></div>
             <div class="t-item">IMMACULATE 2026: <span>99.7m</span> | <b>21.2% CV</b></div>
             <div class="t-item">DAMILOLA 2026: <span>89.4m</span> | <b>18.8% CV</b></div>
+            <div class="t-item">PATRICIA 2026: <span>49.6m</span> | <b>9.8% CV</b></div>
         </div>
     </div>
 
     <header class="fixed-hud">
         <div class="hud-grid">
-            <div class="hud-item"><p class="text-[9px] text-slate-500 font-black uppercase">March Rev (W1)</p><p class="hud-val rev-green">9.1m</p></div>
-            <div class="hud-item"><p class="text-[9px] text-slate-500 font-black uppercase">2026 Total Closed</p><p class="hud-val metric-dark">89</p></div>
-            <div class="hud-item"><p class="text-[9px] text-slate-500 font-black uppercase">2026 YTD Revenue</p><p class="hud-val rev-green">248.1m</p></div>
-            <div class="hud-item"><p class="text-[9px] text-slate-500 font-black uppercase">2026 Total Leads</p><p class="hud-val metric-dark">524</p></div>
+            <div class="hud-item"><p class="text-[8px] text-slate-500 font-black uppercase">March Rev (W1)</p><p class="hud-val rev-green">9.1m</p></div>
+            <div class="hud-item"><p class="text-[8px] text-slate-500 font-black uppercase">2026 Closed</p><p class="hud-val metric-dark">89</p></div>
+            <div class="hud-item"><p class="text-[8px] text-slate-500 font-black uppercase">2026 YTD Revenue</p><p class="hud-val rev-green">248.1m</p></div>
+            <div class="hud-item"><p class="text-[8px] text-slate-500 font-black uppercase">2026 Leads</p><p class="hud-val metric-dark">524</p></div>
         </div>
     </header>
 
@@ -79,7 +78,7 @@
         <span class="h-bold-red">01 // Monthly Performance Audit (March Week 1)</span>
         <table>
             <thead>
-                <tr><th>Agent</th><th>Revenue</th><th>Expected Bonus</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr>
+                <tr><th>Agent</th><th>Revenue</th><th>Bonus</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr>
             </thead>
             <tbody>
                 <tr><td>Patricia Uchedienyi</td><td class="rev-green">2.7m</td><td class="metric-dark">3.1k</td><td class="metric-dark">1</td><td class="metric-dark">12</td><td class="rev-red">8.00%</td></tr>
@@ -91,17 +90,7 @@
             </tbody>
         </table>
 
-        <span class="h-bold-red">02 // Last Month Audit (February 2026)</span>
-        <table>
-            <thead><tr><th>Agent</th><th>Revenue</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr></thead>
-            <tbody>
-                <tr><td>Immaculate</td><td class="rev-green">61.8m</td><td class="metric-dark">18</td><td class="metric-dark">81</td><td class="rev-red">22.22%</td></tr>
-                <tr><td>Damilola</td><td class="rev-green">43.0m</td><td class="metric-dark">13</td><td class="metric-dark">57</td><td class="rev-red">22.81%</td></tr>
-                <tr><td>Patricia</td><td class="rev-green">10.2m</td><td class="metric-dark">7</td><td class="metric-dark">77</td><td class="rev-red">9.09%</td></tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">03 // 2026 YTD Performance (Jan - March)</span>
+        <span class="h-bold-red">02 // 2026 YTD Performance (Jan - March)</span>
         <table>
             <thead><tr><th>Agent</th><th>YTD Revenue</th><th>Leads</th><th>Closed</th><th>Conv %</th></tr></thead>
             <tbody>
@@ -112,25 +101,15 @@
             </tbody>
         </table>
 
-        <span class="h-bold-red">04 // Team vs Business Contribution</span>
+        <span class="h-bold-red">03 // Team vs Business Contribution</span>
         <table>
-            <thead><tr><th>Segment</th><th>Total Revenue</th><th>Contribution</th><th>Gap to 2025</th></tr></thead>
+            <thead><tr><th>Segment</th><th>Total Revenue</th><th>Contribution</th><th>Gap to 2025 Target</th></tr></thead>
             <tbody>
                 <tr><td>Sales Team</td><td class="rev-green">240.1m</td><td class="rev-green">96.81%</td><td class="rev-red">-72.18%</td></tr>
                 <tr><td>The Business</td><td class="rev-green">7.9m</td><td class="rev-red">3.19%</td><td class="rev-red">-94.26%</td></tr>
                 <tr class="bg-slate-900 text-white font-black">
                     <td>TOTAL YTD</td><td>248.1m</td><td>100%</td><td class="text-red-400">₦753.6m Gap</td>
                 </tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">05 // Historical Audit (Lifetime 2024 - Date)</span>
-        <table>
-            <thead><tr><th>Agent</th><th>Lifetime Rev</th><th>Annual Avg (3Y)</th><th>Cust.</th><th>Leads</th></tr></thead>
-            <tbody>
-                <tr><td>Immaculate</td><td class="rev-green">533.3m</td><td class="rev-green">177.7m</td><td class="metric-dark">212</td><td class="metric-dark">3,118</td></tr>
-                <tr><td>Patricia</td><td class="rev-green">512.9m</td><td class="rev-green">170.9m</td><td class="metric-dark">242</td><td class="metric-dark">2,482</td></tr>
-                <tr><td>Damilola</td><td class="rev-green">512.6m</td><td class="rev-green">170.8m</td><td class="metric-dark">198</td><td class="metric-dark">3,776</td></tr>
             </tbody>
         </table>
 
