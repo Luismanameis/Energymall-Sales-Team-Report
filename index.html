@@ -1,151 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ENERGYMALL COMMAND | MARCH 2026 FULL AUDIT</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root { --em-red: #E11D48; --em-green: #16A34A; --bg-light: #F8FAFC; --text-dark: #0F172A; }
-        body { font-family: 'Outfit', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.1; margin: 0; padding-top: 160px; }
-        
-        .ticker-wrap { position: fixed; top: 0; width: 100%; height: 45px; background: #000; z-index: 5000; border-bottom: 3px solid var(--em-red); overflow: hidden; display: flex; align-items: center; }
-        .ticker-move { display: inline-block; white-space: nowrap; animation: ticker-scroll 60s linear infinite; }
-        @keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .t-item { display: inline-block; padding: 0 50px; font-size: 14px; font-weight: 900; letter-spacing: 1.5px; color: #FFF; text-transform: uppercase; }
-        .t-item span { color: var(--em-green); }
-        .t-item b { color: var(--em-red); }
-
-        .fixed-hud { 
-            background: white; border-bottom: 4px solid var(--em-red); 
-            position: fixed; top: 45px; width: 100%; z-index: 4000; padding: 15px 25px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.1);
-        }
-
-        .h-bold-red { 
-            color: var(--em-red); font-weight: 900; text-transform: uppercase; 
-            letter-spacing: 2px; font-size: 1.2rem; margin: 35px 0 15px 0; 
-            display: block; border-left: 8px solid var(--em-red); padding-left: 15px;
-            background: #fff; padding-top: 10px; padding-bottom: 10px;
-        }
-        
-        .rev-green { color: var(--em-green) !important; font-weight: 900; }
-        .rev-red { color: var(--em-red) !important; font-weight: 900; }
-        .metric-white { color: var(--text-dark) !important; font-weight: 800; }
-        
-        table { width: 100%; border-collapse: separate; border-spacing: 0; background: white; border-radius: 12px; overflow: hidden; border: 2px solid #E2E8F0; margin-bottom: 30px; }
-        th { text-align: left; padding: 15px; font-size: 11px; color: #475569; text-transform: uppercase; font-weight: 900; background: #F1F5F9; border-bottom: 2px solid #E2E8F0; }
-        td { padding: 15px; font-size: 18px; border-bottom: 1px solid #F1F5F9; font-weight: 700; color: #1e293b; }
-
-        .hud-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; max-width: 1400px; margin: 0 auto; }
-        .hud-val { font-size: 2.2rem; font-weight: 900; line-height: 1; letter-spacing: -1.5px; }
-        .hud-label { font-size: 10px; color: #64748B; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
-
-        @media (max-width: 768px) {
-            .hud-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
-            body { padding-top: 260px; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ENERGYMALL COMMAND | MARCH 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root { --red:#B01020; --green:#15803D; --bg:#F8FAFC; --ink:#0F172A; --muted:#64748B; --border:#E2E8F0; --surface:#F1F5F9; --white:#FFFFFF; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);line-height:1.2;}
+.ticker-wrap{position:fixed;top:0;width:100%;height:36px;background:#000;z-index:5000;border-bottom:3px solid var(--red);overflow:hidden;display:flex;align-items:center;}
+.ticker-move{display:inline-block;white-space:nowrap;animation:ticker-scroll 60s linear infinite;}
+@keyframes ticker-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.t-item{display:inline-block;padding:0 36px;font-size:11px;font-weight:900;letter-spacing:1.2px;color:#fff;text-transform:uppercase;}
+.t-item .g{color:#4ADE80;}.t-item .r{color:#FDA4AF;}
+.fixed-hud{background:var(--white);border-bottom:4px solid var(--red);position:fixed;top:36px;width:100%;z-index:4000;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+.hud-inner{padding:12px 20px 0;max-width:1400px;margin:0 auto;}
+.hud-brand-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.hud-brand{font-size:1.1rem;font-weight:900;text-transform:uppercase;letter-spacing:-.3px;}
+.hud-brand span{color:var(--red);}
+.hud-date{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:blink 1.8s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.hud-kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--border);}
+.hud-kpi{padding:8px 12px;border-right:1px solid var(--border);}
+.hud-kpi:last-child{border-right:none;}
+.hud-label{font-size:8px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px;}
+.hud-val{font-size:1.25rem;font-weight:900;line-height:1;letter-spacing:-1px;}
+.hv-g{color:var(--green);}.hv-r{color:var(--red);}.hv-k{color:var(--ink);}
+.filter-bar{background:var(--surface);border-top:1px solid var(--border);padding:7px 20px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.filter-label{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+.filter-select{appearance:none;-webkit-appearance:none;background:var(--white);border:1.5px solid var(--border);border-radius:4px;padding:5px 24px 5px 9px;font-size:12px;font-weight:600;font-family:'Outfit',sans-serif;color:var(--ink);cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 7px center;flex:1;min-width:120px;max-width:160px;}
+.filter-select:focus{outline:none;border-color:var(--red);}
+.filter-select.active{border-color:var(--red);color:var(--red);background-color:#FFF0F2;}
+.filter-reset{padding:5px 12px;background:transparent;border:1.5px solid var(--border);border-radius:4px;font-size:11px;font-weight:700;font-family:'Outfit',sans-serif;color:var(--muted);cursor:pointer;white-space:nowrap;}
+.filter-reset:hover{border-color:var(--red);color:var(--red);}
+tr.filter-hidden{display:none !important;}
+.page{padding:0 16px 60px;max-width:1400px;margin:0 auto;}
+.seg-head{color:var(--red);font-weight:900;text-transform:uppercase;letter-spacing:1.5px;font-size:1rem;margin:28px 0 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;border-left:7px solid var(--red);padding:9px 0 9px 14px;background:var(--white);flex-wrap:wrap;}
+.seg-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:20px;flex-shrink:0;align-self:center;}
+.sb-g{background:#F0FDF4;color:var(--green);border:1px solid rgba(21,128,61,.2);}
+.sb-r{background:#FFF0F2;color:var(--red);border:1px solid rgba(176,16,32,.2);}
+.sb-b{background:#EEF2FF;color:#3730A3;border:1px solid rgba(55,48,163,.2);}
+.tbl-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:2px solid var(--border);margin-bottom:8px;background:var(--white);}
+.tbl-wrap table{width:100%;min-width:480px;border-collapse:separate;border-spacing:0;}
+thead tr{background:var(--surface);}
+th{text-align:left;padding:11px 14px;font-size:10px;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.08em;border-bottom:2px solid var(--border);white-space:nowrap;}
+td{padding:12px 14px;font-size:14px;border-bottom:1px solid var(--surface);font-weight:500;color:var(--ink);white-space:nowrap;vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+.tr-total td{background:var(--surface) !important;font-weight:700;border-top:2px solid var(--border);font-size:13px;}
+.g{color:var(--green) !important;font-weight:700;}.r{color:var(--red) !important;font-weight:700;}
+.mu{color:var(--muted) !important;font-weight:500;}.k{color:var(--ink) !important;font-weight:600;}
+.td-name{font-size:13px;font-weight:600;}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;}
+.chip-g{background:#F0FDF4;color:var(--green);}.chip-r{background:#FFF0F2;color:var(--red);}.chip-k{background:var(--surface);color:var(--muted);}
+.prog{height:4px;background:var(--border);border-radius:2px;overflow:hidden;min-width:80px;}
+.prog-fill{height:100%;border-radius:2px;}
+@media(min-width:769px){.hud-val{font-size:1.7rem;}.hud-kpi{padding:10px 20px;}.page{padding:0 28px 80px;}td{font-size:15px;padding:14px 16px;}th{font-size:11px;padding:12px 16px;}.seg-head{font-size:1.1rem;}.tbl-wrap table{min-width:600px;}}
+@media(max-width:768px){.hud-kpis{grid-template-columns:repeat(3,1fr);}.hud-kpi:nth-child(4),.hud-kpi:nth-child(5){display:none;}.seg-head{font-size:.85rem;}.filter-select{font-size:13px;}}
+@media(max-width:480px){.hud-kpis{grid-template-columns:repeat(2,1fr);}.hud-kpi:nth-child(3),.hud-kpi:nth-child(4),.hud-kpi:nth-child(5){display:none;}.hud-val{font-size:1.1rem;}}
+</style>
 </head>
 <body>
 
-    <div class="ticker-wrap">
-        <div class="ticker-move">
-            <div class="t-item">IMMACULATE 2026: <span>99.7m</span> | <b>21.2% CV</b></div>
-            <div class="t-item">DAMILOLA 2026: <span>89.4m</span> | <b>18.8% CV</b></div>
-            <div class="t-item">PATRICIA 2026: <span>49.6m</span> | <b>9.8% CV</b></div>
-            <div class="t-item">YTD REVENUE: <span>248.1m</span></div>
-            <div class="t-item">TOTAL CUSTOMERS CLOSED: <span>89</span></div>
-            <div class="t-item">IMMACULATE 2026: <span>99.7m</span> | <b>21.2% CV</b></div>
-            <div class="t-item">DAMILOLA 2026: <span>89.4m</span> | <b>18.8% CV</b></div>
-        </div>
+<div class="ticker-wrap"><div class="ticker-move">
+  <span class="t-item">IMMACULATE 2026: <span class="g">&#8358;101.3M</span> | <span class="r">22.22% CV</span></span>
+  <span class="t-item">DAMILOLA 2026: <span class="g">&#8358;89.5M</span> | <span class="r">18.88% CV</span></span>
+  <span class="t-item">PATRICIA 2026: <span class="g">&#8358;49.6M</span> | <span class="r">9.47% CV</span></span>
+  <span class="t-item">YTD REVENUE: <span class="g">&#8358;241.8M</span></span>
+  <span class="t-item">CUSTOMERS CLOSED: <span class="g">91</span></span>
+  <span class="t-item">MARCH W1: <span class="g">&#8358;11.05M</span></span>
+  <span class="t-item">ALL-TIME: <span class="g">&#8358;1.618B</span></span>
+  <span class="t-item">IMMACULATE 2026: <span class="g">&#8358;101.3M</span> | <span class="r">22.22% CV</span></span>
+  <span class="t-item">DAMILOLA 2026: <span class="g">&#8358;89.5M</span> | <span class="r">18.88% CV</span></span>
+  <span class="t-item">PATRICIA 2026: <span class="g">&#8358;49.6M</span> | <span class="r">9.47% CV</span></span>
+  <span class="t-item">YTD REVENUE: <span class="g">&#8358;241.8M</span></span>
+  <span class="t-item">CUSTOMERS CLOSED: <span class="g">91</span></span>
+  <span class="t-item">MARCH W1: <span class="g">&#8358;11.05M</span></span>
+  <span class="t-item">ALL-TIME: <span class="g">&#8358;1.618B</span></span>
+</div></div>
+
+<header class="fixed-hud">
+  <div class="hud-inner">
+    <div class="hud-brand-row">
+      <div class="hud-brand"><span>Energy</span>Mall &mdash; Sales Command</div>
+      <div class="hud-date"><span class="live-dot"></span>Live &middot; 09 Mar 2026</div>
     </div>
-
-    <header class="fixed-hud">
-        <div class="hud-grid">
-            <div class="hud-item"><p class="hud-label">March Revenue (W1)</p><p class="hud-val rev-green">9.1m</p></div>
-            <div class="hud-item"><p class="hud-label">2026 Total Closed</p><p class="hud-val metric-white">89</p></div>
-            <div class="hud-item"><p class="hud-label">2026 YTD Revenue</p><p class="hud-val rev-green">248.1m</p></div>
-            <div class="hud-item"><p class="hud-label">2026 Total Leads</p><p class="hud-val metric-white">524</p></div>
-        </div>
-    </header>
-
-    <div class="px-8 max-w-[1400px] mx-auto">
-
-        <span class="h-bold-red">01 // March 2026 - Monthly Performance Audit</span>
-        <table>
-            <thead>
-                <tr><th>Agent</th><th>Revenue</th><th>Bonus</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr>
-            </thead>
-            <tbody>
-                <tr><td>Patricia Uchedienyi</td><td class="rev-green">3.1m</td><td class="metric-white">3.1k</td><td class="metric-white">2</td><td class="metric-white">12</td><td class="rev-red">16.67%</td></tr>
-                <tr><td>Damilola Akingboye</td><td class="rev-green">4.5m</td><td class="metric-white">14.5k</td><td class="metric-white">3</td><td class="metric-white">13</td><td class="rev-red">23.08%</td></tr>
-                <tr><td>Immaculate Imion</td><td class="rev-green">1.7m</td><td class="metric-white">878</td><td class="metric-white">3</td><td class="metric-white">18</td><td class="rev-red">16.67%</td></tr>
-                <tr><td>Jemila Ibrahim</td><td class="rev-green">0.00</td><td class="metric-white">0.00</td><td class="metric-white">0</td><td class="metric-white">0</td><td class="rev-red">0.00%</td></tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">02 // March 2026 - Weekly Revenue Breakdown</span>
-        <table>
-            <thead><tr><th>Week</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Conversion</th></tr></thead>
-            <tbody>
-                <tr><td>Week 1</td><td class="rev-green">9.1m</td><td class="metric-white">7</td><td class="metric-white">43</td><td class="rev-red">16.28%</td></tr>
-                <tr><td>Week 2-5</td><td class="rev-green">0.00</td><td class="metric-white">0</td><td class="metric-white">0</td><td class="rev-red">0.00%</td></tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">03 // Last Month Audit (February 2026)</span>
-        <table>
-            <thead><tr><th>Agent</th><th>Revenue</th><th>Cust.</th><th>Leads</th><th>Conv %</th></tr></thead>
-            <tbody>
-                <tr><td>Immaculate</td><td class="rev-green">61.8m</td><td class="metric-white">18</td><td class="metric-white">81</td><td class="rev-red">22.22%</td></tr>
-                <tr><td>Damilola</td><td class="rev-green">43.0m</td><td class="metric-white">13</td><td class="metric-white">57</td><td class="rev-red">22.81%</td></tr>
-                <tr><td>Patricia</td><td class="rev-green">10.2m</td><td class="metric-white">7</td><td class="metric-white">77</td><td class="rev-red">9.09%</td></tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">04 // 2026 YTD Performance & Target Tracking</span>
-        <table>
-            <thead><tr><th>Agent</th><th>YTD Revenue</th><th>Closed</th><th>Leads</th><th>Conv %</th><th>% From Target</th></tr></thead>
-            <tbody>
-                <tr><td>Immaculate</td><td class="rev-green">99.7m</td><td class="metric-white">42</td><td class="metric-white">198</td><td class="rev-red">21.21%</td><td class="rev-red">10.67%</td></tr>
-                <tr><td>Damilola</td><td class="rev-green">89.4m</td><td class="metric-white">27</td><td class="metric-white">143</td><td class="rev-red">18.88%</td><td class="rev-red">14.91%</td></tr>
-                <tr><td>Patricia</td><td class="rev-green">49.6m</td><td class="metric-white">18</td><td class="metric-white">183</td><td class="rev-red">9.84%</td><td class="rev-red">7.52%</td></tr>
-                <tr><td>Jemila</td><td class="rev-green">1.3m</td><td class="metric-white">2</td><td class="metric-white">0</td><td class="rev-red">0.00%</td><td class="rev-red">0.50%</td></tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">05 // Sales Team vs The Business (2026)</span>
-        <table>
-            <thead><tr><th>Segment</th><th>Revenue</th><th>Contribution %</th></tr></thead>
-            <tbody>
-                <tr><td>Sales Team</td><td class="rev-green">240.1m</td><td class="rev-green">96.81%</td></tr>
-                <tr><td>The Business</td><td class="rev-green">7.9m</td><td class="rev-red">3.19%</td></tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">06 // Annual Comparative Audit (2025 vs 2026)</span>
-        <table>
-            <thead><tr><th>Segment</th><th>2025 Revenue</th><th>2026 YTD</th><th>Difference</th><th>% Diff</th></tr></thead>
-            <tbody>
-                <tr><td>Sales Team</td><td class="metric-white">863.3m</td><td class="rev-green">240.1m</td><td class="rev-red">623.1m</td><td class="rev-red">72.18%</td></tr>
-                <tr><td>The Business</td><td class="metric-white">138.0m</td><td class="rev-green">7.9m</td><td class="rev-red">130.0m</td><td class="rev-red">94.26%</td></tr>
-            </tbody>
-        </table>
-
-        <span class="h-bold-red">07 // Historical Audit (2024 - Date)</span>
-        <table>
-            <thead><tr><th>Agent</th><th>Lifetime Rev</th><th>Cust.</th><th>Leads</th><th>3Y Annual Avg</th></tr></thead>
-            <tbody>
-                <tr><td>Immaculate</td><td class="rev-green">533.3m</td><td class="metric-white">212</td><td class="metric-white">3,118</td><td class="rev-green">177.7m</td></tr>
-                <tr><td>Patricia</td><td class="rev-green">512.9m</td><td class="metric-white">242</td><td class="metric-white">2,482</td><td class="rev-green">170.9m</td></tr>
-                <tr><td>Damilola</td><td class="rev-green">512.6m</td><td class="rev-green">198</td><td class="metric-white">3,776</td><td class="rev-green">170.8m</td></tr>
-                <tr><td>Jemila</td><td class="rev-green">57.9m</td><td class="metric-white">40</td><td class="metric-white">512</td><td class="rev-green">19.3m</td></tr>
-            </tbody>
-        </table>
-
-        <div class="h-20"></div>
+    <div class="hud-kpis">
+      <div class="hud-kpi"><div class="hud-label">Mar W1 Revenue</div><div class="hud-val hv-g">&#8358;11.05M</div></div>
+      <div class="hud-kpi"><div class="hud-label">YTD Revenue</div><div class="hud-val hv-g">&#8358;241.8M</div></div>
+      <div class="hud-kpi"><div class="hud-label">YTD Customers</div><div class="hud-val hv-k">91</div></div>
+      <div class="hud-kpi"><div class="hud-label">Total Leads</div><div class="hud-val hv-k">531</div></div>
+      <div class="hud-kpi"><div class="hud-label">Top Rep</div><div class="hud-val hv-r">Immaculate</div></div>
     </div>
+    <div class="filter-bar" id="filterBar">
+      <span class="filter-label">Filter:</span>
+      <select class="filter-select" id="filterRep" onchange="applyFilters()">
+        <option value="all">All Agents</option>
+        <option value="Patricia">Patricia</option>
+        <option value="Damilola">Damilola</option>
+        <option value="Immaculate">Immaculate</option>
+        <option value="Jemila">Jemila</option>
+      </select>
+      <select class="filter-select" id="filterPeriod" onchange="applyFilters()">
+        <option value="all">All Sections</option>
+        <option value="march">March 2026</option>
+        <option value="lastmonth">Last Month</option>
+        <option value="ytd">2026 YTD</option>
+        <option value="alltime">All Time</option>
+      </select>
+      <button class="filter-reset" id="resetBtn" onclick="resetFilters()">&#10005; Reset</button>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+<div data-period="march">
+  <div class="seg-head"><span>01 // March 2026 &mdash; Monthly Performance Audit</span><span class="seg-badge sb-g">&#9679; W1 Live</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Agent</th><th>Revenue</th><th>Bonus</th><th>Customers</th><th>Leads</th><th>Conv %</th></tr></thead>
+    <tbody>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;4.58M</td><td class="k">&#8358;14.58K</td><td class="k">3</td><td class="k">13</td><td class="r">23.08%</td></tr>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;3.33M</td><td class="k">&#8358;1.67K</td><td class="k">5</td><td class="k">18</td><td class="r">27.78%</td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;3.14M</td><td class="k">&#8358;3.14K</td><td class="k">2</td><td class="k">19</td><td class="r">10.53%</td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;0.00</td><td class="mu">&#8358;0.00</td><td class="mu">0</td><td class="mu">&mdash;</td><td class="mu">0.00%</td></tr>
+      <tr class="tr-total"><td>MARCH TOTAL</td><td class="g">&#8358;11.05M</td><td class="k">&#8358;19.39K</td><td class="k">10</td><td class="k">50</td><td class="r">20.00%</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div data-period="march">
+  <div class="seg-head"><span>02 // March 2026 &mdash; Weekly Revenue Breakdown</span><span class="seg-badge sb-r">W2&ndash;W5 Pending</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Week</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Week 1</td><td class="g">&#8358;11.05M</td><td class="k">10</td><td class="k">50</td><td class="r">20.00%</td><td><span class="chip chip-g">Complete</span></td></tr>
+      <tr><td class="mu">Week 2</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td><span class="chip chip-k">Pending</span></td></tr>
+      <tr><td class="mu">Week 3</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td><span class="chip chip-k">Pending</span></td></tr>
+      <tr><td class="mu">Week 4</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td><span class="chip chip-k">Pending</span></td></tr>
+      <tr><td class="mu">Week 5</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td><span class="chip chip-k">Pending</span></td></tr>
+      <tr class="tr-total"><td>MARCH TOTAL</td><td class="g">&#8358;11.05M</td><td class="k">10</td><td class="k">50</td><td class="r">20.00%</td><td></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div data-period="lastmonth">
+  <div class="seg-head"><span>03 // Last Month Audit &mdash; February 2026</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Agent</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th></tr></thead>
+    <tbody>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;61.8M</td><td class="k">18</td><td class="k">81</td><td class="r">22.22%</td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;43.08M</td><td class="k">13</td><td class="k">57</td><td class="r">22.81%</td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;10.22M</td><td class="k">7</td><td class="k">77</td><td class="r">9.09%</td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;0.00</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">0.00%</td></tr>
+      <tr class="tr-total"><td>FEB TOTAL</td><td class="g">&#8358;115.1M</td><td class="k">38</td><td class="k">215</td><td class="r">17.67%</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div data-period="ytd">
+  <div class="seg-head"><span>04 // 2026 YTD Performance &amp; Target Tracking</span><span class="seg-badge sb-b">All Time 2026</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Agent</th><th>YTD Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th><th>% Target</th><th>Progress</th></tr></thead>
+    <tbody>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;101.32M</td><td class="k">44</td><td class="k">198</td><td class="r">22.22%</td><td class="r">10.84%</td><td><div class="prog"><div class="prog-fill" style="width:10.84%;background:var(--green);"></div></div></td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;89.48M</td><td class="k">27</td><td class="k">143</td><td class="r">18.88%</td><td class="r">14.91%</td><td><div class="prog"><div class="prog-fill" style="width:14.91%;background:var(--red);"></div></div></td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;49.62M</td><td class="k">18</td><td class="k">190</td><td class="r">9.47%</td><td class="r">7.52%</td><td><div class="prog"><div class="prog-fill" style="width:7.52%;background:#3730A3;"></div></div></td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;1.36M</td><td class="k">2</td><td class="mu">NIL</td><td class="mu">0.00%</td><td class="r">0.50%</td><td><div class="prog"><div class="prog-fill" style="width:0.5%;background:var(--muted);"></div></div></td></tr>
+      <tr class="tr-total"><td>YTD TOTAL</td><td class="g">&#8358;241.77M</td><td class="k">91</td><td class="k">531</td><td class="r">17.14%</td><td></td><td></td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div data-period="ytd">
+  <div class="seg-head"><span>05 // Sales Team vs The Business (2026)</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Segment</th><th>Revenue</th><th>Contribution %</th></tr></thead>
+    <tbody>
+      <tr><td class="td-name">Sales Team (All Agents)</td><td class="g">&#8358;241.77M</td><td class="g">96.83%</td></tr>
+      <tr><td class="td-name">The Business</td><td class="mu">&#8358;7.92M</td><td class="mu">3.17%</td></tr>
+      <tr class="tr-total"><td>TOTAL 2026</td><td class="g">&#8358;249.70M</td><td class="k">100%</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div data-period="ytd">
+  <div class="seg-head"><span>06 // Annual Comparative &mdash; 2025 vs 2026</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Segment</th><th>2025 Full Year</th><th>2026 YTD</th><th>Gap</th><th>% Diff</th><th>Months Left</th></tr></thead>
+    <tbody>
+      <tr><td class="td-name">Sales Team</td><td class="mu">&#8358;863.34M</td><td class="g">&#8358;241.77M</td><td class="r">&minus;&#8358;621.57M</td><td class="r">&minus;72.00%</td><td class="k">9</td></tr>
+      <tr><td class="td-name">The Business</td><td class="mu">&#8358;138.02M</td><td class="mu">&#8358;7.92M</td><td class="r">&minus;&#8358;130.10M</td><td class="r">&minus;94.26%</td><td class="k">9</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div data-period="alltime">
+  <div class="seg-head"><span>07 // Historical Audit &mdash; 2024 to Date</span><span class="seg-badge sb-b">3-Year View</span></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Agent</th><th>Lifetime Revenue</th><th>Customers</th><th>Leads</th><th>3Y Annual Avg</th></tr></thead>
+    <tbody>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;534.96M</td><td class="k">213</td><td class="k">3,118</td><td class="g">&#8358;178.32M</td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;512.90M</td><td class="k">242</td><td class="k">2,489</td><td class="g">&#8358;170.97M</td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;512.70M</td><td class="k">198</td><td class="k">3,776</td><td class="g">&#8358;170.90M</td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;57.94M</td><td class="k">40</td><td class="k">512</td><td class="mu">&#8358;19.31M</td></tr>
+      <tr class="tr-total"><td>ALL TIME TOTAL</td><td class="g">&#8358;1.618B</td><td class="k">693</td><td class="k">9,895</td><td class="g">&#8358;539.50M</td></tr>
+    </tbody>
+  </table></div>
+</div>
+
+<div style="height:40px;"></div>
+</div>
+
+<script>
+function setPadding(){var hud=document.querySelector('.fixed-hud');if(hud)document.body.style.paddingTop=(hud.offsetHeight+36)+'px';}
+window.addEventListener('load',setPadding);
+window.addEventListener('resize',setPadding);
+function getFilters(){return{rep:document.getElementById('filterRep').value,period:document.getElementById('filterPeriod').value};}
+function applyFilters(){
+  var f=getFilters(),any=f.rep!=='all'||f.period!=='all';
+  document.getElementById('filterRep').classList.toggle('active',f.rep!=='all');
+  document.getElementById('filterPeriod').classList.toggle('active',f.period!=='all');
+  document.getElementById('resetBtn').style.visibility=any?'visible':'hidden';
+  document.querySelectorAll('tr[data-rep]').forEach(function(r){r.classList.toggle('filter-hidden',f.rep!=='all'&&r.dataset.rep!==f.rep);});
+  document.querySelectorAll('[data-period]').forEach(function(s){s.style.display=(f.period==='all'||s.dataset.period===f.period)?'':'none';});
+  var parts=[],b=document.getElementById('fBadge');
+  if(f.rep!=='all')parts.push(f.rep);
+  if(f.period!=='all'){var l={march:'March 2026',lastmonth:'Last Month',ytd:'2026 YTD',alltime:'All Time'};parts.push(l[f.period]||f.period);}
+  if(!b){b=document.createElement('span');b.id='fBadge';b.style.cssText='font-size:11px;font-weight:700;color:var(--red);padding:3px 8px;background:#FFF0F2;border-radius:3px;border:1px solid rgba(176,16,32,.2);white-space:nowrap;';document.getElementById('filterBar').insertBefore(b,document.getElementById('resetBtn'));}
+  b.textContent=parts.length?'◆ '+parts.join(' · ').toUpperCase():'';
+  b.style.display=parts.length?'inline':'none';
+  setTimeout(setPadding,50);
+}
+function resetFilters(){document.getElementById('filterRep').value='all';document.getElementById('filterPeriod').value='all';applyFilters();}
+window.addEventListener('DOMContentLoaded',function(){document.getElementById('resetBtn').style.visibility='hidden';});
+</script>
 </body>
 </html>
