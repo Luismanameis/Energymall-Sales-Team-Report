@@ -6,7 +6,7 @@
 <title>ENERGYMALL COMMAND | MARCH 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-:root { --red:#B01020; --green:#15803D; --bg:#F8FAFC; --ink:#0F172A; --muted:#64748B; --border:#E2E8F0; --surface:#F1F5F9; --white:#FFFFFF; }
+:root{--red:#B01020;--green:#15803D;--bg:#F8FAFC;--ink:#0F172A;--muted:#64748B;--border:#E2E8F0;--surface:#F1F5F9;--white:#FFFFFF;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{-webkit-text-size-adjust:100%;}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);line-height:1.2;}
@@ -20,231 +20,238 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);line-
 .hud-brand-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
 .hud-brand{font-size:1.1rem;font-weight:900;text-transform:uppercase;letter-spacing:-.3px;}
 .hud-brand span{color:var(--red);}
-.hud-date{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;}
+.hud-date{font-size:9px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:blink 1.8s ease-in-out infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 .hud-kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--border);}
 .hud-kpi{padding:8px 12px;border-right:1px solid var(--border);}
 .hud-kpi:last-child{border-right:none;}
-.hud-label{font-size:8px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px;}
+.hud-label{font-size:8px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px;}
 .hud-val{font-size:1.25rem;font-weight:900;line-height:1;letter-spacing:-1px;}
 .hv-g{color:var(--green);}.hv-r{color:var(--red);}.hv-k{color:var(--ink);}
 .filter-bar{background:var(--surface);border-top:1px solid var(--border);padding:7px 20px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.filter-label{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
-.filter-select{appearance:none;-webkit-appearance:none;background:var(--white);border:1.5px solid var(--border);border-radius:4px;padding:5px 24px 5px 9px;font-size:12px;font-weight:600;font-family:'Outfit',sans-serif;color:var(--ink);cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 7px center;flex:1;min-width:120px;max-width:160px;}
+.filter-label{font-size:9px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);}
+.filter-select{appearance:none;-webkit-appearance:none;background:var(--white);border:1.5px solid var(--border);border-radius:4px;padding:5px 24px 5px 9px;font-size:12px;font-weight:700;font-family:'Outfit',sans-serif;color:var(--ink);cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%2364748B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 7px center;flex:1;min-width:120px;max-width:160px;}
 .filter-select:focus{outline:none;border-color:var(--red);}
 .filter-select.active{border-color:var(--red);color:var(--red);background-color:#FFF0F2;}
-.filter-reset{padding:5px 12px;background:transparent;border:1.5px solid var(--border);border-radius:4px;font-size:11px;font-weight:700;font-family:'Outfit',sans-serif;color:var(--muted);cursor:pointer;white-space:nowrap;}
+.filter-reset{padding:5px 12px;background:transparent;border:1.5px solid var(--border);border-radius:4px;font-size:11px;font-weight:800;font-family:'Outfit',sans-serif;color:var(--muted);cursor:pointer;white-space:nowrap;}
 .filter-reset:hover{border-color:var(--red);color:var(--red);}
-tr.filter-hidden{display:none !important;}
+tr.filter-hidden{display:none!important;}
 .page{padding:0 16px 60px;max-width:1400px;margin:0 auto;}
 .seg-head{color:var(--red);font-weight:900;text-transform:uppercase;letter-spacing:1.5px;font-size:1rem;margin:28px 0 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;border-left:7px solid var(--red);padding:9px 0 9px 14px;background:var(--white);flex-wrap:wrap;}
-.seg-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:20px;flex-shrink:0;align-self:center;}
+.seg-badge{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:20px;flex-shrink:0;align-self:center;}
 .sb-g{background:#F0FDF4;color:var(--green);border:1px solid rgba(21,128,61,.2);}
 .sb-r{background:#FFF0F2;color:var(--red);border:1px solid rgba(176,16,32,.2);}
 .sb-b{background:#EEF2FF;color:#3730A3;border:1px solid rgba(55,48,163,.2);}
+.sb-gold{background:#FFFBEB;color:#B45309;border:1px solid rgba(180,83,9,.2);}
 .tbl-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:2px solid var(--border);margin-bottom:8px;background:var(--white);}
-.tbl-wrap table{width:100%;min-width:480px;border-collapse:separate;border-spacing:0;}
+.tbl-wrap table{width:100%;min-width:480px;border-collapse:separate;border-spacing:0;background:var(--white);}
 thead tr{background:var(--surface);}
-th{text-align:left;padding:11px 14px;font-size:10px;color:var(--muted);text-transform:uppercase;font-weight:700;letter-spacing:.08em;border-bottom:2px solid var(--border);white-space:nowrap;}
-td{padding:12px 14px;font-size:14px;border-bottom:1px solid var(--surface);font-weight:500;color:var(--ink);white-space:nowrap;vertical-align:middle;}
+th{text-align:left;padding:11px 14px;font-size:10px;color:var(--muted);text-transform:uppercase;font-weight:900;letter-spacing:.08em;border-bottom:2px solid var(--border);white-space:nowrap;}
+td{padding:12px 14px;font-size:15px;border-bottom:1px solid var(--surface);font-weight:700;color:var(--ink);white-space:nowrap;vertical-align:middle;}
 tr:last-child td{border-bottom:none;}
-.tr-total td{background:var(--surface) !important;font-weight:700;border-top:2px solid var(--border);font-size:13px;}
-.g{color:var(--green) !important;font-weight:700;}.r{color:var(--red) !important;font-weight:700;}
-.mu{color:var(--muted) !important;font-weight:500;}.k{color:var(--ink) !important;font-weight:600;}.gold{color:#B45309 !important;font-weight:700;}
-.td-name{font-size:13px;font-weight:600;}
-.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;}
-.chip-g{background:#F0FDF4;color:var(--green);}.chip-r{background:#FFF0F2;color:var(--red);}.chip-k{background:var(--surface);color:var(--muted);}
-.prog{height:4px;background:var(--border);border-radius:2px;overflow:hidden;min-width:80px;}
+.tr-total td{background:var(--surface)!important;font-weight:900;border-top:2px solid var(--ink);font-size:14px;}
+.g{color:var(--green)!important;font-weight:900;}.r{color:var(--red)!important;font-weight:900;}
+.mu{color:var(--muted)!important;font-weight:600;}.k{color:var(--ink)!important;font-weight:800;}
+.gold{color:#B45309!important;font-weight:900;}
+.td-name{font-size:13px;font-weight:800;}
+.chip{display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:800;}
+.chip-g{background:#F0FDF4;color:var(--green);}.chip-r{background:#FFF0F2;color:var(--red);}
+.chip-k{background:var(--surface);color:var(--muted);}.chip-gold{background:#FFFBEB;color:#B45309;}
+.prog{height:4px;background:var(--border);border-radius:2px;overflow:hidden;min-width:60px;}
 .prog-fill{height:100%;border-radius:2px;}
-@media(min-width:769px){.hud-val{font-size:1.7rem;}.hud-kpi{padding:10px 20px;}.page{padding:0 28px 80px;}td{font-size:15px;padding:14px 16px;}th{font-size:11px;padding:12px 16px;}.seg-head{font-size:1.1rem;}.tbl-wrap table{min-width:600px;}}
-@media(max-width:768px){.hud-kpis{grid-template-columns:repeat(3,1fr);}.hud-kpi:nth-child(4),.hud-kpi:nth-child(5){display:none;}.seg-head{font-size:.85rem;}.filter-select{font-size:13px;}}
+.return-box{background:var(--white);border:2px solid var(--border);border-left:6px solid var(--green);border-radius:8px;padding:16px 20px;margin-bottom:8px;display:flex;gap:32px;flex-wrap:wrap;align-items:center;}
+.rb-item{display:flex;flex-direction:column;gap:2px;}
+.rb-label{font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);}
+.rb-val{font-size:1.4rem;font-weight:900;letter-spacing:-1px;}
+@media(min-width:769px){.hud-val{font-size:1.7rem;}.hud-kpi{padding:10px 20px;}.page{padding:0 28px 80px;}td{font-size:17px;}th{font-size:11px;padding:12px 16px;}td{padding:14px 16px;}.seg-head{font-size:1.1rem;letter-spacing:2px;}.tbl-wrap table{min-width:600px;}}
+@media(max-width:768px){.hud-kpis{grid-template-columns:repeat(3,1fr);}.hud-kpi:nth-child(4),.hud-kpi:nth-child(5){display:none;}.seg-head{font-size:.85rem;letter-spacing:1px;}.filter-select{font-size:13px;}}
 @media(max-width:480px){.hud-kpis{grid-template-columns:repeat(2,1fr);}.hud-kpi:nth-child(3),.hud-kpi:nth-child(4),.hud-kpi:nth-child(5){display:none;}.hud-val{font-size:1.1rem;}}
 </style>
+<script>
+function setPadding(){var h=document.querySelector('.fixed-hud');if(h)document.body.style.paddingTop=(h.offsetHeight+36)+'px';}
+window.addEventListener('load',setPadding);window.addEventListener('resize',setPadding);
+</script>
 </head>
 <body>
 
 <div class="ticker-wrap"><div class="ticker-move">
-  <span class="t-item">IMMACULATE 2026: <span class="g">&#8358;104.9M</span> | <span class="r">21.70% CV</span></span>
-  <span class="t-item">DAMILOLA 2026: <span class="g">&#8358;89.5M</span> | <span class="r">18.88% CV</span></span>
-  <span class="t-item">PATRICIA 2026: <span class="g">&#8358;49.6M</span> | <span class="r">9.00% CV</span></span>
-  <span class="t-item">YTD REVENUE: <span class="g">&#8358;245.3M</span></span>
-  <span class="t-item">CUSTOMERS CLOSED: <span class="g">93</span></span>
-  <span class="t-item">MARCH REVENUE: <span class="g">&#8358;14.62M</span></span>
-  <span class="t-item">ALL-TIME: <span class="g">&#8358;1.622B</span></span>
-  <span class="t-item">IMMACULATE 2026: <span class="g">&#8358;104.9M</span> | <span class="r">21.70% CV</span></span>
-  <span class="t-item">DAMILOLA 2026: <span class="g">&#8358;89.5M</span> | <span class="r">18.88% CV</span></span>
-  <span class="t-item">PATRICIA 2026: <span class="g">&#8358;49.6M</span> | <span class="r">9.00% CV</span></span>
-  <span class="t-item">YTD REVENUE: <span class="g">&#8358;245.3M</span></span>
-  <span class="t-item">CUSTOMERS CLOSED: <span class="g">93</span></span>
-  <span class="t-item">MARCH REVENUE: <span class="g">&#8358;14.62M</span></span>
-  <span class="t-item">ALL-TIME: <span class="g">&#8358;1.622B</span></span>
+  <span class="t-item">IMMACULATE 2026: <span class="g">&#8358;114.1M</span> | <span class="r">22.9% CV</span></span>
+  <span class="t-item">DAMILOLA 2026: <span class="g">&#8358;85.3M</span> | <span class="r">17.8% CV</span></span>
+  <span class="t-item">PATRICIA 2026: <span class="g">&#8358;49.9M</span> | <span class="r">9.1% CV</span></span>
+  <span class="t-item">YTD REVENUE: <span class="g">&#8358;250.6M</span></span>
+  <span class="t-item">CUSTOMERS: <span class="g">96</span></span>
+  <span class="t-item">MARCH W1: <span class="g">&#8358;11.1M</span></span>
+  <span class="t-item">MARCH SO FAR: <span class="g">&#8358;19.9M</span></span>
+  <span class="t-item">ALL-TIME: <span class="g">&#8358;1.63B</span></span>
+  <span class="t-item">TOP MARCH: <span class="g">IMMACULATE &#8358;16.1M</span></span>
+  <span class="t-item">RETURN CUSTOMERS 2026: <span class="g">36 &#183; 30.65%</span></span>
+  <span class="t-item">IMMACULATE 2026: <span class="g">&#8358;114.1M</span> | <span class="r">22.9% CV</span></span>
+  <span class="t-item">DAMILOLA 2026: <span class="g">&#8358;85.3M</span> | <span class="r">17.8% CV</span></span>
+  <span class="t-item">PATRICIA 2026: <span class="g">&#8358;49.9M</span> | <span class="r">9.1% CV</span></span>
+  <span class="t-item">YTD REVENUE: <span class="g">&#8358;250.6M</span></span>
+  <span class="t-item">CUSTOMERS: <span class="g">96</span></span>
+  <span class="t-item">MARCH W1: <span class="g">&#8358;11.1M</span></span>
+  <span class="t-item">MARCH SO FAR: <span class="g">&#8358;19.9M</span></span>
+  <span class="t-item">ALL-TIME: <span class="g">&#8358;1.63B</span></span>
+  <span class="t-item">TOP MARCH: <span class="g">IMMACULATE &#8358;16.1M</span></span>
+  <span class="t-item">RETURN CUSTOMERS 2026: <span class="g">36 &#183; 30.65%</span></span>
 </div></div>
 
-<header class="fixed-hud">
-  <div class="hud-inner">
-    <div class="hud-brand-row">
-      <div class="hud-brand"><span>Energy</span>Mall &mdash; Sales Command</div>
-      <div class="hud-date"><span class="live-dot"></span>Live &middot; 09 Mar 2026</div>
-    </div>
-    <div class="hud-kpis">
-      <div class="hud-kpi"><div class="hud-label">Mar Revenue</div><div class="hud-val hv-g">&#8358;14.62M</div></div>
-      <div class="hud-kpi"><div class="hud-label">YTD Revenue</div><div class="hud-val hv-g">&#8358;245.3M</div></div>
-      <div class="hud-kpi"><div class="hud-label">YTD Customers</div><div class="hud-val hv-k">93</div></div>
-      <div class="hud-kpi"><div class="hud-label">Total Leads</div><div class="hud-val hv-k">555</div></div>
-      <div class="hud-kpi"><div class="hud-label">Top Rep</div><div class="hud-val hv-r">Immaculate</div></div>
-    </div>
-    <div class="filter-bar" id="filterBar">
-      <span class="filter-label">Filter:</span>
-      <select class="filter-select" id="filterRep" onchange="applyFilters()">
-        <option value="all">All Agents</option>
-        <option value="Patricia">Patricia</option>
-        <option value="Damilola">Damilola</option>
-        <option value="Immaculate">Immaculate</option>
-        <option value="Jemila">Jemila</option>
-      </select>
-      <select class="filter-select" id="filterPeriod" onchange="applyFilters()">
-        <option value="all">All Sections</option>
-        <option value="march">March 2026</option>
-        <option value="lastmonth">Last Month</option>
-        <option value="ytd">2026 YTD</option>
-        <option value="alltime">All Time</option>
-      </select>
-      <button class="filter-reset" id="resetBtn" onclick="resetFilters()">&#10005; Reset</button>
-    </div>
+<header class="fixed-hud"><div class="hud-inner">
+  <div class="hud-brand-row">
+    <div class="hud-brand"><span>Energy</span>Mall &#8212; Sales Command</div>
+    <div class="hud-date"><span class="live-dot"></span>Live &#183; 12 Mar 2026</div>
   </div>
-</header>
+  <div class="hud-kpis">
+    <div class="hud-kpi"><div class="hud-label">Mar Rev (W1+W2)</div><div class="hud-val hv-g">&#8358;19.9M</div></div>
+    <div class="hud-kpi"><div class="hud-label">YTD Revenue</div><div class="hud-val hv-g">&#8358;250.6M</div></div>
+    <div class="hud-kpi"><div class="hud-label">YTD Customers</div><div class="hud-val hv-k">96</div></div>
+    <div class="hud-kpi"><div class="hud-label">YTD Leads</div><div class="hud-val hv-k">569</div></div>
+    <div class="hud-kpi"><div class="hud-label">Top March</div><div class="hud-val hv-r">Immaculate</div></div>
+  </div>
+  <div class="filter-bar" id="filterBar">
+    <span class="filter-label">Filter:</span>
+    <select class="filter-select" id="filterRep" onchange="applyFilters()">
+      <option value="all">All Agents</option>
+      <option value="Patricia">Patricia</option>
+      <option value="Damilola">Damilola</option>
+      <option value="Immaculate">Immaculate</option>
+      <option value="Jemila">Jemila</option>
+    </select>
+    <select class="filter-select" id="filterPeriod" onchange="applyFilters()">
+      <option value="all">All Sections</option>
+      <option value="march">March 2026</option>
+      <option value="lastmonth">Last Month</option>
+      <option value="ytd">2026 YTD</option>
+      <option value="alltime">All Time</option>
+    </select>
+    <button class="filter-reset" id="resetBtn" onclick="resetFilters()">&#10005; Reset</button>
+  </div>
+</div></header>
 
 <div class="page">
 
+<!-- 01 MARCH MONTHLY -->
 <div data-period="march">
-  <div class="seg-head"><span>01 // March 2026 &mdash; Monthly Performance Audit</span><span class="seg-badge sb-g">&#9679; W1 Live</span></div>
+  <div class="seg-head"><span>01 // March 2026 &#8212; Monthly Performance Audit</span><span class="seg-badge sb-g">&#9679; W1+W2 Live</span></div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Agent</th><th>Revenue</th><th>Bonus</th><th>Customers</th><th>Leads</th><th>Conv %</th></tr></thead>
     <tbody>
-      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;4.58M</td><td class="gold">&#8358;14.58K</td><td class="k">3</td><td class="k">13</td><td class="r">23.08%</td></tr>
-      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;6.90M</td><td class="gold">&#8358;3.45K</td><td class="k">7</td><td class="k">32</td><td class="r">21.88%</td></tr>
-      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;3.14M</td><td class="gold">&#8358;3.14K</td><td class="k">2</td><td class="k">29</td><td class="r">6.90%</td></tr>
-      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;0.00</td><td class="gold">&#8358;0.00</td><td class="mu">0</td><td class="mu">&mdash;</td><td class="mu">0.00%</td></tr>
-      <tr class="tr-total"><td>MARCH TOTAL</td><td class="g">&#8358;14.62M</td><td class="gold">&#8358;21.17K</td><td class="k">12</td><td class="k">74</td><td class="r">16.22%</td></tr>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;16,099,500</td><td class="gold">&#8358;8,049.75</td><td class="k">10</td><td class="k">34</td><td class="g">29.41%</td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;3,427,000</td><td class="k">&#8358;3,427.00</td><td class="k">3</td><td class="k">38</td><td class="r">7.89%</td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;368,000</td><td class="gold">&#8358;10,368.00</td><td class="k">2</td><td class="k">16</td><td class="r">12.50%</td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;0.00</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td class="mu">0.00%</td></tr>
+      <tr class="tr-total"><td>MARCH TOTAL</td><td class="g">&#8358;19,894,500</td><td class="gold">&#8358;21,844.75</td><td class="k">15</td><td class="k">88</td><td class="r">17.05%</td></tr>
     </tbody>
   </table></div>
-
-  <!-- Return Customers — March -->
-  <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
-    <div style="background:var(--white);border:1px solid var(--border);border-left:5px solid var(--green);padding:16px 18px;">
-      <div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;">Return Customers — March</div>
-      <div style="font-size:1.6rem;font-weight:900;color:var(--green);letter-spacing:-1px;line-height:1;">6</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Of 13 total customers</div>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--border);border-left:5px solid var(--green);padding:16px 18px;">
-      <div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;">Return Revenue — March</div>
-      <div style="font-size:1.6rem;font-weight:900;color:var(--green);letter-spacing:-1px;line-height:1;">&#8358;8.88M</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Of &#8358;14.62M total</div>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--border);border-left:5px solid var(--red);padding:16px 18px;">
-      <div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;">Return Rate — March</div>
-      <div style="font-size:1.6rem;font-weight:900;color:var(--red);letter-spacing:-1px;line-height:1;">46.15%</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Returning buyers this month</div>
-    </div>
+  <div class="return-box">
+    <div class="rb-item"><div class="rb-label">Return Customers</div><div class="rb-val g">7</div></div>
+    <div class="rb-item"><div class="rb-label">Return Revenue</div><div class="rb-val g">&#8358;10,575,000</div></div>
+    <div class="rb-item"><div class="rb-label">Return %</div><div class="rb-val g">41.18%</div></div>
+    <div class="rb-item"><div class="rb-label">Note</div><div style="font-size:13px;font-weight:700;color:var(--muted);">41% of March closures are returning customers</div></div>
   </div>
 </div>
 
+<!-- 02 MARCH WEEKLY -->
 <div data-period="march">
-  <div class="seg-head"><span>02 // March 2026 &mdash; Weekly Revenue Breakdown</span><span class="seg-badge sb-r">W2&ndash;W5 Pending</span></div>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Week</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th><th>Status</th></tr></thead>
+  <div class="seg-head"><span>02 // March 2026 &#8212; Weekly Breakdown</span><span class="seg-badge sb-r">W3&#8211;W5 Pending</span></div>
+  <div style="font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Week 2 &#8212; Agent Detail</div>
+  <div class="tbl-wrap" style="margin-bottom:16px;"><table>
+    <thead><tr><th>Agent</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th></tr></thead>
     <tbody>
-      <tr><td class="k">Week 1</td><td class="g">&#8358;11.05M</td><td class="k">10</td><td class="k">60</td><td class="r">16.67%</td><td><span class="chip chip-g">Complete</span></td></tr>
-      <tr><td class="mu">Week 2</td><td class="mu">&mdash;</td><td class="mu">0</td><td class="k">11</td><td class="mu">&mdash;</td><td><span class="chip chip-k">In Progress</span></td></tr>
-      <tr><td class="mu">Week 3</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td><span class="chip chip-k">Pending</span></td></tr>
-      <tr><td class="mu">Week 4</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td><span class="chip chip-k">Pending</span></td></tr>
-      <tr><td class="mu">Week 5</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td><span class="chip chip-k">Pending</span></td></tr>
-      <tr class="tr-total"><td>MARCH TOTAL</td><td class="g">&#8358;11.05M</td><td class="k">10</td><td class="k">50</td><td class="r">20.00%</td><td></td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="k">15</td><td class="mu">0%</td></tr>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="k">7</td><td class="mu">0%</td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="k">3</td><td class="mu">0%</td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td class="mu">0%</td></tr>
+      <tr class="tr-total"><td>W2 TOTAL</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="k">25</td><td class="mu">0.00%</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Week</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Week 1</td><td class="g">&#8358;11,052,500</td><td class="k">10</td><td class="k">60</td><td><span class="chip chip-g">Complete</span></td></tr>
+      <tr><td class="k">Week 2</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="k">25</td><td><span class="chip chip-gold">Leads In</span></td></tr>
+      <tr><td class="mu">Week 3</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td><span class="chip chip-k">Pending</span></td></tr>
+      <tr><td class="mu">Week 4</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td><span class="chip chip-k">Pending</span></td></tr>
+      <tr><td class="mu">Week 5</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td><span class="chip chip-k">Pending</span></td></tr>
+      <tr class="tr-total"><td>MARCH TOTAL</td><td class="g">&#8358;11,052,500</td><td class="k">10</td><td class="k">85</td><td></td></tr>
     </tbody>
   </table></div>
 </div>
 
+<!-- 03 LAST MONTH -->
 <div data-period="lastmonth">
-  <div class="seg-head"><span>03 // Last Month Audit &mdash; February 2026</span></div>
+  <div class="seg-head"><span>03 // Last Month Audit &#8212; February 2026</span></div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Agent</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th></tr></thead>
     <tbody>
-      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;61.8M</td><td class="k">18</td><td class="k">81</td><td class="r">22.22%</td></tr>
-      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;43.08M</td><td class="k">13</td><td class="k">57</td><td class="r">22.81%</td></tr>
-      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;10.22M</td><td class="k">7</td><td class="k">77</td><td class="r">9.09%</td></tr>
-      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;0.00</td><td class="mu">&mdash;</td><td class="mu">&mdash;</td><td class="mu">0.00%</td></tr>
-      <tr class="tr-total"><td>FEB TOTAL</td><td class="g">&#8358;115.1M</td><td class="k">38</td><td class="k">215</td><td class="r">17.67%</td></tr>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;61,800,034</td><td class="k">18</td><td class="k">81</td><td class="r">22.22%</td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;43,077,600</td><td class="k">13</td><td class="k">57</td><td class="r">22.81%</td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;10,216,712</td><td class="k">7</td><td class="k">77</td><td class="r">9.09%</td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;0.00</td><td class="mu">&#8212;</td><td class="mu">&#8212;</td><td class="mu">0.00%</td></tr>
+      <tr class="tr-total"><td>FEB TOTAL</td><td class="g">&#8358;115,094,346</td><td class="k">38</td><td class="k">215</td><td class="r">17.67%</td></tr>
     </tbody>
   </table></div>
-
-  <!-- Return Customers — YTD 2026 -->
-  <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
-    <div style="background:var(--white);border:1px solid var(--border);border-left:5px solid var(--green);padding:16px 18px;">
-      <div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;">Return Customers — YTD 2026</div>
-      <div style="font-size:1.6rem;font-weight:900;color:var(--green);letter-spacing:-1px;line-height:1;">35</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Of 93 total YTD customers</div>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--border);border-left:5px solid var(--green);padding:16px 18px;">
-      <div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;">Return Revenue — YTD 2026</div>
-      <div style="font-size:1.6rem;font-weight:900;color:var(--green);letter-spacing:-1px;line-height:1;">&#8358;64.59M</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Of &#8358;245.35M total YTD</div>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--border);border-left:5px solid var(--red);padding:16px 18px;">
-      <div style="font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;">Return Rate — YTD 2026</div>
-      <div style="font-size:1.6rem;font-weight:900;color:var(--red);letter-spacing:-1px;line-height:1;">35.79%</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px;">YTD returning customer rate</div>
-    </div>
-  </div>
 </div>
 
+<!-- 04 YTD -->
 <div data-period="ytd">
   <div class="seg-head"><span>04 // 2026 YTD Performance &amp; Target Tracking</span><span class="seg-badge sb-b">All Time 2026</span></div>
   <div class="tbl-wrap"><table>
-    <thead><tr><th>Agent</th><th>YTD Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th><th>% Target</th><th>Progress</th></tr></thead>
+    <thead><tr><th>Agent</th><th>YTD Revenue</th><th>Customers</th><th>Leads</th><th>Conv %</th><th>% of Target</th><th>Progress</th></tr></thead>
     <tbody>
-      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;104.89M</td><td class="k">46</td><td class="k">212</td><td class="r">21.70%</td><td class="r">11.22%</td><td><div class="prog"><div class="prog-fill" style="width:11.22%;background:var(--green);"></div></div></td></tr>
-      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;89.48M</td><td class="k">27</td><td class="k">143</td><td class="r">18.88%</td><td class="r">14.91%</td><td><div class="prog"><div class="prog-fill" style="width:14.91%;background:var(--red);"></div></div></td></tr>
-      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;49.62M</td><td class="k">18</td><td class="k">200</td><td class="r">9.00%</td><td class="r">7.52%</td><td><div class="prog"><div class="prog-fill" style="width:7.52%;background:#3730A3;"></div></div></td></tr>
-      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;1.36M</td><td class="k">2</td><td class="mu">NIL</td><td class="mu">0.00%</td><td class="r">0.50%</td><td><div class="prog"><div class="prog-fill" style="width:0.5%;background:var(--muted);"></div></div></td></tr>
-      <tr class="tr-total"><td>YTD TOTAL</td><td class="g">&#8358;245.35M</td><td class="k">93</td><td class="k">555</td><td class="r">16.76%</td><td></td><td></td></tr>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;114,083,307.50</td><td class="k">49</td><td class="k">214</td><td class="r">22.90%</td><td class="r">12.20%</td><td><div class="prog"><div class="prog-fill" style="width:12.20%;background:var(--green);"></div></div></td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;85,266,700</td><td class="k">26</td><td class="k">146</td><td class="r">17.81%</td><td class="r">14.21%</td><td><div class="prog"><div class="prog-fill" style="width:14.21%;background:var(--red);"></div></div></td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;49,908,224</td><td class="k">19</td><td class="k">209</td><td class="r">9.09%</td><td class="r">7.56%</td><td><div class="prog"><div class="prog-fill" style="width:7.56%;background:#3730A3;"></div></div></td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;1,357,825</td><td class="k">2</td><td class="mu">NIL</td><td class="mu">0.00%</td><td class="r">0.50%</td><td><div class="prog"><div class="prog-fill" style="width:0.5%;background:var(--muted);"></div></div></td></tr>
+      <tr class="tr-total"><td>YTD TOTAL</td><td class="g">&#8358;250,616,056.50</td><td class="k">96</td><td class="k">569</td><td class="r">&#8212;</td><td></td><td></td></tr>
     </tbody>
   </table></div>
+  <div class="return-box">
+    <div class="rb-item"><div class="rb-label">2026 Return Customers</div><div class="rb-val g">36</div></div>
+    <div class="rb-item"><div class="rb-label">Return Revenue</div><div class="rb-val g">&#8358;66,293,334</div></div>
+    <div class="rb-item"><div class="rb-label">Return %</div><div class="rb-val g">30.65%</div></div>
+    <div class="rb-item"><div class="rb-label">Note</div><div style="font-size:13px;font-weight:700;color:var(--muted);">30.65% of 2026 closures are returning customers</div></div>
+  </div>
 </div>
 
+<!-- 05 SALES TEAM VS BUSINESS -->
 <div data-period="ytd">
-  <div class="seg-head"><span>05 // Sales Team vs The Business (2026)</span></div>
+  <div class="seg-head"><span>05 // Sales Team vs The Business (2026 YTD)</span></div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Segment</th><th>Revenue</th><th>Contribution %</th></tr></thead>
     <tbody>
-      <tr><td class="td-name">Sales Team (All Agents)</td><td class="g">&#8358;245.35M</td><td class="g">96.87%</td></tr>
-      <tr><td class="td-name">The Business</td><td class="mu">&#8358;7.92M</td><td class="mu">3.13%</td></tr>
-      <tr class="tr-total"><td>TOTAL 2026</td><td class="g">&#8358;253.27M</td><td class="k">100%</td></tr>
+      <tr><td class="td-name">Sales Team (All Agents)</td><td class="g">&#8358;250,616,057</td><td class="g">95.65%</td></tr>
+      <tr><td class="td-name">The Business</td><td class="mu">&#8358;11,392,000</td><td class="mu">4.35%</td></tr>
+      <tr class="tr-total"><td>TOTAL 2026</td><td class="g">&#8358;262,008,057</td><td class="k">100%</td></tr>
     </tbody>
   </table></div>
 </div>
 
+<!-- 06 2025 VS 2026 -->
 <div data-period="ytd">
-  <div class="seg-head"><span>06 // Annual Comparative &mdash; 2025 vs 2026</span></div>
+  <div class="seg-head"><span>06 // Annual Comparative &#8212; 2025 vs 2026</span></div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Segment</th><th>2025 Full Year</th><th>2026 YTD</th><th>Gap</th><th>% Diff</th><th>Months Left</th></tr></thead>
     <tbody>
-      <tr><td class="td-name">Sales Team</td><td class="mu">&#8358;863.34M</td><td class="g">&#8358;245.35M</td><td class="r">&minus;&#8358;617.99M</td><td class="r">&minus;71.58%</td><td class="k">9</td></tr>
-      <tr><td class="td-name">The Business</td><td class="mu">&#8358;138.02M</td><td class="mu">&#8358;7.92M</td><td class="r">&minus;&#8358;130.10M</td><td class="r">&minus;94.26%</td><td class="k">9</td></tr>
+      <tr><td class="td-name">Sales Team</td><td class="mu">&#8358;863,343,002.41</td><td class="g">&#8358;250,616,057</td><td class="r">&#8722;&#8358;612,726,945.91</td><td class="r">&#8722;70.97%</td><td class="k">9</td></tr>
+      <tr><td class="td-name">The Business</td><td class="mu">&#8358;138,021,513.59</td><td class="mu">&#8358;11,392,000</td><td class="r">&#8722;&#8358;126,629,513.59</td><td class="r">&#8722;91.75%</td><td class="k">9</td></tr>
     </tbody>
   </table></div>
 </div>
 
+<!-- 07 ALL TIME -->
 <div data-period="alltime">
-  <div class="seg-head"><span>07 // Historical Audit &mdash; 2024 to Date</span><span class="seg-badge sb-b">3-Year View</span></div>
+  <div class="seg-head"><span>07 // Historical Audit &#8212; 2024 to Date</span><span class="seg-badge sb-b">3-Year View</span></div>
   <div class="tbl-wrap"><table>
     <thead><tr><th>Agent</th><th>Lifetime Revenue</th><th>Customers</th><th>Leads</th><th>3Y Annual Avg</th></tr></thead>
     <tbody>
-      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;538.53M</td><td class="k">214</td><td class="k">3,132</td><td class="g">&#8358;179.51M</td></tr>
-      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;512.90M</td><td class="k">242</td><td class="k">2,499</td><td class="g">&#8358;170.97M</td></tr>
-      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;512.70M</td><td class="k">198</td><td class="k">3,776</td><td class="g">&#8358;170.90M</td></tr>
-      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;57.94M</td><td class="k">40</td><td class="k">512</td><td class="mu">&#8358;19.31M</td></tr>
-      <tr class="tr-total"><td>ALL TIME TOTAL</td><td class="g">&#8358;1.622B</td><td class="k">694</td><td class="k">9,919</td><td class="g">&#8358;540.68M</td></tr>
+      <tr data-rep="Immaculate"><td class="td-name">Immaculate Imion</td><td class="g">&#8358;547,723,110.00</td><td class="k">216</td><td class="k">3,134</td><td class="g">&#8358;182,574,370.00</td></tr>
+      <tr data-rep="Patricia"><td class="td-name">Patricia Uchedienyi</td><td class="g">&#8358;513,194,264.50</td><td class="k">243</td><td class="k">2,508</td><td class="g">&#8358;171,064,754.83</td></tr>
+      <tr data-rep="Damilola"><td class="td-name">Damilola Akingboye</td><td class="g">&#8358;508,484,277.00</td><td class="k">197</td><td class="k">3,779</td><td class="g">&#8358;169,494,759.00</td></tr>
+      <tr data-rep="Jemila"><td class="td-name">Jemila Ibrahim</td><td class="mu">&#8358;57,942,601.00</td><td class="k">40</td><td class="k">512</td><td class="mu">&#8358;19,314,200.33</td></tr>
+      <tr class="tr-total"><td>ALL TIME TOTAL</td><td class="g">&#8358;1,627,344,252.50</td><td class="k">696</td><td class="k">9,933</td><td class="g">&#8358;542,448,084.16</td></tr>
     </tbody>
   </table></div>
 </div>
@@ -253,9 +260,6 @@ tr:last-child td{border-bottom:none;}
 </div>
 
 <script>
-function setPadding(){var hud=document.querySelector('.fixed-hud');if(hud)document.body.style.paddingTop=(hud.offsetHeight+36)+'px';}
-window.addEventListener('load',setPadding);
-window.addEventListener('resize',setPadding);
 function getFilters(){return{rep:document.getElementById('filterRep').value,period:document.getElementById('filterPeriod').value};}
 function applyFilters(){
   var f=getFilters(),any=f.rep!=='all'||f.period!=='all';
@@ -267,7 +271,7 @@ function applyFilters(){
   var parts=[],b=document.getElementById('fBadge');
   if(f.rep!=='all')parts.push(f.rep);
   if(f.period!=='all'){var l={march:'March 2026',lastmonth:'Last Month',ytd:'2026 YTD',alltime:'All Time'};parts.push(l[f.period]||f.period);}
-  if(!b){b=document.createElement('span');b.id='fBadge';b.style.cssText='font-size:11px;font-weight:700;color:var(--red);padding:3px 8px;background:#FFF0F2;border-radius:3px;border:1px solid rgba(176,16,32,.2);white-space:nowrap;';document.getElementById('filterBar').insertBefore(b,document.getElementById('resetBtn'));}
+  if(!b){b=document.createElement('span');b.id='fBadge';b.style.cssText='font-size:11px;font-weight:800;color:var(--red);padding:3px 8px;background:#FFF0F2;border-radius:3px;border:1px solid rgba(176,16,32,.2);white-space:nowrap;';document.getElementById('filterBar').insertBefore(b,document.getElementById('resetBtn'));}
   b.textContent=parts.length?'◆ '+parts.join(' · ').toUpperCase():'';
   b.style.display=parts.length?'inline':'none';
   setTimeout(setPadding,50);
