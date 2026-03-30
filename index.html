@@ -7,34 +7,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #050505;
-            --brand-red: #B22222; 
-            --brand-red-glow: #FF3131;
-            --accent-gold: #D4AF37; 
-            --profit-green: #00FF7F;
-            --loss-red: #FF4D4D;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(178, 34, 34, 0.4);
-            --text-white: #FFFFFF;
+            --bg-white: #FFFFFF;
+            --em-red: #E31E24; /* Authentic EnergyMall Red */
+            --em-red-light: #FFEBEC;
+            --profit-green: #2E7D32;
+            --loss-red: #D32F2F;
+            --text-dark: #1A1A1A;
+            --text-gray: #666666;
+            --border-light: #EEEEEE;
         }
 
         body {
-            background-color: var(--bg-deep);
-            color: var(--text-white);
+            background-color: var(--bg-white);
+            color: var(--text-dark);
             font-family: 'Inter', sans-serif;
             margin: 0;
-            padding-top: 260px; 
+            padding-top: 240px; 
         }
 
         /* Continuous Scrolling Ticker */
         .ticker-wrap {
             position: fixed; top: 0; width: 100%; height: 40px;
-            background: var(--brand-red); z-index: 1001; overflow: hidden;
-            display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.2);
+            background: var(--em-red); z-index: 1001; overflow: hidden;
+            display: flex; align-items: center;
         }
         .ticker {
             display: inline-block; white-space: nowrap;
-            animation: ticker-move 30s linear infinite; font-weight: 800; font-size: 12px; text-transform: uppercase;
+            animation: ticker-move 30s linear infinite; font-weight: 800; font-size: 12px; 
+            text-transform: uppercase; color: white;
         }
         @keyframes ticker-move {
             0% { transform: translateX(100%); }
@@ -44,60 +44,61 @@
 
         header {
             position: fixed; top: 40px; left: 0; right: 0;
-            background: linear-gradient(180deg, #120202 0%, #050505 100%);
-            border-bottom: 2px solid var(--brand-red);
-            padding: 20px; z-index: 1000; box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            background: white;
+            border-bottom: 3px solid var(--em-red);
+            padding: 20px; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .logo-area h1 { font-family: 'Montserrat'; font-weight: 800; margin: 0; font-size: 22px; color: var(--brand-red-glow); text-transform: uppercase; }
-        .logo-area span { color: white; font-size: 10px; text-transform: uppercase; letter-spacing: 2px; display: block; }
+        .logo-area h1 { font-family: 'Montserrat'; font-weight: 800; margin: 0; font-size: 24px; color: var(--em-red); text-transform: uppercase; }
+        .logo-area span { color: var(--text-gray); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; display: block; font-weight: 700; }
 
-        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-        .kpi-card { background: var(--glass); border: 1px solid var(--border); padding: 12px; border-radius: 8px; text-align: center; }
-        .kpi-label { font-size: 9px; color: var(--text-white); text-transform: uppercase; display: block; margin-bottom: 5px; font-weight: 700; }
-        .kpi-val { font-size: 18px; font-weight: 700; font-family: 'Montserrat'; color: var(--profit-green); }
+        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .kpi-card { background: var(--em-red-light); border: 1px solid rgba(227, 30, 36, 0.1); padding: 12px; border-radius: 8px; text-align: center; }
+        .kpi-label { font-size: 9px; color: var(--em-red); text-transform: uppercase; display: block; margin-bottom: 5px; font-weight: 800; }
+        .kpi-val { font-size: 20px; font-weight: 800; font-family: 'Montserrat'; color: var(--text-dark); }
 
         .container { max-width: 1250px; margin: 0 auto; padding: 20px; }
-        .segment { background: #0A0A0A; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 30px; overflow: hidden; }
-        .segment-title { background: rgba(178, 34, 34, 0.2); padding: 15px 20px; border-bottom: 1px solid var(--border); }
-        .segment-title h2 { color: var(--brand-red-glow); font-size: 14px; margin: 0; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; }
+        .segment { background: white; border-radius: 12px; border: 1px solid var(--border-light); margin-bottom: 30px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .segment-title { background: #F9F9F9; padding: 15px 20px; border-bottom: 2px solid var(--em-red); }
+        .segment-title h2 { color: var(--em-red); font-size: 14px; margin: 0; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
 
         .table-wrapper { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; }
-        th { text-align: left; padding: 15px 20px; font-size: 10px; color: #888; text-transform: uppercase; background: rgba(0,0,0,0.4); }
-        td { padding: 12px 20px; border-bottom: 1px solid #1a1a1a; font-size: 13px; color: var(--text-white); }
+        th { text-align: left; padding: 15px 20px; font-size: 10px; color: var(--text-gray); text-transform: uppercase; background: #FAFAFA; border-bottom: 1px solid var(--border-light); }
+        td { padding: 14px 20px; border-bottom: 1px solid var(--border-light); font-size: 13px; color: var(--text-dark); }
 
         .rev-green { color: var(--profit-green) !important; font-weight: 700; }
-        .metric-white { color: var(--text-white) !important; }
-        .bonus-gold { color: var(--accent-gold); font-weight: 700; }
         .val-high { color: var(--profit-green); font-weight: 800; }
         .val-low { color: var(--loss-red); font-weight: 800; }
-        .highlight-row { background: rgba(178, 34, 34, 0.08); }
-        .sub-heading { background: rgba(255,255,255,0.03); font-weight: 700; }
+        .highlight-row { background: #FFF9F9; }
+        .sub-heading { background: #F5F5F5; font-weight: 700; }
+        
+        .badge { padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+        .badge-red { background: var(--em-red); color: white; }
     </style>
 </head>
 <body>
 
 <div class="ticker-wrap">
     <div class="ticker">
-        <span>ENERGAYMALL TEAM COMMAND 2026</span>
-        <span>TOTAL MARCH REVENUE: ₦79,098,250</span>
-        <span>IMMACULATE OSEREME IMION LEADING MARCH WITH ₦46.54M</span>
-        <span>SALES TEAM YTD: ₦297,764,806</span>
+        <span>ENERGYMALL TEAM COMMAND 2026</span>
+        <span>MARCH PERFORMANCE AUDIT</span>
+        <span>TOTAL REVENUE: ₦79,098,250</span>
+        <span>IMMACULATE OSEREME IMION LEADING: ₦46.54M</span>
         <span>RETURN CUSTOMER REVENUE: ₦39,577,000</span>
     </div>
 </div>
 
 <header>
     <div class="header-top">
-        <div class="logo-area"><h1>ENERGYMALL SALES TEAM</h1><span>Strategic Operational Report</span></div>
-        <div style="text-align: right;"><span style="font-size: 12px; color: var(--accent-gold);">BUSINESS YTD: ₦317.74M</span></div>
+        <div class="logo-area"><h1>ENERGYMALL</h1><span>SALES TEAM STRATEGIC REPORT</span></div>
+        <div style="text-align: right;"><span class="badge badge-red">BUSINESS YTD: ₦317.74M</span></div>
     </div>
     <div class="kpi-row">
         <div class="kpi-card"><span class="kpi-label">Mar Total Revenue</span><span class="kpi-val">₦79.09M</span></div>
         <div class="kpi-card"><span class="kpi-label">Team Revenue</span><span class="kpi-val">₦67.04M</span></div>
-        <div class="kpi-card"><span class="kpi-label">Expected Bonus</span><span class="kpi-val" style="color:var(--accent-gold)">₦85,043</span></div>
-        <div class="kpi-card"><span class="kpi-label">Total Leads</span><span class="kpi-val metric-white">329</span></div>
+        <div class="kpi-card"><span class="kpi-label">Return Rev. %</span><span class="kpi-val" style="color: var(--em-red);">41.46%</span></div>
+        <div class="kpi-card"><span class="kpi-label">Total Leads</span><span class="kpi-val">329</span></div>
     </div>
 </header>
 
@@ -111,29 +112,11 @@
                     <tr><th>Representative</th><th>Revenue</th><th>Bonus</th><th>Conv. %</th><th>Leads</th><th>Customers</th></tr>
                 </thead>
                 <tbody>
-                    <tr class="highlight-row"><td>Immaculate Osereme Imion</td><td class="rev-green">₦46,544,000</td><td class="bonus-gold">₦54,544</td><td class="metric-white">14.91%</td><td class="metric-white">114</td><td class="metric-white">17</td></tr>
-                    <tr><td>Damilola Abidemi Akingboye</td><td class="rev-green">₦10,980,500</td><td class="bonus-gold">₦20,980</td><td class="metric-white">10.81%</td><td class="metric-white">74</td><td class="metric-white">8</td></tr>
-                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦9,222,750</td><td class="bonus-gold">₦9,222</td><td class="metric-white">7.09%</td><td class="metric-white">141</td><td class="metric-white">10</td></tr>
-                    <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="rev-green">₦296,000</td><td class="bonus-gold">₦296</td><td class="metric-white">0.00%</td><td class="metric-white">0</td><td class="metric-white">1</td></tr>
-                    <tr class="sub-heading"><td>TOTAL TEAM</td><td class="rev-green">₦67,043,250</td><td class="bonus-gold">₦85,043</td><td>-</td><td class="metric-white">329</td><td class="metric-white">36</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="segment">
-        <div class="segment-title"><h2>March Weekly Trajectory</h2></div>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr><th>Period</th><th>Revenue</th><th>Customers</th><th>Leads</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Week 1</td><td class="rev-green">₦14,624,500</td><td class="metric-white">12</td><td class="metric-white">60</td></tr>
-                    <tr><td>Week 2</td><td class="rev-green">₦27,464,650</td><td class="metric-white">13</td><td class="metric-white">62</td></tr>
-                    <tr><td>Week 3</td><td class="rev-green">₦20,970,100</td><td class="metric-white">9</td><td class="metric-white">100</td></tr>
-                    <tr><td>Week 4</td><td class="rev-green">₦16,039,000</td><td class="metric-white">10</td><td class="metric-white">101</td></tr>
-                    <tr><td>Week 5</td><td class="rev-green">₦0</td><td class="metric-white">0</td><td class="metric-white">5</td></tr>
+                    <tr class="highlight-row"><td><strong>Immaculate Osereme Imion</strong></td><td class="rev-green">₦46,544,000</td><td>₦54,544</td><td>14.91%</td><td>114</td><td>17</td></tr>
+                    <tr><td>Damilola Abidemi Akingboye</td><td class="rev-green">₦10,980,500</td><td>₦20,980</td><td>10.81%</td><td>74</td><td>8</td></tr>
+                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦9,222,750</td><td>₦9,222</td><td>7.09%</td><td>141</td><td>10</td></tr>
+                    <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="rev-green">₦296,000</td><td>₦296</td><td>0.00%</td><td>0</td><td>1</td></tr>
+                    <tr class="sub-heading"><td>TOTAL TEAM</td><td class="rev-green">₦67,043,250</td><td>₦85,043</td><td>-</td><td>329</td><td>36</td></tr>
                 </tbody>
             </table>
         </div>
@@ -144,39 +127,30 @@
         <div class="table-wrapper">
             <table>
                 <thead>
-                    <tr><th>Staff</th><th>Total Revenue</th><th>Customers</th><th>Leads</th><th>Conversion</th><th>Target Achieved</th></tr>
+                    <tr><th>Staff</th><th>Total Revenue</th><th>Customers</th><th>Conversion</th><th>Target Achieved</th></tr>
                 </thead>
                 <tbody>
-                    <tr class="highlight-row"><td>Immaculate Osereme Imion</td><td class="rev-green">₦144,527,807</td><td class="metric-white">56</td><td class="metric-white">294</td><td class="metric-white">19.05%</td><td class="val-low">15.46%</td></tr>
-                    <tr><td>Damilola Abidemi Akingboye</td><td class="rev-green">₦95,879,200</td><td class="metric-white">32</td><td class="metric-white">204</td><td class="metric-white">15.69%</td><td class="val-low">15.98%</td></tr>
-                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦55,703,974</td><td class="metric-white">26</td><td class="metric-white">312</td><td class="metric-white">8.33%</td><td class="val-low">8.44%</td></tr>
-                    <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="rev-green">₦1,653,825</td><td class="metric-white">3</td><td class="metric-white">0</td><td class="metric-white">0.00%</td><td class="val-low">0.61%</td></tr>
+                    <tr><td>Immaculate Osereme Imion</td><td class="rev-green">₦144,527,807</td><td>56</td><td>19.05%</td><td class="val-low">15.46%</td></tr>
+                    <tr><td>Damilola Abidemi Akingboye</td><td class="rev-green">₦95,879,200</td><td>32</td><td>15.69%</td><td class="val-low">15.98%</td></tr>
+                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦55,703,974</td><td>26</td><td>8.33%</td><td class="val-low">8.44%</td></tr>
+                    <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="rev-green">₦1,653,825</td><td>3</td><td>0.00%</td><td class="val-low">0.61%</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 
     <div class="segment">
-        <div class="segment-title"><h2>Return Customer Retention</h2></div>
-        <div style="display: flex; justify-content: space-around; padding: 25px; text-align: center; flex-wrap: wrap; gap: 20px;">
-            <div><span class="kpi-label">YTD Return Revenue</span><span class="kpi-val" style="font-size: 24px;">₦95.29M</span></div>
-            <div><span class="kpi-label">Total Return Cust.</span><span class="kpi-val metric-white" style="font-size: 24px;">46</span></div>
-            <div><span class="kpi-label">Return Rev %</span><span class="kpi-val val-low" style="font-size: 24px;">32.24%</span></div>
-        </div>
-    </div>
-
-    <div class="segment">
-        <div class="segment-title"><h2>Benchmarking: 2024 - Date (3-Year Avg)</h2></div>
+        <div class="segment-title"><h2>March Weekly Breakdown</h2></div>
         <div class="table-wrapper">
             <table>
                 <thead>
-                    <tr><th>Representative</th><th>Total Revenue</th><th>Customers</th><th>Leads</th><th>Annual Avg</th></tr>
+                    <tr><th>Period</th><th>Revenue</th><th>Customers</th><th>Leads</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>Immaculate Osereme Imion</td><td class="rev-green">₦578,167,610</td><td class="metric-white">220</td><td class="metric-white">3,214</td><td class="rev-green">₦192.72M</td></tr>
-                    <tr><td>Damilola Abidemi Akingboye</td><td class="rev-green">₦519,096,777</td><td class="metric-white">202</td><td class="metric-white">3,837</td><td class="rev-green">₦173.03M</td></tr>
-                    <tr><td>Patricia Uchedienyi</td><td class="rev-green">₦518,990,014</td><td class="metric-white">250</td><td class="metric-white">2,611</td><td class="rev-green">₦172.99M</td></tr>
-                    <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="rev-green">₦58,238,601</td><td class="metric-white">41</td><td class="metric-white">512</td><td class="rev-green">₦19.41M</td></tr>
+                    <tr><td>Week 1</td><td class="rev-green">₦14,624,500</td><td>12</td><td>60</td></tr>
+                    <tr><td>Week 2</td><td class="rev-green">₦27,464,650</td><td>13</td><td>62</td></tr>
+                    <tr><td>Week 3</td><td class="rev-green">₦20,970,100</td><td>9</td><td>100</td></tr>
+                    <tr><td>Week 4</td><td class="rev-green">₦16,039,000</td><td>10</td><td>101</td></tr>
                 </tbody>
             </table>
         </div>
