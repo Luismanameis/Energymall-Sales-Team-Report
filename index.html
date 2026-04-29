@@ -27,7 +27,6 @@
             line-height: 1.2;
         }
 
-        /* Access Control */
         #auth-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--bg-light); z-index: 9999;
@@ -49,7 +48,6 @@
 
         #main-content { display: none; }
 
-        /* Scrolling Ticker */
         .ticker-wrap {
             position: fixed; top: 0; width: 100%; height: 40px;
             background: var(--em-dark); z-index: 2000; overflow: hidden;
@@ -63,7 +61,6 @@
         @keyframes ticker-move { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .ticker span { margin: 0 30px; }
 
-        /* Fixed Performance Header */
         header {
             position: fixed; top: 40px; left: 0; right: 0;
             background: white; border-bottom: 1px solid var(--border);
@@ -78,14 +75,12 @@
         .kpi-label { font-size: 8px; text-transform: uppercase; font-weight: 800; color: var(--text-muted); display: block; margin-bottom: 2px; }
         .kpi-val { font-size: 13px; font-weight: 900; color: var(--em-dark); font-variant-numeric: tabular-nums; }
         
-        /* Grid System */
         .container { max-width: 1400px; margin: 0 auto; padding: 15px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 15px; }
         .segment { background: white; border-radius: 12px; padding: 20px; border: 1px solid var(--border); grid-column: span 12; overflow: hidden; }
         .half { grid-column: span 6; }
 
         .segment-header h2 { color: var(--em-red); font-size: 13px; margin: 0 0 15px 0; text-transform: uppercase; font-weight: 900; border-left: 3px solid var(--em-red); padding-left: 8px; }
 
-        /* Tables */
         .scroll-container { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
         th { text-align: left; padding: 12px 10px; font-size: 9px; color: var(--text-muted); text-transform: uppercase; border-bottom: 2px solid #F0F0F0; }
@@ -116,7 +111,7 @@
 <div id="main-content">
     <div class="ticker-wrap">
         <div class="ticker">
-            <span>YTD CUSTOMERS 2026: 176</span> <span>RETURN CUSTOMER %: 36.86%</span> <span>APRIL REVENUE: ₦90,547,080</span> <span>SALES TEAM YTD: ₦390,920,937</span> <span>TARGET REMAINING: ₦472,422,065</span>
+            <span>YTD CUSTOMERS 2026: 177</span> <span>RETURN CUSTOMER %: 36.65%</span> <span>APRIL REVENUE: ₦92,377,080</span> <span>SALES TEAM YTD: ₦392,750,937</span> <span>TARGET REMAINING: ₦470,592,065</span>
         </div>
     </div>
 
@@ -143,12 +138,12 @@
                         <tr><th>Representative</th><th>Revenue</th><th>Expected Bonus</th><th>Customers</th><th>Leads</th><th>Conv.</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Patricia Uchedienyi</td><td>₦16,240,680.00</td><td class="m-gold">₦16,240.68</td><td>13</td><td>162</td><td class="m-red">8.02%</td></tr>
-                        <tr><td>Damilola A. Akingboye</td><td>₦27,768,000.00</td><td class="m-gold">₦27,768.00</td><td>10</td><td>60</td><td class="m-green">16.67%</td></tr>
-                        <tr><td>Immaculate O. Imion</td><td>₦38,888,450.00</td><td class="m-gold">₦38,888.45</td><td>19</td><td>114</td><td class="m-green">16.67%</td></tr>
+                        <tr><td>Patricia Uchedienyi</td><td>₦18,070,680.00</td><td class="m-gold">₦18,070.68</td><td>14</td><td>168</td><td class="m-red">8.33%</td></tr>
+                        <tr><td>Damilola A. Akingboye</td><td>₦27,768,000.00</td><td class="m-gold">₦27,768.00</td><td>10</td><td>63</td><td class="m-green">15.87%</td></tr>
+                        <tr><td>Immaculate O. Imion</td><td>₦38,888,450.00</td><td class="m-gold">₦38,888.45</td><td>19</td><td>120</td><td class="m-green">15.83%</td></tr>
                         <tr><td>Jemila O. Ibrahim</td><td>₦942,000.00</td><td class="m-gold">₦942.00</td><td>1</td><td>-</td><td class="m-red">0.00%</td></tr>
-                        <tr style="background:#F9F9F9; font-weight:900;"><td>SALES TEAM TOTAL</td><td>₦83,839,130.00</td><td class="m-gold">₦83,839.13</td><td>43</td><td>336</td><td class="m-green">12.80%</td></tr>
-                        <tr style="background:#FFF0F0; font-weight:900;"><td>THIS MONTH TOTAL (ALL)</td><td>₦90,547,080.00</td><td>-</td><td class="m-green">45</td><td>336</td><td class="m-green">13.39%</td></tr>
+                        <tr style="background:#F9F9F9; font-weight:900;"><td>SALES TEAM TOTAL</td><td>₦85,669,130.00</td><td class="m-gold">₦85,669.13</td><td>44</td><td>351</td><td class="m-green">12.53%</td></tr>
+                        <tr style="background:#FFF0F0; font-weight:900;"><td>THIS MONTH TOTAL (ALL)</td><td>₦92,377,080.00</td><td>-</td><td class="m-green">46</td><td>351</td><td class="m-green">13.10%</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -164,7 +159,7 @@
                         <tr><td>Week 2</td><td>₦19,239,100.00</td><td>10</td><td>68</td></tr>
                         <tr><td>Week 3</td><td>₦34,914,220.00</td><td>20</td><td>103</td></tr>
                         <tr><td>Week 4</td><td>₦12,067,750.00</td><td>12</td><td>103</td></tr>
-                        <tr><td>Week 5</td><td>₦0.00</td><td>0</td><td>20</td></tr>
+                        <tr><td>Week 5</td><td>₦4,656,200.00</td><td>3</td><td>35</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -176,7 +171,7 @@
                 <p><span class="kpi-label" style="color:#aaa;">YTD Return Revenue</span><strong style="font-size:24px; color:var(--em-red); display:block; margin-top:5px;">₦135,638,834.00</strong></p>
                 <div style="display:flex; justify-content:space-between; border-top:1px solid #444; padding-top:15px; margin-top:15px;">
                     <span>65 Customers</span>
-                    <span class="m-green" style="font-weight:900;">33.85% YTD Rate</span>
+                    <span class="m-green" style="font-weight:900;">33.65% YTD Rate</span>
                 </div>
             </div>
         </div>
@@ -191,8 +186,8 @@
                     <tbody>
                         <tr><td>January</td><td>₦36,264,512</td><td>₦41,821,100</td><td>₦36,183,773</td><td>₦1,653,825</td></tr>
                         <tr><td>February</td><td>₦10,216,712</td><td>₦43,077,600</td><td>₦61,800,034</td><td>-</td></tr>
-                        <tr><td>March</td><td>₦10,237,750</td><td>₦18,452,500</td><td>₦47,374,000</td><td>-</td></tr>
-                        <tr style="background:#F9F9F9;"><td>April</td><td>₦16,240,680</td><td>₦27,768,000</td><td>₦38,888,450</td><td>₦942,000</td></tr>
+                        <tr><td>March</td><td>₦10,237,750</td><td>₦18,452,500</td><td>₦47,374,000</td><td>₦296,000</td></tr>
+                        <tr style="background:#F9F9F9;"><td>April</td><td>₦18,070,680</td><td>₦27,768,000</td><td>₦38,888,450</td><td>₦942,000</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -204,9 +199,9 @@
                 <table>
                     <thead><tr><th>Representative</th><th>Total Revenue</th><th>Total Customers</th><th>Total Leads</th><th>3-Year Annual Avg</th></tr></thead>
                     <tbody>
-                        <tr><td>Immaculate O. Imion</td><td>₦617,886,060</td><td>233</td><td>3,333</td><td class="m-gold">₦205,962,020</td></tr>
-                        <tr><td>Damilola A. Akingboye</td><td>₦554,336,777</td><td>212</td><td>3,909</td><td class="m-gold">₦184,778,925</td></tr>
-                        <tr><td>Patricia Uchedienyi</td><td>₦536,245,694</td><td>265</td><td>2,785</td><td class="m-gold">₦178,748,564</td></tr>
+                        <tr><td>Immaculate O. Imion</td><td>₦617,886,060</td><td>233</td><td>3,339</td><td class="m-gold">₦205,962,020</td></tr>
+                        <tr><td>Damilola A. Akingboye</td><td>₦554,336,777</td><td>212</td><td>3,912</td><td class="m-gold">₦184,778,925</td></tr>
+                        <tr><td>Patricia Uchedienyi</td><td>₦538,075,694</td><td>266</td><td>2,791</td><td class="m-gold">₦179,358,564</td></tr>
                         <tr><td>Jemila O. Ibrahim</td><td>₦59,180,601</td><td>42</td><td>512</td><td class="m-gold">₦19,726,867</td></tr>
                     </tbody>
                 </table>
@@ -226,11 +221,11 @@
     }
 
     function initLooping() {
-        startTimer('ytd-rev-loop', 418855387, 0, '₦', true);
-        startTimer('cust-loop', 176, 0, '', false);
-        startTimer('ret-loop', 36.86, 2, '%', false);
-        startTimer('month-loop', 90547080, 0, '₦', true);
-        startTimer('today-loop', 45, 0, '', false);
+        startTimer('ytd-rev-loop', 420685387, 0, '₦', true);
+        startTimer('cust-loop', 177, 0, '', false);
+        startTimer('ret-loop', 36.65, 2, '%', false);
+        startTimer('month-loop', 92377080, 0, '₦', true);
+        startTimer('today-loop', 46, 0, '', false);
     }
 
     function startTimer(id, target, decimals, symbol, isPrefix) {
