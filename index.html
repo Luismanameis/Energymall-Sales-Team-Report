@@ -90,6 +90,10 @@
         .m-green { color: var(--profit-green); }
         .m-gold { color: var(--em-gold); font-weight: 800; }
 
+        /* Target Progress Bar Styles */
+        .progress-box { background: #f0f0f0; height: 6px; border-radius: 3px; margin-top: 5px; position: relative; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--em-red); border-radius: 3px; transition: width 1s ease-in-out; }
+
         @media (max-width: 850px) {
             body { padding-top: 320px; }
             .kpi-row { grid-template-columns: repeat(2, 1fr); }
@@ -111,7 +115,7 @@
 <div id="main-content">
     <div class="ticker-wrap">
         <div class="ticker">
-            <span>YTD CUSTOMERS 2026: 191</span> <span>RETURN CUSTOMER %: 34.25%</span> <span>SALES TEAM YTD: ₦407,697,937</span> <span>BUSINESS CONTRIBUTION: 6.41%</span> <span>AVG CONVERSION: 14.53%</span>
+            <span>YTD CUSTOMERS 2026: 191</span> <span>RETURN CUSTOMER %: 36.24%</span> <span>SALES TEAM YTD: ₦407,697,937</span> <span>BUSINESS CONTRIBUTION: 6.41%</span> <span>AVG CONVERSION: 14.53%</span>
         </div>
     </div>
 
@@ -130,6 +134,48 @@
 
     <div class="container">
         
+        <!-- TARGET TRACKER SEGMENT -->
+        <div class="segment">
+            <div class="segment-header"><h2>2026 Target Progress & Daily Reach</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead>
+                        <tr><th>Representative</th><th>2026 Target</th><th>Achieved YTD</th><th>Reach %</th><th>Visual Progress</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Patricia Uchedienyi</td>
+                            <td>₦330,000,000</td>
+                            <td>₦81,395,654</td>
+                            <td class="m-red">12.33%</td>
+                            <td><div class="progress-box"><div class="progress-fill" style="width: 12.33%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Damilola A. Akingboye</td>
+                            <td>₦300,000,000</td>
+                            <td>₦139,640,200</td>
+                            <td class="m-red">23.27%</td>
+                            <td><div class="progress-box"><div class="progress-fill" style="width: 23.27%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Immaculate O. Imion</td>
+                            <td>₦455,000,000</td>
+                            <td>₦184,066,257</td>
+                            <td class="m-red">19.69%</td>
+                            <td><div class="progress-box"><div class="progress-fill" style="width: 19.69%;"></div></div></td>
+                        </tr>
+                        <tr>
+                            <td>Jemila O. Ibrahim</td>
+                            <td>₦90,000,000</td>
+                            <td>₦2,595,825</td>
+                            <td class="m-red">0.96%</td>
+                            <td><div class="progress-box"><div class="progress-fill" style="width: 0.96%;"></div></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="segment">
             <div class="segment-header"><h2>May 2026: Sales & Bonus Audit</h2></div>
             <div class="scroll-container">
@@ -143,23 +189,20 @@
                         <tr><td>Immaculate O. Imion</td><td>₦3,205,000.00</td><td class="m-gold">₦3,205.00</td><td>3</td><td>23</td><td class="m-green">13.04%</td></tr>
                         <tr><td>Jemila O. Ibrahim</td><td>₦0.00</td><td class="m-gold">₦0.00</td><td>0</td><td>0</td><td class="m-red">0.00%</td></tr>
                         <tr style="background:#F9F9F9; font-weight:900;"><td>SALES TEAM TOTAL</td><td>₦9,798,000.00</td><td class="m-gold">₦9,798.00</td><td>9</td><td>41</td><td class="m-green">21.95%</td></tr>
-                        <tr style="background:#FFF0F0; font-weight:900;"><td>THIS MONTH TOTAL (ALL)</td><td>₦9,798,000.00</td><td>-</td><td class="m-green">9</td><td>41</td><td class="m-green">21.95%</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
         <div class="segment half">
-            <div class="segment-header"><h2>May Weekly Breakdown</h2></div>
+            <div class="segment-header"><h2>This Month (May) Weekly</h2></div>
             <div class="scroll-container">
                 <table>
                     <thead><tr><th>Period</th><th>Revenue</th><th>Customers</th><th>Leads</th></tr></thead>
                     <tbody>
                         <tr><td>Week 1</td><td>₦6,653,000.00</td><td>7</td><td>41</td></tr>
-                        <tr><td>Week 2</td><td>₦3,145,000.00</td><td>2</td><td>0</td></tr>
-                        <tr><td>Week 3</td><td>₦0.00</td><td>0</td><td>0</td></tr>
-                        <tr><td>Week 4</td><td>₦0.00</td><td>0</td><td>0</td></tr>
-                        <tr class="total-row" style="font-weight: 800; border-top: 2px solid #EEE;"><td>TOTAL</td><td>₦9,798,000.00</td><td>9</td><td>41</td></tr>
+                        <tr><td>Week 2</td><td>₦0.00</td><td>0</td><td>0</td></tr>
+                        <tr class="total-row" style="font-weight: 800; border-top: 2px solid #EEE;"><td>TOTAL</td><td>₦6,653,000.00</td><td>7</td><td>41</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -173,24 +216,6 @@
                     <span>66 Customers</span>
                     <span class="m-green" style="font-weight:900;">34.25% YTD Rate</span>
                 </div>
-            </div>
-        </div>
-
-        <div class="segment">
-            <div class="segment-header"><h2>2026 Monthly Matrix (Revenue per Rep)</h2></div>
-            <div class="scroll-container">
-                <table>
-                    <thead>
-                        <tr><th>Month</th><th>Patricia</th><th>Damilola</th><th>Immaculate</th><th>Jemila</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>January</td><td>₦36,264,512</td><td>₦41,821,100</td><td>₦36,183,773</td><td>₦1,653,825</td></tr>
-                        <tr><td>February</td><td>₦10,216,712</td><td>₦43,077,600</td><td>₦52,800,034</td><td>-</td></tr>
-                        <tr><td>March</td><td>₦10,237,750</td><td>₦18,452,500</td><td>₦47,374,000</td><td>-</td></tr>
-                        <tr><td>April</td><td>₦18,780,680</td><td>₦35,592,000</td><td>₦44,503,450</td><td>₦942,000</td></tr>
-                        <tr style="background:#F9F9F9;"><td>May (MTD)</td><td>₦5,896,000</td><td>₦697,000</td><td>₦3,205,000</td><td>₦0</td></tr>
-                    </tbody>
-                </table>
             </div>
         </div>
 
@@ -224,7 +249,7 @@
     function initLooping() {
         startTimer('ytd-rev-loop', 435632387, 0, '₦', true);
         startTimer('cust-loop', 191, 0, '', false);
-        startTimer('ret-loop', 34.25, 2, '%', false);
+        startTimer('ret-loop', 36.24, 2, '%', false);
         startTimer('month-loop', 9798000, 0, '₦', true);
         startTimer('today-loop', 9, 0, '', false);
     }
