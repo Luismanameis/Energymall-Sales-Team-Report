@@ -122,13 +122,13 @@
     <header>
         <div class="header-top">
             <div class="logo-area"><h1>ENERGYMALL</h1><span>COMMAND DASHBOARD 2026</span></div>
-            <div style="text-align: right;"><span class="kpi-label" style="color:var(--em-red);">YTD REVENUE (TOTAL)</span><br><span style="font-size: 16px; font-weight: 900; color: var(--em-red);">₦475.03M</span></div>
+            <div style="text-align: right;"><span class="kpi-label" style="color:var(--em-red);">YTD REVENUE (TOTAL)</span><br><span id="ytd-rev-loop" style="font-size: 16px; font-weight: 900; color: var(--em-red);">₦0.00</span></div>
         </div>
         <div class="kpi-row">
-            <div class="kpi-card"><span class="kpi-label">YTD Customers (2026)</span><span class="kpi-val">208</span></div>
-            <div class="kpi-card"><span class="kpi-label">Avg Return % (YTD)</span><span class="kpi-val">32.30%</span></div>
-            <div class="kpi-card"><span class="kpi-label">Month Rev (May)</span><span class="kpi-val m-green">₦49.20M</span></div>
-            <div class="kpi-card"><span class="kpi-label">Month Cust. (May)</span><span class="kpi-val m-green">26</span></div>
+            <div class="kpi-card"><span class="kpi-label">YTD Customers (2026)</span><span class="kpi-val" id="cust-loop">0</span></div>
+            <div class="kpi-card"><span class="kpi-label">Avg Return % (YTD)</span><span class="kpi-val" id="ret-loop">0.00%</span></div>
+            <div class="kpi-card"><span class="kpi-label">Month Rev (May)</span><span class="kpi-val m-green" id="month-loop">₦0.00</span></div>
+            <div class="kpi-card"><span class="kpi-label">Month Cust. (May)</span><span class="kpi-val m-green" id="today-loop">0</span></div>
         </div>
     </header>
 
@@ -239,7 +239,7 @@
             </div>
         </div>
 
-        <!-- NEW: LAST MONTH BREAKDOWN (APRIL) -->
+        <!-- LAST MONTH BREAKDOWN (APRIL) -->
         <div class="segment">
             <div class="segment-header"><h2>Last Month Performance (April)</h2></div>
             <div class="scroll-container">
@@ -255,7 +255,7 @@
             </div>
         </div>
 
-        <!-- NEW: ALL TIME YTD LEAD HANDLE & CLOSURE -->
+        <!-- ALL TIME YTD LEAD HANDLE & CLOSURE -->
         <div class="segment">
             <div class="segment-header"><h2>YTD Lead Management & Conversions (2026)</h2></div>
             <div class="scroll-container">
@@ -272,7 +272,7 @@
             </div>
         </div>
 
-        <!-- NEW: SALES TEAM VS THE BUSINESS SHARE -->
+        <!-- SALES TEAM VS THE BUSINESS SHARE -->
         <div class="segment half">
             <div class="segment-header"><h2>Sales Team vs. The Business Contribution</h2></div>
             <div class="scroll-container">
@@ -287,7 +287,7 @@
             </div>
         </div>
 
-        <!-- NEW: YEAR-OVER-YEAR COMPARATIVE METRICS -->
+        <!-- YEAR-OVER-YEAR COMPARATIVE METRICS -->
         <div class="segment half">
             <div class="segment-header"><h2>Year-Over-Year Variance (2025 vs 2026)</h2></div>
             <div class="scroll-container">
@@ -317,7 +317,7 @@
             </div>
         </div>
 
-        <!-- NEW: QUARTERLY MATRIX BREAKDOWN -->
+        <!-- QUARTERLY MATRIX BREAKDOWN -->
         <div class="segment">
             <div class="segment-header"><h2>2026 Financial Quarters Matrix</h2></div>
             <div class="scroll-container">
@@ -333,7 +333,7 @@
             </div>
         </div>
 
-        <!-- NEW: DETAILED MONTHLY HISTORICAL ARCHIVE -->
+        <!-- DETAILED MONTHLY HISTORICAL ARCHIVE -->
         <div class="segment">
             <div class="segment-header"><h2>2026 Rep Performance Logs (January - May Archive)</h2></div>
             <div class="scroll-container">
@@ -391,9 +391,65 @@
         if (inputCode === 'eng96') {
             document.getElementById('auth-overlay').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
+            initLooping();
         } else {
             alert('INVALID CODE');
         }
+    }
+
+    function initLooping() {
+        // Runs the counters with a 4-second delay before restarting the counting sequence
+        startTimer('ytd-rev-loop', 475030888, 0, '₦', true);
+        startTimer('cust-loop', 208, 0, '', false);
+        startTimer('ret-loop', 32.30, 2, '%', false);
+        startTimer('month-loop', 49196501, 0, '₦', true);
+        startTimer('today-loop', 26, 0, '', false);
+    }
+
+    function startTimer(id, target, decimals, symbol, isPrefix) {
+        const el = document.getElementById(id);
+        const duration = 2000; // Time it takes to complete counting (2s)
+        const pause = 4000;    // Pauses for 4 seconds at full value before restarting
+
+        function run() {
+            let start = null;
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                let progress = timestamp - start;
+                let current = Math.min((progress / duration) * target, target);
+                
+                let displayTarget = current;
+                let displayDecimals = decimals;
+                let customSymbol = symbol;
+                
+                if (target > 1000000) {
+                    displayTarget = current / 1000000;
+                    displayDecimals = 2;
+                    customSymbol = isPrefix ? symbol : '';
+                }
+
+                let val = displayTarget.toLocaleString(undefined, {
+                    minimumFractionDigits: displayDecimals,
+                    maximumFractionDigits: displayDecimals
+                });
+                
+                if (target > 1000000) {
+                    val += 'M';
+                }
+
+                el.innerHTML = isPrefix ? customSymbol + val : val + customSymbol;
+                
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    setTimeout(() => {
+                        run();
+                    }, pause);
+                }
+            }
+            window.requestAnimationFrame(step);
+        }
+        run();
     }
 </script>
 
