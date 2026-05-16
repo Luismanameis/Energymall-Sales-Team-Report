@@ -92,7 +92,7 @@
         .m-white { color: #FFFFFF; font-weight: 800; }
 
         .progress-box { background: #333; height: 6px; border-radius: 3px; margin-top: 5px; position: relative; overflow: hidden; }
-        .progress-fill { height: 100%; background: var(--em-red); border-radius: 3px; transition: width 1s ease-in-out; }
+        .progress-fill { height: 100%; background: var(--em-red); border-radius: 3px; }
 
         @media (max-width: 850px) {
             body { padding-top: 320px; }
@@ -122,19 +122,19 @@
     <header>
         <div class="header-top">
             <div class="logo-area"><h1>ENERGYMALL</h1><span>COMMAND DASHBOARD 2026</span></div>
-            <div style="text-align: right;"><span class="kpi-label" style="color:var(--em-red);">YTD REVENUE (TOTAL)</span><br><span id="ytd-rev-loop" style="font-size: 16px; font-weight: 900; color: var(--em-red);">₦0.00</span></div>
+            <div style="text-align: right;"><span class="kpi-label" style="color:var(--em-red);">YTD REVENUE (TOTAL)</span><br><span style="font-size: 16px; font-weight: 900; color: var(--em-red);">₦475.03M</span></div>
         </div>
         <div class="kpi-row">
-            <div class="kpi-card"><span class="kpi-label">YTD Customers (2026)</span><span class="kpi-val" id="cust-loop">0</span></div>
-            <div class="kpi-card"><span class="kpi-label">Avg Return % (YTD)</span><span class="kpi-val" id="ret-loop">0.00%</span></div>
-            <div class="kpi-card"><span class="kpi-label">Month Rev (May)</span><span class="kpi-val m-green" id="month-loop">₦0.00</span></div>
-            <div class="kpi-card"><span class="kpi-label">Month Cust. (May)</span><span class="kpi-val m-green" id="today-loop">0</span></div>
+            <div class="kpi-card"><span class="kpi-label">YTD Customers (2026)</span><span class="kpi-val">208</span></div>
+            <div class="kpi-card"><span class="kpi-label">Avg Return % (YTD)</span><span class="kpi-val">32.30%</span></div>
+            <div class="kpi-card"><span class="kpi-label">Month Rev (May)</span><span class="kpi-val m-green">₦49.20M</span></div>
+            <div class="kpi-card"><span class="kpi-label">Month Cust. (May)</span><span class="kpi-val m-green">26</span></div>
         </div>
     </header>
 
     <div class="container">
         
-        <!-- FIXED CURRENT MONTH FIXED AT THE TOP -->
+        <!-- FIXED CURRENT MONTH AT THE TOP -->
         <div class="segment">
             <div class="segment-header"><h2>May 2026: Sales & Bonus Audit</h2></div>
             <div class="scroll-container">
@@ -147,24 +147,27 @@
                         <tr><td>Damilola Abidemi Akingboye</td><td class="m-green">₦4.80M</td><td class="m-gold">₦4.80K</td><td>4</td><td>11</td><td class="m-red">36.36%</td></tr>
                         <tr><td>Immaculate Osereme Imion</td><td class="m-green">₦13.73M</td><td class="m-gold">₦13.73K</td><td>8</td><td>90</td><td class="m-red">8.89%</td></tr>
                         <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">₦13.94M</td><td class="m-gold">₦13.94K</td><td>1</td><td>0</td><td class="m-red">0.00%</td></tr>
-                        <tr style="background:#222; font-weight:900;"><td>SALES TEAM TOTAL</td><td class="m-green">₦43.38M</td><td class="m-gold">₦43.38K</td><td>23</td><td>184</td><td class="m-red">12.50%</td></tr>
+                        <tr style="background:#222; font-weight:900;"><td>THIS MONTH TOTAL - SALES TEAM</td><td class="m-green">₦43.38M</td><td class="m-gold">₦43.38K</td><td>23</td><td>184</td><td class="m-red">12.50%</td></tr>
+                        <tr style="background:#292929; font-weight:900;"><td>THIS MONTH TOTAL - ALL</td><td class="m-green">₦49.20M</td><td class="m-gold">-</td><td>26</td><td>184</td><td class="m-red">14.13%</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <!-- 2026 TARGET PROGRESS & PERFORMANCE -->
         <div class="segment">
             <div class="segment-header"><h2>2026 Target Progress & Performance</h2></div>
             <div class="scroll-container">
                 <table>
                     <thead>
-                        <tr><th>Representative</th><th>2026 Target</th><th>Achieved YTD</th><th>Reach %</th><th>Visual Progress</th></tr>
+                        <tr><th>Representative</th><th>2026 Target</th><th>Achieved YTD</th><th>Total Bonus Received</th><th>Reach %</th><th>Visual Progress</th></tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Patricia Uchedienyi</td>
                             <td>₦330.00M</td>
                             <td class="m-white">₦86.41M</td>
+                            <td class="m-gold">₦86.41K</td>
                             <td class="m-red">13.09%</td>
                             <td><div class="progress-box"><div class="progress-fill" style="width: 13.09%; background: var(--loss-red);"></div></div></td>
                         </tr>
@@ -172,6 +175,7 @@
                             <td>Damilola Abidemi Akingboye</td>
                             <td>₦300.00M</td>
                             <td class="m-white">₦143.74M</td>
+                            <td class="m-gold">₦143.74K</td>
                             <td class="m-red">23.96%</td>
                             <td><div class="progress-box"><div class="progress-fill" style="width: 23.96%; background: var(--loss-red);"></div></div></td>
                         </tr>
@@ -179,6 +183,7 @@
                             <td>Immaculate Osereme Imion</td>
                             <td>₦455.00M</td>
                             <td class="m-white">₦194.59M</td>
+                            <td class="m-gold">₦194.59K</td>
                             <td class="m-red">20.81%</td>
                             <td><div class="progress-box"><div class="progress-fill" style="width: 20.81%; background: var(--loss-red);"></div></div></td>
                         </tr>
@@ -186,6 +191,7 @@
                             <td>Jemila Ojo-Agafu Ibrahim</td>
                             <td>₦90.00M</td>
                             <td class="m-white">₦16.54M</td>
+                            <td class="m-gold">₦16.54K</td>
                             <td class="m-red">6.12%</td>
                             <td><div class="progress-box"><div class="progress-fill" style="width: 6.12%; background: var(--loss-red);"></div></div></td>
                         </tr>
@@ -194,6 +200,7 @@
             </div>
         </div>
 
+        <!-- MAY WEEKLY BREAKDOWN -->
         <div class="segment half">
             <div class="segment-header"><h2>May Weekly Breakdown</h2></div>
             <div class="scroll-container">
@@ -205,29 +212,101 @@
                         <tr><td>Week 3</td><td class="m-green">₦9.63M</td><td>6</td><td>82</td></tr>
                         <tr><td>Week 4</td><td class="m-green">₦0.00</td><td>0</td><td>0</td></tr>
                         <tr><td>Week 5</td><td class="m-green">₦0.00</td><td>0</td><td>0</td></tr>
-                        <tr class="total-row" style="font-weight: 800; border-top: 2px solid #333;"><td>TOTAL</td><td class="m-green">₦25.65M</td><td>23</td><td>184</td></tr>
+                        <tr style="font-weight: 800; border-top: 2px solid #333; background: #222;"><td>TOTAL</td><td class="m-green">₦25.65M</td><td>23</td><td>184</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
+        <!-- RETURN CUSTOMERS SEGMENTS -->
         <div class="segment half">
-            <div class="segment-header"><h2>Return Customers Segment (May)</h2></div>
-            <div style="padding:15px; background:var(--em-dark); border-radius:12px; color:white;">
-                <p><span class="kpi-label" style="color:#aaa;">May Return Revenue</span><strong style="font-size:24px; color:var(--profit-green); display:block; margin-top:5px;">₦12.07M</strong></p>
-                <div style="display:flex; justify-content:space-between; border-top:1px solid #444; padding-top:15px; margin-top:15px;">
-                    <span>6 Customers</span>
-                    <span class="m-red" style="font-weight:900; color:var(--loss-red);">23.08% May Rate</span>
+            <div class="segment-header"><h2>Return Customers Segment Analytics</h2></div>
+            <div style="padding:15px; background:var(--em-dark); border-radius:12px; color:white; border: 1px solid var(--border); margin-bottom: 10px;">
+                <span class="kpi-label" style="color:#aaa;">May Segment Overview</span>
+                <strong style="font-size:20px; color:var(--profit-green); display:block; margin: 5px 0;">₦12.07M Revenue</strong>
+                <div style="display:flex; justify-content:space-between; font-size:11px; color: var(--text-muted);">
+                    <span>6 Customers Balance</span>
+                    <span class="m-red">23.08% May Rate</span>
                 </div>
             </div>
-            <div style="margin-top:10px; font-size:10px; color:var(--text-muted); font-weight:800;">YTD Return Rate: 32.30% (72 Customers)</div>
+            <div style="padding:15px; background:var(--em-dark); border-radius:12px; color:white; border: 1px solid var(--border);">
+                <span class="kpi-label" style="color:#aaa;">YTD Segment Overview</span>
+                <strong style="font-size:20px; color:var(--profit-green); display:block; margin: 5px 0;">₦153.65M Revenue</strong>
+                <div style="display:flex; justify-content:space-between; font-size:11px; color: var(--text-muted);">
+                    <span>72 Unique Customers</span>
+                    <span class="m-red">32.30% YTD Rate</span>
+                </div>
+            </div>
         </div>
 
+        <!-- NEW: LAST MONTH BREAKDOWN (APRIL) -->
         <div class="segment">
-            <div class="segment-header"><h2>All Time Performance (2024 - Date)</h2></div>
+            <div class="segment-header"><h2>Last Month Performance (April)</h2></div>
             <div class="scroll-container">
                 <table>
-                    <thead><tr><th>Representative</th><th>Total Revenue</th><th>Total Customers</th><th>Total Leads</th><th>3-Year Annual Avg</th></tr></thead>
+                    <thead><tr><th>Representative</th><th>Revenue</th><th>Customers</th><th>Leads</th><th>Conversion</th></tr></thead>
+                    <tbody>
+                        <tr><td>Patricia Uchedienyi</td><td class="m-green">₦18.78M</td><td>15</td><td>186</td><td class="m-red">8.06%</td></tr>
+                        <tr><td>Damilola Abidemi Akingboye</td><td class="m-green">₦35.59M</td><td>12</td><td>68</td><td class="m-red">17.65%</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">₦44.50M</td><td>24</td><td>131</td><td class="m-red">18.32%</td></tr>
+                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">₦0.94M</td><td>1</td><td>0</td><td class="m-red">0.00%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- NEW: ALL TIME YTD LEAD HANDLE & CLOSURE -->
+        <div class="segment">
+            <div class="segment-header"><h2>YTD Lead Management & Conversions (2026)</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead><tr><th>Representative</th><th>Leads Handled</th><th>Customers Closed</th><th>Conversion</th><th>Total YTD Revenue</th><th>% From Target</th></tr></thead>
+                    <tbody>
+                        <tr><td>Patricia Uchedienyi</td><td>593</td><td>53</td><td class="m-red">8.94%</td><td class="m-green">₦86.41M</td><td class="m-red">13.09%</td></tr>
+                        <tr><td>Damilola Abidemi Akingboye</td><td>296</td><td>51</td><td class="m-red">17.23%</td><td class="m-green">₦143.74M</td><td class="m-red">23.96%</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td>520</td><td>89</td><td class="m-red">17.12%</td><td class="m-green">₦194.59M</td><td class="m-red">20.81%</td></tr>
+                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td>0</td><td>5</td><td class="m-red">0.00%</td><td class="m-green">₦16.54M</td><td class="m-red">6.12%</td></tr>
+                        <tr style="background:#222; font-weight:900;"><td>SALES TEAM TOTAL</td><td>1,409</td><td>198</td><td class="m-red">14.05%</td><td class="m-green">₦441.28M</td><td>-</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- NEW: SALES TEAM VS THE BUSINESS SHARE -->
+        <div class="segment half">
+            <div class="segment-header"><h2>Sales Team vs. The Business Contribution</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead><tr><th>Channel</th><th>Revenue</th><th>Contribution Share</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sales Team Contribution</td><td class="m-green">₦441.28M</td><td class="m-red">92.89%</td></tr>
+                        <tr><td>Direct Business Channels</td><td class="m-green">₦33.75M</td><td class="m-red">7.11%</td></tr>
+                        <tr style="background:#222; font-weight:900;"><td>COMBINED OPERATIONS REVENUE</td><td class="m-green">₦475.03M</td><td class="m-red">100.00%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- NEW: YEAR-OVER-YEAR COMPARATIVE METRICS -->
+        <div class="segment half">
+            <div class="segment-header"><h2>Year-Over-Year Variance (2025 vs 2026)</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead><tr><th>Channel</th><th>2025 Revenue</th><th>2026 YTD</th><th>Run Rate Variance</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sales Team</td><td>₦863.34M</td><td>₦441.28M</td><td class="m-red">-₦422.07M (-48.89%)</td></tr>
+                        <tr><td>The Business</td><td>₦138.02M</td><td>₦33.75M</td><td class="m-red">-₦104.27M (-75.54%)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ALL TIME HISTORICAL PERFORMANCE -->
+        <div class="segment">
+            <div class="segment-header"><h2>All Time Historical Performance (2024 - Date)</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead><tr><th>Representative</th><th>Total Revenue All Time</th><th>Total Customers</th><th>Total Leads</th><th>3-Year Annual Avg</th></tr></thead>
                     <tbody>
                         <tr><td>Immaculate Osereme Imion</td><td>₦628.23M</td><td>245</td><td>3,439</td><td class="m-gold">₦209.41M</td></tr>
                         <tr><td>Damilola Abidemi Akingboye</td><td>₦566.96M</td><td>216</td><td>3,928</td><td class="m-gold">₦188.99M</td></tr>
@@ -238,68 +317,83 @@
             </div>
         </div>
 
+        <!-- NEW: QUARTERLY MATRIX BREAKDOWN -->
+        <div class="segment">
+            <div class="segment-header"><h2>2026 Financial Quarters Matrix</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead><tr><th>Representative</th><th>Q1 Performance</th><th>Q2 Performance (Run)</th><th>Q3 Pipeline</th><th>Q4 Pipeline</th></tr></thead>
+                    <tbody>
+                        <tr><td>Patricia Uchedienyi</td><td class="m-green">₦56.72M</td><td class="m-green">₦29.69M</td><td>₦0.00</td><td>₦0.00</td></tr>
+                        <tr><td>Damilola Abidemi Akingboye</td><td class="m-green">₦103.35M</td><td class="m-green">₦40.39M</td><td>₦0.00</td><td>₦0.00</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">₦136.36M</td><td class="m-green">₦58.23M</td><td>₦0.00</td><td>₦0.00</td></tr>
+                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">₦1.65M</td><td class="m-green">₦14.88M</td><td>₦0.00</td><td>₦0.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- NEW: DETAILED MONTHLY HISTORICAL ARCHIVE -->
+        <div class="segment">
+            <div class="segment-header"><h2>2026 Rep Performance Logs (January - May Archive)</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead>
+                        <tr><th>Month</th><th>Metrics Category</th><th>Patricia Uchedienyi</th><th>Damilola Abidemi Akingboye</th><th>Immaculate Osereme Imion</th></tr>
+                    </thead>
+                    <tbody>
+                        <!-- JAN -->
+                        <tr style="border-top:2px solid #444;">
+                            <td rowspan="3" style="vertical-align:middle; background:#1e1e1e; font-weight:800;">JANUARY</td>
+                            <td>Revenue Breakdown</td><td class="m-green">₦36.26M</td><td class="m-green">₦41.82M</td><td class="m-green">₦36.18M</td>
+                        </tr>
+                        <tr><td>Closed Customers</td><td>9 Customers</td><td>11 Customers</td><td>21 Customers</td></tr>
+                        <tr style="border-bottom:1px solid #333;"><td>Leads Acquired</td><td>94 Leads</td><td>73 Leads</td><td>99 Leads</td></tr>
+                        <!-- FEB -->
+                        <tr style="border-top:2px solid #444;">
+                            <td rowspan="3" style="vertical-align:middle; background:#1e1e1e; font-weight:800;">FEBRUARY</td>
+                            <td>Revenue Breakdown</td><td class="m-green">₦10.22M</td><td class="m-green">₦43.08M</td><td class="m-green">₦52.80M</td>
+                        </tr>
+                        <tr><td>Closed Customers</td><td>7 Customers</td><td>13 Customers</td><td>18 Customers</td></tr>
+                        <tr style="border-bottom:1px solid #333;"><td>Leads Acquired</td><td>77 Leads</td><td>57 Leads</td><td>81 Leads</td></tr>
+                        <!-- MAR -->
+                        <tr style="border-top:2px solid #444;">
+                            <td rowspan="3" style="vertical-align:middle; background:#1e1e1e; font-weight:800;">MARCH</td>
+                            <td>Revenue Breakdown</td><td class="m-green">₦10.24M</td><td class="m-green">₦18.45M</td><td class="m-green">₦47.37M</td>
+                        </tr>
+                        <tr><td>Closed Customers</td><td>12 Customers</td><td>11 Customers</td><td>18 Customers</td></tr>
+                        <tr style="border-bottom:1px solid #333;"><td>Leads Acquired</td><td>153 Leads</td><td>87 Leads</td><td>119 Leads</td></tr>
+                        <!-- APR -->
+                        <tr style="border-top:2px solid #444;">
+                            <td rowspan="3" style="vertical-align:middle; background:#1e1e1e; font-weight:800;">APRIL</td>
+                            <td>Revenue Breakdown</td><td class="m-green">₦18.78M</td><td class="m-green">₦35.59M</td><td class="m-green">₦44.50M</td>
+                        </tr>
+                        <tr><td>Closed Customers</td><td>15 Customers</td><td>12 Customers</td><td>24 Customers</td></tr>
+                        <tr style="border-bottom:1px solid #333;"><td>Leads Acquired</td><td>186 Leads</td><td>68 Leads</td><td>131 Leads</td></tr>
+                        <!-- MAY -->
+                        <tr style="border-top:2px solid #444;">
+                            <td rowspan="3" style="vertical-align:middle; background:#1e1e1e; font-weight:800;">MAY</td>
+                            <td>Revenue Breakdown</td><td class="m-green">₦10.91M</td><td class="m-green">₦4.80M</td><td class="m-green">₦13.73M</td>
+                        </tr>
+                        <tr><td>Closed Customers</td><td>10 Customers</td><td>4 Customers</td><td>8 Customers</td></tr>
+                        <tr style="border-bottom:2px solid #444;"><td>Leads Acquired</td><td>83 Leads</td><td>11 Leads</td><td>90 Leads</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     </div>
 </div>
 
 <script>
     function checkAccess() {
-        if (document.getElementById('access-code').value === 'eng96') {
+        const inputCode = document.getElementById('access-code').value.trim().toLowerCase();
+        if (inputCode === 'eng96') {
             document.getElementById('auth-overlay').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
-            initLooping();
+        } else {
+            alert('INVALID CODE');
         }
-    }
-
-    function initLooping() {
-        startTimer('ytd-rev-loop', 475030888, 0, '₦', true);
-        startTimer('cust-loop', 208, 0, '', false);
-        startTimer('ret-loop', 32.30, 2, '%', false);
-        startTimer('month-loop', 49196501, 0, '₦', true);
-        startTimer('today-loop', 26, 0, '', false);
-    }
-
-    function startTimer(id, target, decimals, symbol, isPrefix) {
-        const el = document.getElementById(id);
-        const duration = 2000;
-        const pause = 9999999; // Prevents reset loops from flashing out data permanently
-
-        function run() {
-            let start = null;
-            function step(timestamp) {
-                if (!start) start = timestamp;
-                let progress = timestamp - start;
-                let current = Math.min((progress / duration) * target, target);
-                
-                let displayTarget = current;
-                let displayDecimals = decimals;
-                let customSymbol = symbol;
-                
-                if (target > 1000000) {
-                    displayTarget = current / 1000000;
-                    displayDecimals = 2;
-                    customSymbol = isPrefix ? symbol : '';
-                }
-
-                let val = displayTarget.toLocaleString(undefined, {
-                    minimumFractionDigits: displayDecimals,
-                    maximumFractionDigits: displayDecimals
-                });
-                
-                if (target > 1000000) {
-                    val += 'M';
-                }
-
-                el.innerHTML = isPrefix ? customSymbol + val : val + customSymbol;
-                if (progress < duration) window.requestAnimationFrame(step);
-                else {
-                    setTimeout(() => {
-                        run();
-                    }, pause);
-                }
-            }
-            window.requestAnimationFrame(step);
-        }
-        run();
     }
 </script>
 
