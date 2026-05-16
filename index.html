@@ -12,10 +12,10 @@
             --em-gold: #D4AF37;
             --profit-green: #008000;
             --loss-red: #FF0000;
-            --text-main: #111111;
-            --text-muted: #666666;
-            --border: #E0E0E0;
-            --bg-light: #F4F4F4;
+            --text-main: #FFFFFF;
+            --text-muted: #AAAAAA;
+            --border: #333333;
+            --bg-light: #111111;
             --white: #FFFFFF;
         }
 
@@ -33,13 +33,13 @@
             display: flex; align-items: center; justify-content: center;
         }
         .auth-card {
-            background: white; padding: 30px; border-radius: 16px;
+            background: #1A1A1A; padding: 30px; border-radius: 16px;
             border-top: 5px solid var(--em-red); text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 90%; max-width: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: 90%; max-width: 350px;
         }
         .auth-card input {
-            width: 100%; padding: 12px; background: #F9F9F9; border: 1px solid var(--border);
-            border-radius: 8px; text-align: center; font-size: 18px; margin-bottom: 15px; outline: none;
+            width: 100%; padding: 12px; background: #222222; border: 1px solid var(--border);
+            border-radius: 8px; text-align: center; font-size: 18px; margin-bottom: 15px; outline: none; color: white;
         }
         .auth-card button {
             width: 100%; padding: 12px; background: var(--em-red); color: white;
@@ -63,35 +63,35 @@
 
         header {
             position: fixed; top: 40px; left: 0; right: 0;
-            background: white; border-bottom: 1px solid var(--border);
-            padding: 15px 5%; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background: #1A1A1A; border-bottom: 1px solid var(--border);
+            padding: 15px 5%; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .logo-area h1 { font-weight: 900; margin: 0; font-size: clamp(16px, 4vw, 22px); color: var(--em-red); text-transform: uppercase; }
         .logo-area span { color: var(--text-muted); font-size: 9px; font-weight: 800; letter-spacing: 1px; }
 
         .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-        .kpi-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px; border-left: 3px solid var(--em-red); }
+        .kpi-card { background: #1A1A1A; border: 1px solid var(--border); border-radius: 8px; padding: 10px; border-left: 3px solid var(--em-red); }
         .kpi-label { font-size: 8px; text-transform: uppercase; font-weight: 800; color: var(--text-muted); display: block; margin-bottom: 2px; }
-        .kpi-val { font-size: 13px; font-weight: 900; color: var(--em-dark); font-variant-numeric: tabular-nums; }
+        .kpi-val { font-size: 13px; font-weight: 900; color: var(--white); font-variant-numeric: tabular-nums; }
         
         .container { max-width: 1400px; margin: 0 auto; padding: 15px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 15px; }
-        .segment { background: white; border-radius: 12px; padding: 20px; border: 1px solid var(--border); grid-column: span 12; overflow: hidden; }
+        .segment { background: #1A1A1A; border-radius: 12px; padding: 20px; border: 1px solid var(--border); grid-column: span 12; overflow: hidden; }
         .half { grid-column: span 6; }
 
         .segment-header h2 { color: var(--em-red); font-size: 13px; margin: 0 0 15px 0; text-transform: uppercase; font-weight: 900; border-left: 3px solid var(--em-red); padding-left: 8px; }
 
         .scroll-container { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        th { text-align: left; padding: 12px 10px; font-size: 9px; color: var(--text-muted); text-transform: uppercase; border-bottom: 2px solid #F0F0F0; }
-        td { padding: 12px 10px; border-bottom: 1px solid #F8F8F8; font-size: 11px; font-weight: 600; }
+        th { text-align: left; padding: 12px 10px; font-size: 9px; color: var(--text-muted); text-transform: uppercase; border-bottom: 2px solid #333; }
+        td { padding: 12px 10px; border-bottom: 1px solid #222; font-size: 11px; font-weight: 600; color: #FFF; }
         
         .m-red { color: var(--loss-red); font-weight: 800; }
         .m-green { color: var(--profit-green); font-weight: 800; }
         .m-gold { color: var(--em-gold); font-weight: 800; }
         .m-white { color: #FFFFFF; font-weight: 800; }
 
-        .progress-box { background: #f0f0f0; height: 6px; border-radius: 3px; margin-top: 5px; position: relative; overflow: hidden; }
+        .progress-box { background: #333; height: 6px; border-radius: 3px; margin-top: 5px; position: relative; overflow: hidden; }
         .progress-fill { height: 100%; background: var(--em-red); border-radius: 3px; transition: width 1s ease-in-out; }
 
         @media (max-width: 850px) {
@@ -106,7 +106,7 @@
 
 <div id="auth-overlay">
     <div class="auth-card">
-        <h2 style="margin-bottom:15px; font-size:16px;">SECURE DATA LINK</h2>
+        <h2 style="margin-bottom:15px; font-size:16px; color: white;">SECURE DATA LINK</h2>
         <input type="password" id="access-code" placeholder="PIN" autofocus>
         <button onclick="checkAccess()">LOAD SEGMENTS</button>
     </div>
@@ -115,7 +115,7 @@
 <div id="main-content">
     <div class="ticker-wrap">
         <div class="ticker">
-            <span>YTD CUSTOMERS 2026: 206</span> <span>RETURN CUSTOMER %: 31.40%</span> <span>SALES TEAM YTD: ₦435,816,438</span> <span>BUSINESS CONTRIBUTION: 6.36%</span> <span>AVG CONVERSION: 14.15%</span>
+            <span>YTD CUSTOMERS 2026: 208</span> <span>RETURN CUSTOMER %: 32.30%</span> <span>SALES TEAM YTD: ₦441.28M</span> <span>BUSINESS CONTRIBUTION: 92.89%</span> <span>TOTAL REVENUE YTD: ₦475.03M</span>
         </div>
     </div>
 
@@ -134,6 +134,25 @@
 
     <div class="container">
         
+        <!-- FIXED CURRENT MONTH FIXED AT THE TOP -->
+        <div class="segment">
+            <div class="segment-header"><h2>May 2026: Sales & Bonus Audit</h2></div>
+            <div class="scroll-container">
+                <table>
+                    <thead>
+                        <tr><th>Representative</th><th>Revenue</th><th>Expected Bonus</th><th>Customers</th><th>Leads</th><th>Conv.</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Patricia Uchedienyi</td><td class="m-green">₦10.91M</td><td class="m-gold">₦10.91K</td><td>10</td><td>83</td><td class="m-red">12.05%</td></tr>
+                        <tr><td>Damilola Abidemi Akingboye</td><td class="m-green">₦4.80M</td><td class="m-gold">₦4.80K</td><td>4</td><td>11</td><td class="m-red">36.36%</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">₦13.73M</td><td class="m-gold">₦13.73K</td><td>8</td><td>90</td><td class="m-red">8.89%</td></tr>
+                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">₦13.94M</td><td class="m-gold">₦13.94K</td><td>1</td><td>0</td><td class="m-red">0.00%</td></tr>
+                        <tr style="background:#222; font-weight:900;"><td>SALES TEAM TOTAL</td><td class="m-green">₦43.38M</td><td class="m-gold">₦43.38K</td><td>23</td><td>184</td><td class="m-red">12.50%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="segment">
             <div class="segment-header"><h2>2026 Target Progress & Performance</h2></div>
             <div class="scroll-container">
@@ -144,50 +163,32 @@
                     <tbody>
                         <tr>
                             <td>Patricia Uchedienyi</td>
-                            <td>₦330,000,000</td>
-                            <td class="m-white" style="color: #111;">₦86,405,655</td>
+                            <td>₦330.00M</td>
+                            <td class="m-white">₦86.41M</td>
                             <td class="m-red">13.09%</td>
                             <td><div class="progress-box"><div class="progress-fill" style="width: 13.09%; background: var(--loss-red);"></div></div></td>
                         </tr>
                         <tr>
                             <td>Damilola Abidemi Akingboye</td>
-                            <td>₦300,000,000</td>
-                            <td class="m-white" style="color: #111;">₦143,742,200</td>
+                            <td>₦300.00M</td>
+                            <td class="m-white">₦143.74M</td>
                             <td class="m-red">23.96%</td>
                             <td><div class="progress-box"><div class="progress-fill" style="width: 23.96%; background: var(--loss-red);"></div></div></td>
                         </tr>
                         <tr>
                             <td>Immaculate Osereme Imion</td>
-                            <td>₦455,000,000</td>
-                            <td class="m-white" style="color: #111;">₦189,132,757</td>
-                            <td class="m-red">20.23%</td>
-                            <td><div class="progress-box"><div class="progress-fill" style="width: 20.23%; background: var(--loss-red);"></div></div></td>
+                            <td>₦455.00M</td>
+                            <td class="m-white">₦194.59M</td>
+                            <td class="m-red">20.81%</td>
+                            <td><div class="progress-box"><div class="progress-fill" style="width: 20.81%; background: var(--loss-red);"></div></div></td>
                         </tr>
                         <tr>
                             <td>Jemila Ojo-Agafu Ibrahim</td>
-                            <td>₦90,000,000</td>
-                            <td class="m-white" style="color: #111;">₦16,535,825</td>
+                            <td>₦90.00M</td>
+                            <td class="m-white">₦16.54M</td>
                             <td class="m-red">6.12%</td>
                             <td><div class="progress-box"><div class="progress-fill" style="width: 6.12%; background: var(--loss-red);"></div></div></td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="segment">
-            <div class="segment-header"><h2>May 2026: Sales & Bonus Audit</h2></div>
-            <div class="scroll-container">
-                <table>
-                    <thead>
-                        <tr><th>Representative</th><th>Revenue</th><th>Expected Bonus</th><th>Customers</th><th>Leads</th><th>Conv.</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Patricia Uchedienyi</td><td class="m-green">₦10,906,001.00</td><td class="m-gold">₦10,906.00</td><td>10</td><td>74</td><td class="m-red">13.51%</td></tr>
-                        <tr><td>Damilola Abidemi Akingboye</td><td class="m-green">₦4,799,000.00</td><td class="m-gold">₦4,799.00</td><td>4</td><td>11</td><td class="m-red">36.36%</td></tr>
-                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">₦8,271,500.00</td><td class="m-gold">₦8,271.50</td><td>7</td><td>82</td><td class="m-red">8.54%</td></tr>
-                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">₦13,940,000.00</td><td class="m-gold">₦13,940.00</td><td>1</td><td>0</td><td class="m-red">0.00%</td></tr>
-                        <tr style="background:#F9F9F9; font-weight:900;"><td>SALES TEAM TOTAL</td><td class="m-green">₦37,916,501.00</td><td class="m-gold">₦37,916.50</td><td>22</td><td>167</td><td class="m-red">13.17%</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -199,10 +200,12 @@
                 <table>
                     <thead><tr><th>Period</th><th>Revenue</th><th>Customers</th><th>Leads</th></tr></thead>
                     <tbody>
-                        <tr><td>Week 1</td><td class="m-green">₦6,653,000.00</td><td>7</td><td>41</td></tr>
-                        <tr><td>Week 2</td><td class="m-green">₦9,367,001.00</td><td>10</td><td>61</td></tr>
-                        <tr><td>Week 3</td><td class="m-green">₦9,626,500.00</td><td>6</td><td>65</td></tr>
-                        <tr class="total-row" style="font-weight: 800; border-top: 2px solid #EEE;"><td>TOTAL</td><td class="m-green">₦25,646,501.00</td><td>23</td><td>167</td></tr>
+                        <tr><td>Week 1</td><td class="m-green">₦6.65M</td><td>7</td><td>41</td></tr>
+                        <tr><td>Week 2</td><td class="m-green">₦9.37M</td><td>10</td><td>61</td></tr>
+                        <tr><td>Week 3</td><td class="m-green">₦9.63M</td><td>6</td><td>82</td></tr>
+                        <tr><td>Week 4</td><td class="m-green">₦0.00</td><td>0</td><td>0</td></tr>
+                        <tr><td>Week 5</td><td class="m-green">₦0.00</td><td>0</td><td>0</td></tr>
+                        <tr class="total-row" style="font-weight: 800; border-top: 2px solid #333;"><td>TOTAL</td><td class="m-green">₦25.65M</td><td>23</td><td>184</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -211,13 +214,13 @@
         <div class="segment half">
             <div class="segment-header"><h2>Return Customers Segment (May)</h2></div>
             <div style="padding:15px; background:var(--em-dark); border-radius:12px; color:white;">
-                <p><span class="kpi-label" style="color:#aaa;">May Return Revenue</span><strong style="font-size:24px; color:var(--profit-green); display:block; margin-top:5px;">₦7,920,000.00</strong></p>
+                <p><span class="kpi-label" style="color:#aaa;">May Return Revenue</span><strong style="font-size:24px; color:var(--profit-green); display:block; margin-top:5px;">₦12.07M</strong></p>
                 <div style="display:flex; justify-content:space-between; border-top:1px solid #444; padding-top:15px; margin-top:15px;">
-                    <span>5 Customers</span>
-                    <span class="m-red" style="font-weight:900; color:var(--loss-red);">20.83% May Rate</span>
+                    <span>6 Customers</span>
+                    <span class="m-red" style="font-weight:900; color:var(--loss-red);">23.08% May Rate</span>
                 </div>
             </div>
-            <div style="margin-top:10px; font-size:10px; color:var(--text-muted); font-weight:800;">YTD Return Rate: 31.40% (71 Customers)</div>
+            <div style="margin-top:10px; font-size:10px; color:var(--text-muted); font-weight:800;">YTD Return Rate: 32.30% (72 Customers)</div>
         </div>
 
         <div class="segment">
@@ -226,10 +229,10 @@
                 <table>
                     <thead><tr><th>Representative</th><th>Total Revenue</th><th>Total Customers</th><th>Total Leads</th><th>3-Year Annual Avg</th></tr></thead>
                     <tbody>
-                        <tr><td>Immaculate Osereme Imion</td><td>₦622,772,560</td><td>244</td><td>3,431</td><td class="m-gold">₦207,590,853</td></tr>
-                        <tr><td>Damilola Abidemi Akingboye</td><td>₦566,959,777</td><td>216</td><td>3,928</td><td class="m-gold">₦188,986,592</td></tr>
-                        <tr><td>Patricia Uchedienyi</td><td>₦549,691,695</td><td>277</td><td>2,883</td><td class="m-gold">₦183,230,565</td></tr>
-                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td>₦73,120,601</td><td>43</td><td>512</td><td class="m-gold">₦24,373,533</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td>₦628.23M</td><td>245</td><td>3,439</td><td class="m-gold">₦209.41M</td></tr>
+                        <tr><td>Damilola Abidemi Akingboye</td><td>₦566.96M</td><td>216</td><td>3,928</td><td class="m-gold">₦188.99M</td></tr>
+                        <tr><td>Patricia Uchedienyi</td><td>₦549.69M</td><td>277</td><td>2,892</td><td class="m-gold">₦183.23M</td></tr>
+                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td>₦73.12M</td><td>43</td><td>512</td><td class="m-gold">₦24.37M</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -248,17 +251,17 @@
     }
 
     function initLooping() {
-        startTimer('ytd-rev-loop', 465420888, 0, '₦', true);
-        startTimer('cust-loop', 206, 0, '', false);
-        startTimer('ret-loop', 31.40, 2, '%', false);
-        startTimer('month-loop', 39586501, 0, '₦', true);
-        startTimer('today-loop', 24, 0, '', false);
+        startTimer('ytd-rev-loop', 475030888, 0, '₦', true);
+        startTimer('cust-loop', 208, 0, '', false);
+        startTimer('ret-loop', 32.30, 2, '%', false);
+        startTimer('month-loop', 49196501, 0, '₦', true);
+        startTimer('today-loop', 26, 0, '', false);
     }
 
     function startTimer(id, target, decimals, symbol, isPrefix) {
         const el = document.getElementById(id);
         const duration = 2000;
-        const pause = 3000;
+        const pause = 9999999; // Prevents reset loops from flashing out data permanently
 
         function run() {
             let start = null;
@@ -266,15 +269,30 @@
                 if (!start) start = timestamp;
                 let progress = timestamp - start;
                 let current = Math.min((progress / duration) * target, target);
-                let val = current.toLocaleString(undefined, {
-                    minimumFractionDigits: decimals,
-                    maximumFractionDigits: decimals
+                
+                let displayTarget = current;
+                let displayDecimals = decimals;
+                let customSymbol = symbol;
+                
+                if (target > 1000000) {
+                    displayTarget = current / 1000000;
+                    displayDecimals = 2;
+                    customSymbol = isPrefix ? symbol : '';
+                }
+
+                let val = displayTarget.toLocaleString(undefined, {
+                    minimumFractionDigits: displayDecimals,
+                    maximumFractionDigits: displayDecimals
                 });
-                el.innerHTML = isPrefix ? symbol + val : val + symbol;
+                
+                if (target > 1000000) {
+                    val += 'M';
+                }
+
+                el.innerHTML = isPrefix ? customSymbol + val : val + customSymbol;
                 if (progress < duration) window.requestAnimationFrame(step);
                 else {
                     setTimeout(() => {
-                        el.innerHTML = isPrefix ? symbol + "0" : "0" + symbol;
                         run();
                     }, pause);
                 }
