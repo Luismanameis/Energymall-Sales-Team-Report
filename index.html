@@ -51,108 +51,119 @@
 <body>
 <div id="auth-overlay"><div class="auth-card"><h2>ENTER SECURITY CODE</h2><input type="password" id="access-code" placeholder="ACCESS PIN" autofocus><button onclick="checkAccess()">DECRYPT SYSTEMS</button></div></div>
 <div id="main-content">
-    <div class="ticker-wrap"><div class="ticker"><span>YTD CUSTOMERS 2026: <strong>244</strong></span> <span>RETURN CUSTOMER %: <strong>32.15%</strong></span> <span>SALES TEAM YTD: <strong>494.10m</strong></span> <span>BUSINESS CONTRIBUTION: <strong>91.27%</strong></span> <span>TOTAL REVENUE YTD: <strong>541.34m</strong></span><span>YTD CUSTOMERS 2026: <strong>244</strong></span> <span>RETURN CUSTOMER %: <strong>32.15%</strong></span> <span>SALES TEAM YTD: <strong>494.10m</strong></span> <span>BUSINESS CONTRIBUTION: <strong>91.27%</strong></span> <span>TOTAL REVENUE YTD: <strong>541.34m</strong></span></div></div>
+    <div class="ticker-wrap"><div class="ticker"><span>YTD CUSTOMERS 2026: <strong>258</strong></span> <span>RETURN CUSTOMER %: <strong>32.00%</strong></span> <span>SALES TEAM YTD: <strong>512.24m</strong></span> <span>BUSINESS CONTRIBUTION: <strong>91.73%</strong></span> <span>TOTAL REVENUE YTD: <strong>558.40m</strong></span><span>YTD CUSTOMERS 2026: <strong>258</strong></span> <span>RETURN CUSTOMER %: <strong>32.00%</strong></span> <span>SALES TEAM YTD: <strong>512.24m</strong></span> <span>BUSINESS CONTRIBUTION: <strong>91.73%</strong></span> <span>TOTAL REVENUE YTD: <strong>558.40m</strong></span></div></div>
     <header>
         <div class="header-top">
             <div class="logo-area"><h1>ENERGYMALL</h1><span>OPERATIONAL AUDIT MATRIX</span></div>
-            <div style="text-align: right;"><span class="kpi-label" style="color:var(--em-red);">TOTAL YTD REVENUE</span><span id="ytd-rev-loop" style="font-size: 24px; font-weight: 900;">541.34m</span></div>
+            <div style="text-align: right;"><span class="kpi-label" style="color:var(--em-red);">TOTAL YTD REVENUE</span><span id="ytd-rev-loop" style="font-size: 24px; font-weight: 900;">558.40m</span></div>
         </div>
         <div class="kpi-row">
-            <div class="kpi-card"><span class="kpi-label">YTD Volume (2026)</span><span class="kpi-val m-white" id="cust-loop">244</span></div>
-            <div class="kpi-card"><span class="kpi-label">Avg Return Profile (YTD)</span><span class="kpi-val m-red" id="ret-loop">32.15%</span></div>
-            <div class="kpi-card"><span class="kpi-label">June Revenue Stream</span><span class="kpi-val m-green" id="month-loop">34.70m</span></div>
-            <div class="kpi-card"><span class="kpi-label">June Customer Volume</span><span class="kpi-val m-white" id="today-loop">17</span></div>
+            <div class="kpi-card"><span class="kpi-label">YTD Volume (2026)</span><span class="kpi-val m-white" id="cust-loop">258</span></div>
+            <div class="kpi-card"><span class="kpi-label">Avg Return Profile (YTD)</span><span class="kpi-val m-red" id="ret-loop">32.00%</span></div>
+            <div class="kpi-card"><span class="kpi-label">Current Month Revenue</span><span class="kpi-val m-green" id="month-loop">51.76m</span></div>
+            <div class="kpi-card"><span class="kpi-label">Current Month Customers</span><span class="kpi-val m-white" id="today-loop">31</span></div>
         </div>
     </header>
     <div class="container">
+        <!-- FIXED MONTHLY SUMMARY AT THE TOP -->
         <div class="segment">
-            <div class="segment-header"><h2>June 2026 Performance Metrics Summary</h2></div>
+            <div class="segment-header"><h2>Current Month Performance Metrics Summary (June 2026)</h2></div>
             <div class="scroll-container">
                 <table>
                     <thead><tr><th>Representative</th><th>Revenue</th><th>Expected Bonus</th><th>Customers</th><th>Leads</th><th>Conv. Rate</th></tr></thead>
                     <tbody>
-                        <tr><td>Patricia Uchedienyi</td><td class="m-green">765.3k</td><td class="m-gold">765.30</td><td class="m-white">1</td><td class="m-white">20</td><td class="m-red">5.00%</td></tr>
-                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">24.86m</td><td class="m-gold">24.86k</td><td class="m-white">13</td><td class="m-white">79</td><td class="m-red">16.46%</td></tr>
+                        <tr><td>Patricia Uchedienyi</td><td class="m-green">8.68m</td><td class="m-gold">8.68k</td><td class="m-white">5</td><td class="m-white">52</td><td class="m-red">9.62%</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">35.09m</td><td class="m-gold">35.09k</td><td class="m-white">23</td><td class="m-white">155</td><td class="m-red">14.84%</td></tr>
                         <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">6.15m</td><td class="m-gold">6.15k</td><td class="m-white">2</td><td class="m-white">0</td><td class="m-red">0.00%</td></tr>
-                        <tr style="background:#111; font-weight:800;"><td style="color:var(--text-muted);">SALES OPERATIONS TOTAL</td><td class="m-green">31.77m</td><td class="m-gold">31.77k</td><td class="m-white">16</td><td class="m-white">99</td><td class="m-red">16.16%</td></tr>
-                        <tr style="background:#161616; font-weight:800;"><td style="color:var(--em-red);">COMBINED AGGREGATE TOTAL</td><td class="m-green">34.70m</td><td class="m-gold">-</td><td class="m-white">17</td><td class="m-white">99</td><td class="m-red">17.17%</td></tr>
+                        <tr style="background:#111; font-weight:800;"><td style="color:var(--text-muted);">SALES OPERATIONS TOTAL</td><td class="m-green">49.91m</td><td class="m-gold">49.91k</td><td class="m-white">30</td><td class="m-white">207</td><td class="m-red">14.49%</td></tr>
+                        <tr style="background:#161616; font-weight:800;"><td style="color:var(--em-red);">COMBINED AGGREGATE TOTAL</td><td class="m-green">51.76m</td><td class="m-gold">-</td><td class="m-white">31</td><td class="m-white">207</td><td class="m-red">14.98%</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
         <div class="segment">
             <div class="segment-header"><h2>Annual Sales Milestones Performance Tracker</h2></div>
             <div class="scroll-container">
                 <table>
                     <thead><tr><th>Representative</th><th>Annual Target Goal</th><th>YTD Contribution</th><th>Bonus Pay Out</th><th>Target Gap %</th><th>Framework Progress</th></tr></thead>
                     <tbody>
-                        <tr><td>Patricia Uchedienyi</td><td class="m-white">660m</td><td class="m-green">95.51m</td><td class="m-gold">95.51k</td><td class="m-red">14.47%</td><td><div class="progress-box"><div class="progress-fill" style="width: 14.47%; background: var(--loss-red);"></div></div></td></tr>
-                        <tr><td>Immaculate Osereme Imion</td><td class="m-white">935m</td><td class="m-green">214.50m</td><td class="m-gold">214.50k</td><td class="m-red">24.54%</td><td><div class="progress-box"><div class="progress-fill" style="width: 24.54%; background: var(--loss-red);"></div></div></td></tr>
+                        <tr><td>Patricia Uchedienyi</td><td class="m-white">660m</td><td class="m-green">103.43m</td><td class="m-gold">103.43k</td><td class="m-red">15.67%</td><td><div class="progress-box"><div class="progress-fill" style="width: 15.67%; background: var(--loss-red);"></div></div></td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td class="m-white">935m</td><td class="m-green">214.50m</td><td class="m-gold">214.50k</td><td class="m-red">22.94%</td><td><div class="progress-box"><div class="progress-fill" style="width: 22.94%; background: var(--loss-red);"></div></div></td></tr>
                         <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-white">270m</td><td class="m-green">16.71m</td><td class="m-gold">16.71k</td><td class="m-red">6.19%</td><td><div class="progress-box"><div class="progress-fill" style="width: 6.19%; background: var(--loss-red);"></div></div></td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
         <div class="segment half">
             <div class="segment-header"><h2>June Run-Rate Distribution Matrix</h2></div>
             <div class="scroll-container">
                 <table>
                     <thead><tr><th>Interval Phase</th><th>Inbound Revenue</th><th>Customers</th><th>Leads Handled</th></tr></thead>
                     <tbody>
-                        <tr><td>Week Phase 1</td><td class="m-green">14.70m</td><td class="m-white">6</td><td class="m-white">41</td></tr>
+                        <tr><td>Week Phase 1</td><td class="m-green">14.70m</td><td class="m-white">6</td><td class="m-white">79</td></tr>
                         <tr><td>Week Phase 2</td><td class="m-green">15.19m</td><td class="m-white">9</td><td class="m-white">36</td></tr>
-                        <tr><td>Week Phase 3</td><td class="m-green">4.81m</td><td class="m-white">4</td><td class="m-white">22</td></tr>
-                        <tr><td>Week Phase 4</td><td class="m-green">0</td><td class="m-white">0</td><td class="m-white">0</td></tr>
-                        <tr><td>Week Phase 5</td><td class="m-green">0</td><td class="m-white">0</td><td class="m-white">0</td></tr>
-                        <tr style="font-weight: 800; background: #111;"><td>AGGREGATE RUN RATE</td><td class="m-green">34.70m</td><td class="m-white">19</td><td class="m-white">99</td></tr>
+                        <tr><td>Week Phase 3</td><td class="m-green">10.64m</td><td class="m-white">10</td><td class="m-white">47</td></tr>
+                        <tr><td>Week Phase 4</td><td class="m-green">5.86m</td><td class="m-white">6</td><td class="m-white">22</td></tr>
+                        <tr><td>Week Phase 5</td><td class="m-green">5.38m</td><td class="m-white">3</td><td class="m-white">23</td></tr>
+                        <tr style="font-weight: 800; background: #111;"><td>AGGREGATE RUN RATE</td><td class="m-green">51.76m</td><td class="m-white">34</td><td class="m-white">207</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
         <div class="segment half">
             <div class="segment-header"><h2>Retention Segment Engine Overview</h2></div>
             <div class="metric-block">
-                <span class="kpi-label">June Performance Framework</span>
-                <strong style="font-size:24px; display:block; margin: 8px 0; font-weight: 800;">16.72m <span style="font-size:14px; font-weight:400; color:var(--profit-green);">Revenue Pipeline</span></strong>
-                <div style="display:flex; font-size:12px; border-top:1px solid var(--border); padding-top:10px; margin-top:5px;"><span style="color:var(--text-muted)">Accounts: <strong class="m-white">4 Ret.</strong></span><span style="color:var(--text-muted); margin-left:auto;">Efficiency: <strong class="m-red">23.53% Rate</strong></span></div>
+                <span class="kpi-label">Current Month Retention</span>
+                <strong style="font-size:24px; display:block; margin: 8px 0; font-weight: 800;">0.00m <span style="font-size:14px; font-weight:400; color:var(--profit-green);">Revenue Pipeline</span></strong>
+                <div style="display:flex; font-size:12px; border-top:1px solid var(--border); padding-top:10px; margin-top:5px;"><span style="color:var(--text-muted)">Accounts: <strong class="m-white">0 Ret.</strong></span><span style="color:var(--text-muted); margin-left:auto;">Efficiency: <strong class="m-red">0.00% Rate</strong></span></div>
             </div>
             <div class="metric-block">
                 <span class="kpi-label">Annual YTD Tracking Matrix</span>
-                <strong style="font-size:24px; display:block; margin: 8px 0; font-weight: 800;">177.19m <span style="font-size:14px; font-weight:400; color:var(--profit-green);">Revenue Pipeline</span></strong>
-                <div style="display:flex; font-size:12px; border-top:1px solid var(--border); padding-top:10px; margin-top:5px;"><span style="color:var(--text-muted)">Accounts: <strong class="m-white">81 Ret.</strong></span><span style="color:var(--text-muted); margin-left:auto;">Efficiency: <strong class="m-red">34.76% Rate</strong></span></div>
+                <strong style="font-size:24px; display:block; margin: 8px 0; font-weight: 800;">179.64m <span style="font-size:14px; font-weight:400; color:var(--profit-green);">Revenue Pipeline</span></strong>
+                <div style="display:flex; font-size:12px; border-top:1px solid var(--border); padding-top:10px; margin-top:5px;"><span style="color:var(--text-muted)">Accounts: <strong class="m-white">84 Ret.</strong></span><span style="color:var(--text-muted); margin-left:auto;">Efficiency: <strong class="m-red">32.90% Rate</strong></span></div>
             </div>
         </div>
+
         <div class="segment">
-            <div class="segment-header"><h2>Operational Performance Records (May Framework)</h2></div>
+            <div class="segment-header"><h2>Operational Performance Records (July Active Framework)</h2></div>
             <div class="scroll-container">
                 <table>
                     <thead><tr><th>Representative</th><th>Revenue Secured</th><th>Completed Accounts</th><th>Inbound Pipeline</th><th>Conversion Rate</th></tr></thead>
                     <tbody>
-                        <tr><td>Patricia Uchedienyi</td><td class="m-green">19.25m</td><td class="m-white">15</td><td class="m-white">169</td><td class="m-red">8.88%</td></tr>
-                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">23.71m</td><td class="m-white">14</td><td class="m-white">135</td><td class="m-red">10.37%</td></tr>
-                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">14.12m</td><td class="m-white">2</td><td class="m-white">0</td><td class="m-red">0.00%</td></tr>
+                        <tr><td>Patricia Uchedienyi</td><td class="m-green">0.00m</td><td class="m-white">0</td><td class="m-white">0</td><td class="m-red">0.00%</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td class="m-green">0.00m</td><td class="m-white">0</td><td class="m-white">0</td><td class="m-red">0.00%</td></tr>
+                        <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">0.00m</td><td class="m-white">0</td><td class="m-white">0</td><td class="m-red">0.00%</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
+
         <div class="segment">
             <div class="segment-header"><h2>Lead Infrastructure System & Conversion Audits (All-Time 2026)</h2></div>
             <div class="scroll-container">
                 <table>
                     <thead><tr><th>Representative</th><th>Leads Routed</th><th>Conversions Executed</th><th>Efficiency Rate</th><th>Secured YTD Revenue</th><th>Target Matrix %</th></tr></thead>
                     <tbody>
-                        <tr><td>Patricia Uchedienyi</td><td class="m-white">699</td><td class="m-white">59</td><td class="m-red">8.44%</td><td class="m-green">95.51m</td><td class="m-red">14.47%</td></tr>
-                        <tr><td>Immaculate Osereme Imion</td><td class="m-white">644</td><td class="m-white">108</td><td class="m-red">16.77%</td><td class="m-green">229.44m</td><td class="m-red">24.54%</td></tr>
+                        <tr><td>Patricia Uchedienyi</td><td class="m-white">731</td><td class="m-white">63</td><td class="m-red">8.62%</td><td class="m-green">103.43m</td><td class="m-red">15.67%</td></tr>
+                        <tr><td>Immaculate Osereme Imion</td><td class="m-white">720</td><td class="m-white">118</td><td class="m-red">16.39%</td><td class="m-green">239.66m</td><td class="m-red">25.63%</td></tr>
                         <tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-white">0</td><td class="m-white">8</td><td class="m-red">0.00%</td><td class="m-green">22.86m</td><td class="m-red">8.47%</td></tr>
-                        <tr style="background:#111; font-weight:800;"><td>TOTAL PIPELINE AGGREGATION</td><td class="m-white">1,343</td><td class="m-white">175</td><td class="m-red">13.03%</td><td class="m-green">347.81m</td><td>-</td></tr>
+                        <tr style="background:#111; font-weight:800;"><td>TOTAL PIPELINE AGGREGATION</td><td class="m-white">1,451</td><td class="m-white">189</td><td class="m-red">13.03%</td><td class="m-green">365.95m</td><td>-</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="segment half"><div class="segment-header"><h2>Operations Channels Architecture Share</h2></div><div class="scroll-container"><table><thead><tr><th>Operational Model</th><th>Gross Revenue Allocation</th><th>Pipeline System Share</th></tr></thead><tbody><tr><td>Sales Force Framework</td><td class="m-green">494.10m</td><td class="m-red">91.27%</td></tr><tr><td>Direct System Flows</td><td class="m-green">47.24m</td><td class="m-red">8.73%</td></tr><tr style="background:#111; font-weight:800;"><td>ENTERPRISE PERFORMANCE GROSS</td><td class="m-green">541.34m</td><td class="m-red">100.00%</td></tr></tbody></table></div></div>
-        <div class="segment half"><div class="segment-header"><h2>System Operational Variance Comparison (YoY)</h2></div><div class="scroll-container"><table><thead><tr><th>Channel Pipeline</th><th>2025 Historical Baseline</th><th>2026 Current Track</th><th>Operational Run-Rate Delta</th></tr></thead><tbody><tr><td>Sales Operations</td><td class="m-green">863.34m</td><td class="m-green">494.10m</td><td class="m-red">-369.24m (42.77%)</td></tr><tr><td>Business Operations</td><td class="m-green">138.02m</td><td class="m-green">47.24m</td><td class="m-red">-90.78m (65.77%)</td></tr></tbody></table></div></div>
-        <div class="segment"><div class="segment-header"><h2>All-Time Historical Operations Performance Database (3 Year Avg)</h2></div><div class="scroll-container"><table><thead><tr><th>Representative</th><th>Gross Structural Value</th><th>Total Accounts Finalized</th><th>Total Routed Leads</th><th>Historical System Run-Rate Avg</th></tr></thead><tbody><tr><td>Patricia Uchedienyi</td><td class="m-green">558.80m</td><td class="m-white">283</td><td class="m-white">2,998</td><td class="m-gold">186.27m</td></tr><tr><td>Immaculate Osereme Imion</td><td class="m-green">663.08m</td><td class="m-white">261</td><td class="m-white">3,564</td><td class="m-gold">221.03m</td></tr><tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">79.44m</td><td class="m-white">46</td><td class="m-white">512</td><td class="m-gold">26.48m</td></tr></tbody></table></div></div>
-        <div class="segment"><div class="segment-header"><h2>2026 Fiscal Operational Quarters Framework</h2></div><div class="scroll-container"><table><thead><tr><th>Representative</th><th>Q1 Consolidated Revenue</th><th>Q2 Active Operational Tracking</th><th>Q3 Future Framework Pipeline</th><th>Q4 Future Framework Pipeline</th></tr></thead><tbody><tr><td>Patricia Uchedienyi</td><td class="m-green">56.72m</td><td class="m-green">38.79m</td><td class="m-green">0</td><td class="m-green">0</td></tr><tr><td>Immaculate Osereme Imion</td><td class="m-green">136.36m</td><td class="m-green">93.08m</td><td class="m-green">0</td><td class="m-green">0</td></tr><tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">1.65m</td><td class="m-green">21.20m</td><td class="m-green">0</td><td class="m-green">0</td></tr></tbody></table></div></div>
+
+        <div class="segment half"><div class="segment-header"><h2>Operations Channels Architecture Share</h2></div><div class="scroll-container"><table><thead><tr><th>Operational Model</th><th>Gross Revenue Allocation</th><th>Pipeline System Share</th></tr></thead><tbody><tr><td>Sales Force Framework</td><td class="m-green">512.24m</td><td class="m-red">91.73%</td></tr><tr><td>Direct System Flows</td><td class="m-green">46.16m</td><td class="m-red">8.27%</td></tr><tr style="background:#111; font-weight:800;"><td>ENTERPRISE PERFORMANCE GROSS</td><td class="m-green">558.40m</td><td class="m-red">100.00%</td></tr></tbody></table></div></div>
+        
+        <div class="segment half"><div class="segment-header"><h2>System Operational Variance Comparison (YoY)</h2></div><div class="scroll-container"><table><thead><tr><th>Channel Pipeline</th><th>2025 Historical Baseline</th><th>2026 Current Track</th><th>Operational Run-Rate Delta</th></tr></thead><tbody><tr><td>Sales Operations</td><td class="m-green">863.34m</td><td class="m-green">512.24m</td><td class="m-red">-351.10m (40.67%)</td></tr><tr><td>Business Operations</td><td class="m-green">138.02m</td><td class="m-green">46.16m</td><td class="m-red">-91.86m (66.55%)</td></tr></tbody></table></div></div>
+        
+        <div class="segment"><div class="segment-header"><h2>All-Time Historical Operations Performance Database (3 Year Avg)</h2></div><div class="scroll-container"><table><thead><tr><th>Representative</th><th>Gross Structural Value</th><th>Total Accounts Finalized</th><th>Total Routed Leads</th><th>Historical System Run-Rate Avg</th></tr></thead><tbody><tr><td>Patricia Uchedienyi</td><td class="m-green">566.71m</td><td class="m-white">287</td><td class="m-white">3,030</td><td class="m-gold">188.90m</td></tr><tr><td>Immaculate Osereme Imion</td><td class="m-green">673.30m</td><td class="m-white">269</td><td class="m-white">3,640</td><td class="m-gold">224.43m</td></tr><tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">79.44m</td><td class="m-white">46</td><td class="m-white">512</td><td class="m-gold">26.48m</td></tr></tbody></table></div></div>
+        
+        <div class="segment"><div class="segment-header"><h2>2026 Fiscal Operational Quarters Framework</h2></div><div class="scroll-container"><table><thead><tr><th>Representative</th><th>Q1 Consolidated Revenue</th><th>Q2 Active Operational Tracking</th><th>Q3 Future Framework Pipeline</th><th>Q4 Future Framework Pipeline</th></tr></thead><tbody><tr><td>Patricia Uchedienyi</td><td class="m-green">56.72m</td><td class="m-green">46.71m</td><td class="m-green">0</td><td class="m-green">0</td></tr><tr><td>Immaculate Osereme Imion</td><td class="m-green">136.36m</td><td class="m-green">103.31m</td><td class="m-green">0</td><td class="m-green">0</td></tr><tr><td>Jemila Ojo-Agafu Ibrahim</td><td class="m-green">1.65m</td><td class="m-green">21.20m</td><td class="m-green">0</td><td class="m-green">0</td></tr></tbody></table></div></div>
+        
         <div class="segment">
             <div class="segment-header"><h2>Rep Performance Master Registry Archive (Jan - June Tracking)</h2></div>
             <div class="scroll-container">
@@ -164,7 +175,7 @@
                         <tr style="border-top:1px solid #333;"><td rowspan="3" style="vertical-align:middle; font-weight:800; color:var(--em-red); font-size:11px; letter-spacing:1px;">MARCH</td><td>Consolidated Capital</td><td class="m-green">10.24m</td><td class="m-green">47.37m</td></tr><tr><td>Accounts Dynamic</td><td class="m-white">12 Accounts</td><td class="m-white">18 Accounts</td></tr><tr style="border-bottom:1px solid var(--border);"><td>Routed Channels</td><td class="m-white">153 Leads</td><td class="m-white">119 Leads</td></tr>
                         <tr style="border-top:1px solid #333;"><td rowspan="3" style="vertical-align:middle; font-weight:800; color:var(--em-red); font-size:11px; letter-spacing:1px;">APRIL</td><td>Consolidated Capital</td><td class="m-green">18.78m</td><td class="m-green">44.50m</td></tr><tr><td>Accounts Dynamic</td><td class="m-white">15 Accounts</td><td class="m-white">24 Accounts</td></tr><tr style="border-bottom:1px solid var(--border);"><td>Routed Channels</td><td class="m-white">186 Leads</td><td class="m-white">131 Leads</td></tr>
                         <tr style="border-top:1px solid #333;"><td rowspan="3" style="vertical-align:middle; font-weight:800; color:var(--em-red); font-size:11px; letter-spacing:1px;">MAY</td><td>Consolidated Capital</td><td class="m-green">19.25m</td><td class="m-green">23.71m</td></tr><tr><td>Accounts Dynamic</td><td class="m-white">15 Accounts</td><td class="m-white">14 Accounts</td></tr><tr style="border-bottom:1px solid var(--border);"><td>Routed Channels</td><td class="m-white">169 Leads</td><td class="m-white">135 Leads</td></tr>
-                        <tr style="border-top:1px solid #333;"><td rowspan="3" style="vertical-align:middle; font-weight:800; color:var(--em-red); font-size:11px; letter-spacing:1px;">JUNE</td><td>Consolidated Capital</td><td class="m-green">765.3k</td><td class="m-green">24.86m</td></tr><tr><td>Accounts Dynamic</td><td class="m-white">1 Account</td><td class="m-white">13 Accounts</td></tr><tr style="border-bottom:1px solid var(--border);"><td>Routed Channels</td><td class="m-white">20 Leads</td><td class="m-white">79 Leads</td></tr>
+                        <tr style="border-top:1px solid #333;"><td rowspan="3" style="vertical-align:middle; font-weight:800; color:var(--em-red); font-size:11px; letter-spacing:1px;">JUNE</td><td>Consolidated Capital</td><td class="m-green">8.68m</td><td class="m-green">35.09m</td></tr><tr><td>Accounts Dynamic</td><td class="m-white">5 Accounts</td><td class="m-white">23 Accounts</td></tr><tr style="border-bottom:1px solid var(--border);"><td>Routed Channels</td><td class="m-white">52 Leads</td><td class="m-white">155 Leads</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -180,11 +191,11 @@
         } else { alert('SYSTEM REJECTION: SECURITY EXCEPTION CODE INVALID'); }
     }
     function initLooping() {
-        startTimer('ytd-rev-loop', 541342752.50, 0, '₦', true);
-        startTimer('cust-loop', 244, 0, '', false);
-        startTimer('ret-loop', 32.15, 2, '%', false);
-        startTimer('month-loop', 34701300, 0, '₦', true);
-        startTimer('today-loop', 17, 0, '', false);
+        startTimer('ytd-rev-loop', 558404552.50, 0, '₦', true);
+        startTimer('cust-loop', 258, 0, '', false);
+        startTimer('ret-loop', 32.90, 2, '%', false);
+        startTimer('month-loop', 51763100, 0, '₦', true);
+        startTimer('today-loop', 31, 0, '', false);
     }
     function startTimer(id, target, decimals, symbol, isPrefix) {
         const el = document.getElementById(id);
